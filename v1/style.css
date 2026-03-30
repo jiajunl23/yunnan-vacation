@@ -1,0 +1,544 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 17px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", "Noto Serif", serif;
+  background-color: #faf7f2;
+  color: #3d362f;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Top Nav ===== */
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 0.8rem;
+}
+
+.topnav-back {
+  text-decoration: none;
+  color: #8a7d6f;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.topnav-back:hover {
+  color: #b85c38;
+}
+
+.topnav-label {
+  font-family: "Courier New", monospace;
+  color: #b0a497;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+/* ===== Cover ===== */
+.cover {
+  position: relative;
+  height: 100vh;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Lijiang_Yunnan_China_Jade-Dragon-Snow-Mountain-01.jpg/1600px-Lijiang_Yunnan_China_Jade-Dragon-Snow-Mountain-01.jpg');
+  background-size: cover;
+  background-position: center 30%;
+}
+
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(62, 45, 30, 0.35) 0%,
+    rgba(62, 45, 30, 0.5) 50%,
+    rgba(250, 247, 242, 0.95) 92%,
+    rgba(250, 247, 242, 1) 100%
+  );
+}
+
+.cover-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.cover-series {
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: #e8d5c0;
+  margin-bottom: 1.5rem;
+}
+
+.cover h1 {
+  font-size: clamp(4.5rem, 14vw, 9rem);
+  font-weight: 400;
+  color: #faf7f2;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cover-edition {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: #e8d5c0;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.cover-rule {
+  width: 60px;
+  height: 2px;
+  background: #b85c38;
+  margin: 0 auto 2rem;
+}
+
+.cover-tagline {
+  font-size: 0.95rem;
+  color: #c4b5a3;
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ===== Book / Article ===== */
+.book {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ===== Chapter ===== */
+.chapter {
+  margin-bottom: 5rem;
+}
+
+.chapter-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-top: 3rem;
+}
+
+.chapter-number {
+  display: block;
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: #b85c38;
+  margin-bottom: 0.75rem;
+}
+
+.chapter h2 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 400;
+  color: #3d362f;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.chapter-subtitle {
+  font-size: 0.9rem;
+  color: #a0937f;
+  font-style: italic;
+  letter-spacing: 0.05em;
+}
+
+/* ===== Text Columns ===== */
+.col-text {
+  margin-bottom: 2rem;
+}
+
+.col-text p {
+  margin-bottom: 1.2rem;
+}
+
+.col-text h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #b85c38;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+/* ===== Drop Cap ===== */
+.dropcap::first-letter {
+  float: left;
+  font-size: 4.5rem;
+  line-height: 0.8;
+  padding-right: 0.12em;
+  padding-top: 0.08em;
+  color: #b85c38;
+  font-weight: 400;
+}
+
+/* ===== Figures ===== */
+.fig-full {
+  margin: 2.5rem -2rem;
+  overflow: hidden;
+}
+
+.fig-full img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+figcaption {
+  font-size: 0.8rem;
+  color: #a0937f;
+  font-style: italic;
+  padding: 0.75rem 2rem 0;
+  line-height: 1.5;
+}
+
+.fig-side {
+  float: right;
+  width: 48%;
+  margin: 0.5rem 0 1.5rem 2rem;
+  overflow: hidden;
+}
+
+.fig-side img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.fig-side figcaption {
+  padding: 0.5rem 0 0;
+}
+
+@media (max-width: 600px) {
+  .fig-side {
+    float: none;
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+  .fig-full {
+    margin: 2rem -1rem;
+  }
+  figcaption {
+    padding: 0.75rem 1rem 0;
+  }
+}
+
+/* ===== Pull Quotes ===== */
+.pullquote {
+  margin: 2.5rem 0;
+  padding: 0 0 0 2rem;
+  border-left: 3px solid #b85c38;
+}
+
+.pullquote blockquote {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5e50;
+  line-height: 1.75;
+}
+
+.pullquote--right {
+  float: right;
+  width: 45%;
+  margin: 0.5rem 0 1.5rem 2.5rem;
+  padding: 0 0 0 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .pullquote--right {
+    float: none;
+    width: 100%;
+    margin: 2rem 0;
+  }
+}
+
+/* ===== Tip Box ===== */
+.tip-box {
+  background: #f0e8dc;
+  border-radius: 4px;
+  padding: 2rem 2.5rem;
+  margin: 3rem 0;
+  border-left: 4px solid #b85c38;
+}
+
+.tip-box h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #b85c38;
+  margin-bottom: 1rem;
+}
+
+.tip-box ul {
+  list-style: none;
+}
+
+.tip-box li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 0.95rem;
+  color: #5c5248;
+}
+
+.tip-box li:last-child {
+  border-bottom: none;
+}
+
+.tip-box li strong {
+  color: #3d362f;
+}
+
+/* ===== Info Box ===== */
+.info-box {
+  background: #fff;
+  border: 1px solid #e4ddd4;
+  border-radius: 4px;
+  padding: 1.75rem 2rem;
+  margin: 2rem 0;
+}
+
+.info-box h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #b85c38;
+  margin-bottom: 0.75rem;
+}
+
+.info-box p {
+  font-size: 0.92rem;
+  color: #6b5e50;
+  line-height: 1.7;
+}
+
+/* ===== Food Grid ===== */
+.food-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.food-item {
+  background: #fff;
+  border: 1px solid #e4ddd4;
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+.food-item h4 {
+  font-size: 1rem;
+  color: #3d362f;
+  margin-bottom: 0.5rem;
+}
+
+.food-item p {
+  font-size: 0.88rem;
+  color: #7a6e62;
+  line-height: 1.6;
+}
+
+/* ===== Practical Grid ===== */
+.practical-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 600px) {
+  .practical-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.practical-item h4 {
+  font-size: 1rem;
+  color: #b85c38;
+  margin-bottom: 0.5rem;
+}
+
+.practical-item p {
+  font-size: 0.92rem;
+  color: #5c5248;
+}
+
+/* ===== Highlight Chapter ===== */
+.chapter--highlight {
+  background: #f0e8dc;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding: 3rem 2rem 4rem;
+  border-radius: 0;
+}
+
+/* ===== Opening ===== */
+.opening {
+  padding-top: 4rem;
+}
+
+/* ===== Closing ===== */
+.closing {
+  text-align: center;
+  padding: 3rem 0 2rem;
+}
+
+.closing-rule {
+  width: 40px;
+  height: 2px;
+  background: #b85c38;
+  margin: 0 auto 2rem;
+}
+
+.closing-text {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5e50;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+}
+
+/* ===== Footer ===== */
+.book-footer {
+  text-align: center;
+  padding: 3rem 2rem 4rem;
+  font-size: 0.8rem;
+  color: #b0a497;
+}
+
+.book-footer p {
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.book-footer a {
+  color: #b85c38;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.book-footer a:hover {
+  color: #8a4328;
+}
+
+/* ===== Inline Photo Credits ===== */
+.credit {
+  display: inline;
+  font-size: 0.72rem;
+  font-style: normal;
+  color: #b0a497;
+}
+
+.credit a {
+  color: #a0937f;
+  text-decoration: underline;
+  text-decoration-color: rgba(160, 147, 127, 0.3);
+  transition: color 0.2s;
+}
+
+.credit a:hover {
+  color: #6b5e50;
+}
+
+/* ===== Footer Photo Credits ===== */
+.photo-credits {
+  max-width: 600px;
+  margin: 2.5rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e4ddd4;
+  text-align: left;
+}
+
+.photo-credits h4 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #b0a497;
+  margin-bottom: 0.75rem;
+}
+
+.photo-credits p {
+  font-size: 0.75rem;
+  color: #b0a497;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.photo-credits ul {
+  list-style: none;
+  font-size: 0.72rem;
+  color: #b0a497;
+  line-height: 1.8;
+}
+
+.photo-credits li {
+  padding: 0.15rem 0;
+}
+
+.photo-credits a {
+  color: #a0937f;
+  text-decoration: underline;
+  text-decoration-color: rgba(160, 147, 127, 0.3);
+}
+
+.photo-credits a:hover {
+  color: #6b5e50;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+  .book {
+    padding: 0 1.25rem;
+  }
+  .chapter--highlight {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding: 2rem 1.25rem 3rem;
+  }
+  .tip-box {
+    padding: 1.5rem;
+  }
+}
