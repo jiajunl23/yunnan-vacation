@@ -1,0 +1,587 @@
+/* ========================================
+   v16 -- Chinese Traditional Scroll / Shanshui Painting
+   ======================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --rice-paper: #f4ede0;
+  --ink-black: #1a1410;
+  --vermilion: #cc3333;
+  --bamboo-green: #5a7247;
+  --mountain-gray: #8c8578;
+  --gold: #b8963e;
+  --dark-brown: #3d2b1f;
+  --light-wash: #ddd5c8;
+  --pale-wash: #ebe4d6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--rice-paper);
+  color: var(--ink-black);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.9;
+  min-height: 100vh;
+}
+
+/* --- SCROLL CONTAINER --- */
+
+.scroll-outer {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- SCROLL ROLLERS --- */
+
+.scroll-roller {
+  max-width: 660px;
+  margin: 0 auto;
+  height: 22px;
+  background: linear-gradient(
+    180deg,
+    var(--gold) 0%,
+    var(--dark-brown) 15%,
+    var(--dark-brown) 85%,
+    var(--gold) 100%
+  );
+  border-radius: 11px;
+  position: relative;
+  box-shadow: 0 3px 8px rgba(26, 20, 16, 0.3);
+}
+
+.scroll-roller::before,
+.scroll-roller::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, var(--gold) 40%, var(--dark-brown) 100%);
+  border-radius: 50%;
+}
+
+.scroll-roller::before {
+  left: -10px;
+}
+
+.scroll-roller::after {
+  right: -10px;
+}
+
+/* --- SCROLL NUMBER --- */
+
+.scroll-number {
+  text-align: center;
+  padding: 40px 0 10px;
+  font-size: 0.85rem;
+  color: var(--mountain-gray);
+  letter-spacing: 0.3em;
+}
+
+/* --- RETURN NAV --- */
+
+.return-nav {
+  position: fixed;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  z-index: 100;
+}
+
+.return-nav a {
+  color: var(--vermilion);
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  padding: 12px 6px;
+  border-left: 2px solid var(--vermilion);
+  transition: color 0.3s;
+}
+
+.return-nav a:hover {
+  color: var(--ink-black);
+}
+
+/* --- MAIN CONTENT COLUMN --- */
+
+.scroll-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* --- TITLE AREA --- */
+
+.scroll-title {
+  text-align: center;
+  padding: 60px 0 40px;
+}
+
+.scroll-title .title-chinese {
+  font-size: 3.5rem;
+  color: var(--ink-black);
+  letter-spacing: 0.4em;
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.scroll-title .title-english {
+  font-size: 1.1rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--mountain-gray);
+  font-weight: 400;
+}
+
+.scroll-title .title-sub {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: var(--mountain-gray);
+  letter-spacing: 0.25em;
+}
+
+/* --- POETRY SECTION --- */
+
+.poem-section {
+  padding: 50px 0 60px;
+  text-align: center;
+}
+
+.poem-section p {
+  font-style: italic;
+  color: var(--ink-black);
+  line-height: 2.4;
+  font-size: 1.05rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.poem-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  display: inline-block;
+  margin: 30px auto;
+  font-size: 1.3rem;
+  line-height: 2.8;
+  color: var(--ink-black);
+  height: 320px;
+  text-align: start;
+  letter-spacing: 0.15em;
+}
+
+/* --- INK WASH DIVIDERS --- */
+
+.ink-wash-divider {
+  height: 80px;
+  margin: 20px 0;
+  background: radial-gradient(
+    ellipse 80% 50% at 50% 50%,
+    var(--light-wash) 0%,
+    var(--rice-paper) 100%
+  );
+}
+
+.ink-wash-divider-small {
+  height: 40px;
+  margin: 10px 0;
+  background: radial-gradient(
+    ellipse 60% 40% at 50% 50%,
+    var(--light-wash) 0%,
+    var(--rice-paper) 100%
+  );
+}
+
+/* --- BRUSH STROKE DIVIDER --- */
+
+.brush-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.brush-divider .stroke {
+  height: 2px;
+  width: 200px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--ink-black) 20%,
+    var(--ink-black) 50%,
+    var(--ink-black) 80%,
+    transparent 100%
+  );
+  opacity: 0.5;
+}
+
+.brush-divider-gold .stroke {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--gold) 20%,
+    var(--gold) 50%,
+    var(--gold) 80%,
+    transparent 100%
+  );
+  opacity: 0.7;
+}
+
+/* Tapered brush stroke */
+.brush-taper {
+  height: 4px;
+  max-width: 280px;
+  margin: 30px auto;
+  background: radial-gradient(
+    ellipse 50% 100% at 50% 50%,
+    var(--ink-black) 0%,
+    transparent 100%
+  );
+  opacity: 0.35;
+  border-radius: 2px;
+}
+
+/* --- SECTION HEADINGS --- */
+
+.section-heading {
+  text-align: center;
+  padding: 50px 0 30px;
+}
+
+.section-heading .chinese-name {
+  font-size: 3.2rem;
+  color: var(--ink-black);
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+}
+
+.section-heading .english-name {
+  font-size: 1.1rem;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: var(--mountain-gray);
+  font-weight: 400;
+}
+
+/* --- PROSE PARAGRAPHS --- */
+
+.prose {
+  padding: 10px 0 20px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.prose p {
+  margin-bottom: 24px;
+  text-indent: 2em;
+}
+
+.prose p:first-child {
+  text-indent: 0;
+}
+
+.prose .first-line-cap::first-letter {
+  font-size: 2.2rem;
+  float: left;
+  line-height: 1;
+  margin-right: 6px;
+  margin-top: 4px;
+  color: var(--vermilion);
+}
+
+/* --- IMAGE / PAINTING MOUNT --- */
+
+.painting-mount {
+  margin: 40px auto;
+  padding: 12px;
+  border: 2px solid var(--bamboo-green);
+  background: var(--pale-wash);
+  position: relative;
+  max-width: 520px;
+}
+
+.painting-mount .inner-frame {
+  border: 1px solid var(--ink-black);
+  overflow: hidden;
+  position: relative;
+  line-height: 0;
+}
+
+.painting-mount .inner-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: saturate(0.7) contrast(1.05);
+}
+
+/* Red corner squares */
+.painting-mount .inner-frame::before,
+.painting-mount .inner-frame::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--vermilion);
+  z-index: 2;
+}
+
+.painting-mount .inner-frame::before {
+  top: 6px;
+  left: 6px;
+}
+
+.painting-mount .inner-frame::after {
+  bottom: 6px;
+  right: 6px;
+}
+
+.painting-caption {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--mountain-gray);
+  margin-top: 10px;
+  letter-spacing: 0.2em;
+}
+
+/* --- RED SEAL / CHOP STAMP --- */
+
+.seal-stamp {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--vermilion);
+  transform: rotate(5deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  font-size: 0.85rem;
+  color: var(--vermilion);
+  letter-spacing: 0.15em;
+  line-height: 1.2;
+  margin: 20px auto;
+  background: rgba(204, 51, 51, 0.04);
+}
+
+.seal-stamp-right {
+  margin: 20px 0 20px auto;
+}
+
+.seal-stamp-left {
+  margin: 20px auto 20px 0;
+}
+
+.seal-stamp-inline {
+  display: inline-flex;
+  vertical-align: middle;
+  margin: 0 8px;
+}
+
+/* --- FOOD / TEA SECTION --- */
+
+.dish-entry {
+  margin-bottom: 36px;
+}
+
+.dish-entry .dish-name {
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  color: var(--ink-black);
+  text-align: center;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
+.dish-entry .dish-name .dish-chinese {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.dish-entry p {
+  text-indent: 2em;
+  text-align: justify;
+}
+
+/* --- VERTICAL DECORATIVE TEXT --- */
+
+.vertical-deco {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 1.1rem;
+  color: var(--mountain-gray);
+  opacity: 0.4;
+  letter-spacing: 0.5em;
+  line-height: 1;
+  position: absolute;
+}
+
+.vertical-deco-right {
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.vertical-deco-left {
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* --- CREDITS --- */
+
+.credits-section {
+  padding: 50px 0 30px;
+  text-align: center;
+}
+
+.credits-section p {
+  font-size: 0.75rem;
+  color: var(--mountain-gray);
+  line-height: 2;
+  letter-spacing: 0.1em;
+}
+
+.credits-section a {
+  color: var(--mountain-gray);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--mountain-gray);
+}
+
+.credits-section a:hover {
+  color: var(--ink-black);
+}
+
+/* --- GOLD LINE --- */
+
+.gold-line {
+  height: 1px;
+  max-width: 300px;
+  margin: 40px auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent
+  );
+}
+
+/* --- BAMBOO ACCENT LINE --- */
+
+.bamboo-line {
+  height: 1px;
+  max-width: 160px;
+  margin: 20px auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--bamboo-green),
+    transparent
+  );
+}
+
+/* --- SECTION WRAPPER for relative positioning --- */
+
+.section-wrapper {
+  position: relative;
+  padding: 10px 0;
+}
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 760px) {
+  .return-nav {
+    position: static;
+    writing-mode: horizontal-tb;
+    text-align: center;
+    padding: 10px 0 0;
+    transform: none;
+  }
+
+  .return-nav a {
+    border-left: none;
+    border-bottom: 2px solid var(--vermilion);
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+  }
+
+  .scroll-outer {
+    padding: 0 12px;
+  }
+
+  .scroll-content {
+    padding: 0;
+  }
+
+  .scroll-title .title-chinese {
+    font-size: 2.5rem;
+  }
+
+  .section-heading .chinese-name {
+    font-size: 2.4rem;
+  }
+
+  .poem-vertical {
+    height: 260px;
+    font-size: 1.1rem;
+  }
+
+  .painting-mount {
+    margin: 30px auto;
+    padding: 8px;
+  }
+
+  .vertical-deco {
+    display: none;
+  }
+
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-title .title-chinese {
+    font-size: 2rem;
+    letter-spacing: 0.2em;
+  }
+
+  .section-heading .chinese-name {
+    font-size: 2rem;
+    letter-spacing: 0.15em;
+  }
+
+  .scroll-roller {
+    height: 16px;
+    border-radius: 8px;
+  }
+
+  .scroll-roller::before,
+  .scroll-roller::after {
+    width: 24px;
+    height: 24px;
+    top: -4px;
+  }
+
+  .poem-vertical {
+    height: 220px;
+    font-size: 1rem;
+  }
+}

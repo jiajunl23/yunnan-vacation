@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5e6c8;
+    color: #2c2416;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 18px;
+    line-height: 1.85;
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent,
+            transparent 27px,
+            #b8cfe6 27px,
+            #b8cfe6 28px
+        );
+    background-size: 100% 28px;
+    background-attachment: local;
+    min-height: 100vh;
+    padding-top: 56px;
+    padding-bottom: 120px;
+}
+
+.page {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 0 40px 0 100px;
+    position: relative;
+    border-left: 2px solid #cc4444;
+    margin-left: max(calc(50% - 330px), 20px);
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 11px;
+    color: #8b6914;
+    text-decoration: none;
+    opacity: 0.45;
+    margin-bottom: 28px;
+    font-style: italic;
+}
+
+.back-link:hover {
+    opacity: 0.8;
+}
+
+.date {
+    font-style: italic;
+    color: #1a3f7a;
+    font-size: 16px;
+    margin-bottom: 28px;
+    display: block;
+}
+
+p {
+    margin-bottom: 28px;
+    text-indent: 0;
+}
+
+.crossed-out {
+    text-decoration: line-through;
+    color: #6b5a42;
+}
+
+.aside {
+    color: #5a4a32;
+    font-style: italic;
+}
+
+.blue-ink {
+    color: #1a3f7a;
+}
+
+.emphasis-bold {
+    font-weight: bold;
+}
+
+.emphasis-italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+    text-decoration-color: #8b6914;
+}
+
+/* Taped-in images */
+.taped-image {
+    display: block;
+    margin: 28px auto;
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.taped-image img {
+    display: block;
+    max-width: 100%;
+    width: 420px;
+    border: 8px solid #fff;
+    box-shadow: 2px 3px 12px rgba(44, 36, 22, 0.3);
+}
+
+.taped-image.rotate-right img {
+    transform: rotate(1.5deg);
+}
+
+.taped-image.rotate-left img {
+    transform: rotate(-2deg);
+}
+
+.taped-image.rotate-slight img {
+    transform: rotate(0.8deg);
+}
+
+.taped-image.rotate-more img {
+    transform: rotate(-2.5deg);
+}
+
+/* Tape pieces on images */
+.taped-image::before,
+.taped-image::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 22px;
+    background: rgba(230, 218, 185, 0.65);
+    z-index: 2;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.taped-image::before {
+    top: -6px;
+    left: 30px;
+    transform: rotate(-4deg);
+}
+
+.taped-image::after {
+    bottom: -4px;
+    right: 25px;
+    transform: rotate(3deg);
+}
+
+/* Margin notes */
+.margin-note {
+    position: absolute;
+    right: -170px;
+    width: 140px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #8b6914;
+    font-style: italic;
+    text-align: left;
+}
+
+/* Coffee ring stain */
+.coffee-ring {
+    position: fixed;
+    top: 180px;
+    right: calc(50% - 480px);
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 12px solid rgba(139, 105, 20, 0.12);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.coffee-ring-2 {
+    position: absolute;
+    top: 2800px;
+    left: -60px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 10px solid rgba(139, 105, 20, 0.08);
+    pointer-events: none;
+    z-index: 0;
+    transform: rotate(15deg);
+}
+
+/* Credits */
+.credits {
+    margin-top: 84px;
+    font-size: 10px;
+    color: #8b6914;
+    opacity: 0.5;
+    line-height: 1.5;
+}
+
+.credits a {
+    color: #8b6914;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .margin-note {
+        position: relative;
+        right: auto;
+        width: auto;
+        display: block;
+        margin: 14px 0;
+        padding: 8px 12px;
+        background: rgba(139, 105, 20, 0.06);
+        font-size: 13px;
+    }
+
+    .coffee-ring {
+        right: 10px;
+        top: 120px;
+        width: 70px;
+        height: 70px;
+        border-width: 8px;
+    }
+}
+
+@media (max-width: 700px) {
+    .page {
+        margin-left: 20px;
+        padding: 0 20px 0 30px;
+    }
+
+    .taped-image img {
+        width: 100%;
+    }
+
+    body {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page {
+        margin-left: 10px;
+        padding: 0 12px 0 22px;
+    }
+
+    body {
+        font-size: 15px;
+        padding-top: 28px;
+    }
+}

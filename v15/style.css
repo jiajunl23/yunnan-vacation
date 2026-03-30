@@ -1,0 +1,473 @@
+/* BBC Documentary Edition -- V15 */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --charcoal: #1c1c1c;
+  --warm-white: #f5f0e8;
+  --bbc-red: #bb1919;
+  --gold: #c8a85a;
+  --gray: #6b6b6b;
+  --black: #000000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--charcoal);
+  color: var(--warm-white);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  line-height: 2.0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- NAV --- */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  pointer-events: none;
+}
+
+.nav a,
+.nav span {
+  pointer-events: auto;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #444;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--gray);
+}
+
+/* --- OPENING TITLE --- */
+
+.opening {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--black);
+  text-align: center;
+  padding: 2rem;
+}
+
+.opening .overline {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 200;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 3rem;
+}
+
+.opening h1 {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 200;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--warm-white);
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.opening .episode {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: var(--bbc-red);
+  margin-top: 1rem;
+}
+
+.opening .red-line {
+  width: 60px;
+  height: 2px;
+  background: var(--bbc-red);
+  margin: 2rem auto;
+}
+
+/* --- CHAPTER TITLE CARDS --- */
+
+.chapter-card {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--black);
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.chapter-card .red-line-top,
+.chapter-card .red-line-bottom {
+  width: 40px;
+  height: 2px;
+  background: var(--bbc-red);
+}
+
+.chapter-card .red-line-top {
+  margin-bottom: 2.5rem;
+}
+
+.chapter-card .red-line-bottom {
+  margin-top: 2.5rem;
+}
+
+.chapter-card .chapter-label {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 200;
+  font-size: 11px;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+}
+
+.chapter-card h2 {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 200;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--warm-white);
+  line-height: 1.5;
+}
+
+.chapter-card .subtitle {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--gray);
+  margin-top: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* --- FADE TRANSITIONS --- */
+
+.fade-transition {
+  height: 12rem;
+  background: linear-gradient(to bottom, var(--charcoal), var(--black), var(--charcoal));
+}
+
+.fade-to-black {
+  height: 8rem;
+  background: linear-gradient(to bottom, var(--charcoal), var(--black));
+}
+
+.fade-from-black {
+  height: 8rem;
+  background: linear-gradient(to bottom, var(--black), var(--charcoal));
+}
+
+/* --- CONTENT SECTIONS --- */
+
+.content-section {
+  padding: 6rem 2rem 8rem;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content-section p {
+  margin-bottom: 2rem;
+  color: var(--warm-white);
+}
+
+.content-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- CINEMATIC IMAGES --- */
+
+.cinematic-image {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.cinematic-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+}
+
+.cinematic-image::before,
+.cinematic-image::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 15%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cinematic-image::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--charcoal), transparent);
+}
+
+.cinematic-image::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--charcoal), transparent);
+}
+
+.image-caption {
+  text-align: center;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--gray);
+  padding: 1.2rem 2rem 0;
+  letter-spacing: 0.05em;
+}
+
+/* --- NARRATOR PULL QUOTES --- */
+
+.narrator-quote {
+  padding: 6rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--charcoal);
+}
+
+.narrator-quote blockquote {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: clamp(20px, 3vw, 28px);
+  line-height: 1.8;
+  color: var(--warm-white);
+  position: relative;
+  padding: 0 1rem;
+}
+
+.narrator-quote .quote-mark {
+  color: var(--bbc-red);
+  font-size: 1.2em;
+  font-style: normal;
+}
+
+.narrator-quote .attribution {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 2rem;
+  display: block;
+  font-style: normal;
+}
+
+/* --- INTERLUDE TITLE CARD --- */
+
+.interlude-card {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--black);
+  text-align: center;
+  padding: 2rem;
+}
+
+.interlude-card .interlude-label {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 200;
+  font-size: 11px;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: var(--bbc-red);
+  margin-bottom: 2rem;
+}
+
+.interlude-card h2 {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 200;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--warm-white);
+  line-height: 1.5;
+}
+
+.interlude-card .red-line-top,
+.interlude-card .red-line-bottom {
+  width: 40px;
+  height: 2px;
+  background: var(--bbc-red);
+}
+
+.interlude-card .red-line-top {
+  margin-bottom: 2rem;
+}
+
+.interlude-card .red-line-bottom {
+  margin-top: 2rem;
+}
+
+/* --- END CREDITS --- */
+
+.end-credits {
+  background: var(--black);
+  padding: 8rem 2rem 6rem;
+  text-align: center;
+}
+
+.end-credits .credits-title {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 200;
+  font-size: 11px;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 4rem;
+}
+
+.end-credits .credits-block {
+  max-width: 500px;
+  margin: 0 auto 3rem;
+}
+
+.end-credits .credit-role {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 200;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+}
+
+.end-credits .credit-name {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  color: var(--warm-white);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.end-credits .credit-name a {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.3s;
+}
+
+.end-credits .credit-name a:hover {
+  color: var(--warm-white);
+}
+
+.end-credits .production-line {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 200;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid #333;
+}
+
+.end-credits .final-line {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--gray);
+  margin-top: 2rem;
+}
+
+.end-credits .red-line {
+  width: 40px;
+  height: 2px;
+  background: var(--bbc-red);
+  margin: 3rem auto;
+}
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 17px;
+    line-height: 1.9;
+  }
+
+  .content-section {
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .narrator-quote {
+    padding: 4rem 1.5rem;
+  }
+
+  .opening h1 {
+    letter-spacing: 0.2em;
+  }
+
+  .chapter-card h2 {
+    letter-spacing: 0.2em;
+  }
+
+  .fade-transition {
+    height: 8rem;
+  }
+
+  .end-credits {
+    padding: 5rem 1.5rem 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .nav {
+    padding: 1rem 1.2rem;
+  }
+
+  .content-section {
+    padding: 3rem 1.2rem 4rem;
+  }
+
+  .narrator-quote {
+    padding: 3rem 1rem;
+  }
+
+  .chapter-card {
+    height: 80vh;
+  }
+}

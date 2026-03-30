@@ -1,0 +1,1003 @@
+/* ============================================
+   V12 CUBIST / ABSTRACT -- YUNNAN VACATION
+   ============================================ */
+
+/* --- PALETTE --- */
+:root {
+  --cobalt: #0047ab;
+  --red: #e63946;
+  --ochre: #e6b800;
+  --olive: #556b2f;
+  --charcoal: #2b2b2b;
+  --offwhite: #f8f4e8;
+}
+
+/* --- RESET & BASE --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--offwhite);
+  color: var(--charcoal);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --- TYPOGRAPHY MIX --- */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+}
+
+h4 {
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+p {
+  text-align: justify;
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--cobalt);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ochre);
+}
+a:hover {
+  color: var(--red);
+}
+
+/* --- NAV BAR --- */
+.nav-bar {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--cobalt);
+  color: var(--offwhite);
+  padding: 1rem 3rem 1rem 5rem;
+  transform: rotate(-3deg);
+  margin: -10px -20px 30px -20px;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.nav-gallery {
+  color: var(--offwhite);
+  border-bottom: 2px solid var(--ochre);
+  padding: 0.2em 0.5em;
+}
+.nav-gallery:hover {
+  color: var(--ochre);
+}
+
+.nav-title {
+  font-family: system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+}
+
+/* --- HERO --- */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 6rem 8% 4rem 12%;
+  overflow: hidden;
+}
+
+.hero-block-blue,
+.hero-block-red,
+.hero-block-yellow {
+  position: absolute;
+  z-index: 0;
+}
+
+.hero-block-blue {
+  width: 55%;
+  height: 70%;
+  top: 5%;
+  left: -5%;
+  background: var(--cobalt);
+  opacity: 0.12;
+  transform: rotate(4deg);
+}
+
+.hero-block-red {
+  width: 35%;
+  height: 50%;
+  top: 20%;
+  right: 5%;
+  background: var(--red);
+  opacity: 0.10;
+  transform: rotate(-7deg);
+}
+
+.hero-block-yellow {
+  width: 40%;
+  height: 30%;
+  bottom: -5%;
+  left: 30%;
+  background: var(--ochre);
+  opacity: 0.15;
+  transform: rotate(2deg);
+}
+
+.hero-title {
+  position: relative;
+  z-index: 1;
+  font-size: 8rem;
+  letter-spacing: 0.3em;
+  color: var(--charcoal);
+  transform: rotate(-5deg);
+  margin-bottom: 0.2em;
+  line-height: 1;
+}
+
+.hero-subtitle {
+  position: relative;
+  z-index: 1;
+  font-family: system-ui, sans-serif;
+  font-weight: 200;
+  font-size: 1.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  transform: rotate(2deg);
+  margin-left: 3rem;
+  text-align: left;
+}
+
+.hero-tagline {
+  position: relative;
+  z-index: 1;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--charcoal);
+  opacity: 0.7;
+  margin-top: 2rem;
+  margin-left: 6rem;
+  max-width: 500px;
+  text-align: left;
+  transform: rotate(-1deg);
+}
+
+/* --- SECTION DIVIDERS --- */
+.section-divider {
+  height: 20px;
+  margin: 0 -20px;
+  position: relative;
+  z-index: 5;
+}
+
+.divider-blue {
+  background: var(--cobalt);
+  transform: rotate(-1.5deg);
+}
+.divider-ochre {
+  background: var(--ochre);
+  transform: rotate(2deg);
+}
+.divider-red {
+  background: var(--red);
+  transform: rotate(-2.5deg);
+}
+.divider-green {
+  background: var(--olive);
+  transform: rotate(1deg);
+}
+.divider-charcoal {
+  background: var(--charcoal);
+  transform: rotate(-1deg);
+}
+
+/* --- DESTINATION SECTIONS --- */
+.destination {
+  position: relative;
+  padding: 4rem 5% 5rem;
+  overflow: hidden;
+}
+
+.dest-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Background decorative blocks via pseudo-elements */
+.dest-kunming::before {
+  content: '';
+  position: absolute;
+  width: 45%;
+  height: 60%;
+  top: 10%;
+  right: -5%;
+  background: var(--cobalt);
+  opacity: 0.08;
+  transform: rotate(6deg);
+  z-index: 0;
+}
+
+.dest-dali::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 55%;
+  top: 5%;
+  left: -8%;
+  background: var(--ochre);
+  opacity: 0.10;
+  transform: rotate(-4deg);
+  z-index: 0;
+}
+.dest-dali::after {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 40%;
+  bottom: 10%;
+  right: 5%;
+  background: var(--red);
+  opacity: 0.07;
+  transform: rotate(8deg);
+  z-index: 0;
+}
+
+.dest-lijiang::before {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 70%;
+  top: -5%;
+  right: 10%;
+  background: var(--red);
+  opacity: 0.09;
+  transform: rotate(-3deg);
+  z-index: 0;
+}
+
+.dest-jade::before {
+  content: '';
+  position: absolute;
+  width: 55%;
+  height: 50%;
+  top: 15%;
+  left: -10%;
+  background: var(--olive);
+  opacity: 0.08;
+  transform: rotate(5deg);
+  z-index: 0;
+}
+
+.dest-tiger::before {
+  content: '';
+  position: absolute;
+  width: 35%;
+  height: 65%;
+  top: 5%;
+  right: -3%;
+  background: var(--charcoal);
+  opacity: 0.06;
+  transform: rotate(-6deg);
+  z-index: 0;
+}
+.dest-tiger::after {
+  content: '';
+  position: absolute;
+  width: 25%;
+  height: 35%;
+  bottom: 5%;
+  left: 10%;
+  background: var(--cobalt);
+  opacity: 0.07;
+  transform: rotate(3deg);
+  z-index: 0;
+}
+
+.dest-shangrila::before {
+  content: '';
+  position: absolute;
+  width: 45%;
+  height: 55%;
+  top: 10%;
+  left: 5%;
+  background: var(--ochre);
+  opacity: 0.09;
+  transform: rotate(-5deg);
+  z-index: 0;
+}
+
+.dest-yuanyang::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 45%;
+  top: 8%;
+  right: -5%;
+  background: var(--olive);
+  opacity: 0.10;
+  transform: rotate(4deg);
+  z-index: 0;
+}
+.dest-yuanyang::after {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  bottom: 15%;
+  left: -5%;
+  background: var(--red);
+  opacity: 0.08;
+  transform: rotate(-7deg);
+  z-index: 0;
+}
+
+/* --- HEADINGS --- */
+.heading-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  position: absolute;
+  left: 1%;
+  top: 3rem;
+  font-size: 3.5rem;
+  letter-spacing: 0.15em;
+  color: var(--cobalt);
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.heading-right {
+  left: auto;
+  right: 1%;
+}
+
+.heading-rotated {
+  display: inline-block;
+  font-size: 3.5rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  color: var(--charcoal);
+}
+
+.rotate-pos5 { transform: rotate(5deg); }
+.rotate-neg4 { transform: rotate(-4deg); }
+.rotate-pos8 { transform: rotate(8deg); }
+
+.heading-tilted {
+  display: inline-block;
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.tilt-neg5 { transform: rotate(-5deg); color: var(--red); }
+.tilt-neg3 { transform: rotate(-3deg); color: var(--cobalt); }
+.tilt-neg2 { transform: rotate(-2deg); color: var(--olive); }
+.tilt-pos3 { transform: rotate(3deg); color: var(--charcoal); }
+.tilt-pos4 { transform: rotate(4deg); color: var(--ochre); }
+.tilt-pos6 { transform: rotate(6deg); color: var(--red); }
+.tilt-pos7 { transform: rotate(7deg); color: var(--olive); }
+
+/* --- GALLERY FRAMES (images) --- */
+.gallery-frame {
+  position: relative;
+  z-index: 3;
+  overflow: visible;
+}
+
+.gallery-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Clip-path shapes -- different per image */
+.img-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  shape-outside: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.img-pentagon {
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  shape-outside: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.img-circle {
+  clip-path: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);
+}
+
+.img-irregular {
+  clip-path: polygon(10% 0%, 90% 5%, 100% 40%, 85% 100%, 15% 95%, 0% 55%);
+  shape-outside: polygon(10% 0%, 90% 5%, 100% 40%, 85% 100%, 15% 95%, 0% 55%);
+}
+
+.img-diamond {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  shape-outside: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.img-trapezoid {
+  clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+  shape-outside: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+}
+
+.img-hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  shape-outside: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.img-arrow {
+  clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+  shape-outside: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+
+/* --- DESTINATION LAYOUT: gallery-wall asymmetric --- */
+
+/* Kunming */
+.dest-kunming .gallery-frame {
+  float: left;
+  width: 40%;
+  margin: 0 2rem 1rem -3%;
+  transform: rotate(3deg);
+}
+.dest-kunming .text-block {
+  margin-left: 10%;
+  padding-left: 2rem;
+}
+
+/* Dali */
+.dest-dali .dest-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+}
+.dest-dali .heading-rotated {
+  grid-column: 1 / -1;
+  margin-left: 15%;
+}
+.dest-dali .frame-2 {
+  grid-column: 1;
+  width: 90%;
+  transform: rotate(-4deg);
+  margin-top: -1rem;
+  z-index: 4;
+}
+.dest-dali .frame-3 {
+  grid-column: 2;
+  width: 75%;
+  transform: rotate(3deg);
+  margin-top: 2rem;
+  margin-left: -10%;
+  z-index: 3;
+}
+.dest-dali .text-block {
+  grid-column: 1 / -1;
+  padding: 1rem 8% 0 5%;
+}
+
+/* Lijiang */
+.dest-lijiang .gallery-frame {
+  float: right;
+  width: 45%;
+  margin: 0 -2% 1rem 2rem;
+  transform: rotate(-3deg);
+}
+.dest-lijiang .text-block {
+  margin-right: 5%;
+  padding-right: 2rem;
+}
+
+/* Jade Dragon */
+.dest-jade .gallery-frame {
+  float: left;
+  width: 38%;
+  margin: 1rem 2rem 1rem 5%;
+  transform: rotate(5deg);
+}
+.dest-jade .text-block {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/* Tiger Leaping */
+.dest-tiger .gallery-frame {
+  float: right;
+  width: 42%;
+  margin: 0 -1% 1rem 2rem;
+  transform: rotate(-2deg);
+}
+.dest-tiger .text-block {
+  margin-left: 8%;
+}
+
+/* Shangri-La */
+.dest-shangrila .gallery-frame {
+  float: left;
+  width: 44%;
+  margin: 0 2rem 1rem -2%;
+  transform: rotate(4deg);
+}
+.dest-shangrila .text-block {
+  margin-left: 5%;
+  margin-right: 8%;
+}
+
+/* Yuanyang */
+.dest-yuanyang .gallery-frame {
+  float: left;
+  width: 50%;
+  margin: 0 2rem 1rem 2%;
+  transform: rotate(-3deg);
+}
+.dest-yuanyang .text-block {
+  margin-right: 5%;
+}
+
+/* Clear floats after text blocks */
+.text-block::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.dest-content::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* --- FOOD SECTION --- */
+.food-section {
+  position: relative;
+  padding: 4rem 5% 5rem;
+  overflow: hidden;
+}
+
+.food-section::before {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 80%;
+  top: 5%;
+  left: 20%;
+  background: var(--ochre);
+  opacity: 0.07;
+  transform: rotate(-3deg);
+  z-index: 0;
+}
+.food-section::after {
+  content: '';
+  position: absolute;
+  width: 35%;
+  height: 50%;
+  bottom: 10%;
+  right: -5%;
+  background: var(--red);
+  opacity: 0.06;
+  transform: rotate(5deg);
+  z-index: 0;
+}
+
+.food-title {
+  position: relative;
+  z-index: 2;
+  font-size: 2.8rem;
+  letter-spacing: 0.15em;
+  color: var(--red);
+  transform: rotate(-2deg);
+  margin-bottom: 3rem;
+  margin-left: 5%;
+}
+
+.food-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding: 0 3%;
+}
+
+.food-card {
+  background: var(--offwhite);
+  border: 3px solid var(--charcoal);
+  padding: 1.8rem 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.food-card h4 {
+  margin-bottom: 0.8rem;
+  color: var(--cobalt);
+  font-size: 1rem;
+}
+
+.food-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.card-tilt-1 {
+  transform: rotate(-4deg);
+  margin-top: 1rem;
+  z-index: 6;
+  border-color: var(--cobalt);
+}
+.card-tilt-2 {
+  transform: rotate(3deg);
+  margin-top: -0.5rem;
+  z-index: 5;
+  border-color: var(--red);
+}
+.card-tilt-3 {
+  transform: rotate(-2deg);
+  margin-top: 2rem;
+  z-index: 7;
+  border-color: var(--olive);
+}
+.card-tilt-4 {
+  transform: rotate(5deg);
+  margin-top: -1rem;
+  z-index: 4;
+  border-color: var(--ochre);
+}
+.card-tilt-5 {
+  transform: rotate(-3deg);
+  margin-top: 1.5rem;
+  z-index: 8;
+  border-color: var(--charcoal);
+}
+.card-tilt-6 {
+  transform: rotate(6deg);
+  margin-top: -0.5rem;
+  z-index: 3;
+  border-color: var(--cobalt);
+}
+
+/* --- PRACTICAL SECTION --- */
+.practical-section {
+  position: relative;
+  padding: 4rem 5% 4rem;
+  overflow: hidden;
+}
+
+.practical-section::before {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 70%;
+  top: 10%;
+  left: -5%;
+  background: var(--olive);
+  opacity: 0.07;
+  transform: rotate(3deg);
+  z-index: 0;
+}
+
+.practical-title {
+  position: relative;
+  z-index: 2;
+  font-size: 2.2rem;
+  letter-spacing: 0.2em;
+  color: var(--charcoal);
+  transform: rotate(1.5deg);
+  margin-bottom: 2.5rem;
+  margin-left: 8%;
+  font-family: system-ui, sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+.practical-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 0 5%;
+}
+
+.practical-block {
+  padding: 1.5rem;
+  border-left: 6px solid var(--charcoal);
+}
+
+.practical-block h4 {
+  margin-bottom: 0.6rem;
+  color: var(--charcoal);
+}
+
+.practical-block p {
+  font-size: 0.92rem;
+}
+
+.block-when {
+  border-left-color: var(--cobalt);
+  transform: rotate(-1deg);
+}
+.block-how {
+  border-left-color: var(--red);
+  transform: rotate(1.5deg);
+}
+.block-altitude {
+  border-left-color: var(--ochre);
+  transform: rotate(0.5deg);
+}
+.block-currency {
+  border-left-color: var(--olive);
+  transform: rotate(-2deg);
+}
+
+/* --- FOOTER / CREDITS --- */
+.credits-footer {
+  position: relative;
+  padding: 3rem 5% 4rem;
+  background: var(--charcoal);
+  color: var(--offwhite);
+  transform: rotate(1deg);
+  margin: 2rem -20px -10px;
+  overflow: hidden;
+}
+
+.credits-footer .section-divider {
+  display: none;
+}
+
+.credits-heading {
+  font-size: 1.5rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  color: var(--ochre);
+  transform: rotate(-2deg);
+}
+
+.credits-list {
+  list-style: none;
+  columns: 2;
+  column-gap: 3rem;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.credits-list li {
+  margin-bottom: 0.8rem;
+  break-inside: avoid;
+}
+
+.credits-list a {
+  color: var(--ochre);
+  border-bottom: 1px solid rgba(230, 184, 0, 0.3);
+}
+.credits-list a:hover {
+  color: var(--offwhite);
+}
+
+.credits-note {
+  font-family: system-ui, sans-serif;
+  font-weight: 200;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-align: left;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+/* --- COLOR BLOCK BREAKERS --- */
+.dest-kunming {
+  border-left: 60px solid var(--cobalt);
+}
+.dest-dali {
+  border-right: 80px solid var(--ochre);
+}
+.dest-lijiang {
+  border-left: 50px solid var(--red);
+}
+.dest-jade {
+  border-right: 70px solid var(--olive);
+}
+.dest-tiger {
+  border-left: 40px solid var(--charcoal);
+}
+.dest-shangrila {
+  border-right: 60px solid var(--cobalt);
+}
+.dest-yuanyang {
+  border-left: 55px solid var(--ochre);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 4.5rem;
+    transform: rotate(-2deg);
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+  }
+
+  .hero-tagline {
+    margin-left: 1rem;
+  }
+
+  .nav-bar {
+    transform: rotate(-1deg);
+    padding: 0.8rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .heading-vertical {
+    position: relative;
+    writing-mode: horizontal-tb;
+    left: auto;
+    right: auto;
+    top: auto;
+    font-size: 2.5rem;
+    opacity: 0.3;
+    margin-bottom: 1rem;
+  }
+
+  .heading-right {
+    text-align: right;
+  }
+
+  .heading-rotated {
+    font-size: 2.5rem;
+  }
+
+  .dest-kunming .gallery-frame,
+  .dest-lijiang .gallery-frame,
+  .dest-jade .gallery-frame,
+  .dest-tiger .gallery-frame,
+  .dest-shangrila .gallery-frame,
+  .dest-yuanyang .gallery-frame {
+    float: none;
+    width: 75%;
+    margin: 1rem auto 2rem;
+  }
+
+  .dest-dali .dest-content {
+    display: block;
+  }
+  .dest-dali .frame-2,
+  .dest-dali .frame-3 {
+    width: 70%;
+    margin: 1rem auto;
+  }
+
+  .text-block {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .food-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .food-card {
+    transform: rotate(0deg) !important;
+    margin-top: 0 !important;
+  }
+
+  .card-tilt-1 { transform: rotate(-2deg) !important; }
+  .card-tilt-2 { transform: rotate(1.5deg) !important; }
+  .card-tilt-3 { transform: rotate(-1deg) !important; }
+  .card-tilt-4 { transform: rotate(2deg) !important; }
+  .card-tilt-5 { transform: rotate(-1.5deg) !important; }
+  .card-tilt-6 { transform: rotate(3deg) !important; }
+
+  .practical-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .credits-list {
+    columns: 1;
+  }
+
+  .dest-kunming,
+  .dest-dali,
+  .dest-lijiang,
+  .dest-jade,
+  .dest-tiger,
+  .dest-shangrila,
+  .dest-yuanyang {
+    border-left-width: 20px;
+    border-right-width: 20px;
+  }
+
+  .food-title {
+    font-size: 2rem;
+  }
+
+  .section-divider {
+    height: 12px;
+  }
+}
+
+@media (max-width: 550px) {
+  .hero-title {
+    font-size: 3rem;
+    transform: rotate(-1deg);
+    letter-spacing: 0.15em;
+  }
+
+  .hero {
+    padding: 4rem 5% 3rem 8%;
+    min-height: 40vh;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    transform: rotate(1deg);
+  }
+
+  .heading-rotated {
+    font-size: 2rem;
+  }
+
+  .heading-tilted {
+    font-size: 1.3rem;
+  }
+
+  .dest-kunming .gallery-frame,
+  .dest-lijiang .gallery-frame,
+  .dest-jade .gallery-frame,
+  .dest-tiger .gallery-frame,
+  .dest-shangrila .gallery-frame,
+  .dest-yuanyang .gallery-frame {
+    width: 90%;
+    transform: rotate(0deg);
+  }
+
+  .dest-dali .frame-2,
+  .dest-dali .frame-3 {
+    width: 85%;
+    transform: rotate(0deg);
+  }
+
+  .practical-block {
+    transform: rotate(0deg) !important;
+  }
+
+  .dest-kunming,
+  .dest-dali,
+  .dest-lijiang,
+  .dest-jade,
+  .dest-tiger,
+  .dest-shangrila,
+  .dest-yuanyang {
+    border-left-width: 10px;
+    border-right-width: 10px;
+  }
+}

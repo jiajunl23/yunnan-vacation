@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yunnan Travel AI -- Your Conversation Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="chat-wrapper">
+
+  <!-- Header -->
+  <div class="chat-header">
+    <div class="header-avatar"></div>
+    <div class="header-info">
+      <div class="header-name">Yunnan Travel AI</div>
+      <div class="header-status"><span class="status-dot"></span> Online</div>
+    </div>
+  </div>
+
+  <!-- Chat body -->
+  <div class="chat-body">
+
+    <!-- Date separator -->
+    <div class="date-separator"><span>Today 9:15 AM</span></div>
+
+    <!-- 1. User: intro -->
+    <div class="message-row user">
+      <div class="avatar user-avatar"></div>
+      <div class="bubble">
+        <p>Hey, planning a trip to Yunnan! Where should I start?</p>
+      </div>
+    </div>
+    <div class="timestamp user-time">9:15 AM</div>
+    <div class="read-receipt">Read 9:15 AM</div>
+
+    <!-- 1. AI: Kunming intro -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar"></div>
+      <div class="bubble">
+        <p>Great choice! Yunnan is one of China's most extraordinary provinces -- a place where snow-capped mountains, subtropical forests, ancient towns, and over 25 ethnic minority cultures all coexist. It sits in the far southwest, bordering Myanmar, Laos, and Vietnam.</p>
+        <p>I'd say start in <strong>Kunming</strong>, the capital. It's called the "Spring City" because the weather is mild and pleasant year-round -- think 15-25C most days. It's the natural gateway and transportation hub for the whole province.</p>
+        <p>Kunming highlights:</p>
+        <ul>
+          <li><strong>Green Lake Park</strong> -- a beautiful central park where locals gather for tai chi, dancing, and birdwatching. In winter, black-headed gulls migrate here by the thousands.</li>
+          <li><strong>Yunnan Provincial Museum</strong> -- excellent collection covering the Bronze Age Dian Kingdom, ethnic minority textiles, and regional history.</li>
+          <li><strong>Kunming Old Streets</strong> -- wander the lanes near Nanping Jie for local snacks, flower markets (Yunnan is China's flower capital), and street life.</li>
+          <li><strong>Crossing-the-Bridge Rice Noodles</strong> -- Yunnan's most famous dish, and Kunming is the place to try the original version.</li>
+        </ul>
+        <p>Plan 1-2 days here before heading out to the real showstoppers.</p>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:16 AM</div>
+
+    <!-- 2. User: Stone Forest -->
+    <div class="message-row user">
+      <div class="avatar user-avatar"></div>
+      <div class="bubble">
+        <p>What about the Stone Forest? It's near Kunming right?</p>
+      </div>
+    </div>
+    <div class="timestamp user-time">9:18 AM</div>
+    <div class="read-receipt">Read 9:18 AM</div>
+
+    <!-- 2. AI: Stone Forest -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar"></div>
+      <div class="bubble">
+        <p>Yes! The <strong>Stone Forest (Shilin)</strong> is about 85km southeast of Kunming -- roughly 1.5 hours by bus or car. It's a UNESCO World Heritage Site and honestly one of the most surreal landscapes you'll ever see.</p>
+        <p>Imagine a forest, but instead of trees, it's towering limestone pillars -- some over 30 meters tall -- formed over 270 million years when this area was an ancient seabed. The karst formations have been eroded into blade-like pinnacles, archways, and labyrinthine corridors.</p>
+        <p>Key areas to explore:</p>
+        <ul>
+          <li><strong>Major Stone Forest</strong> -- the main scenic area with the tallest and most dramatic formations. Well-paved paths wind between the pillars.</li>
+          <li><strong>Minor Stone Forest</strong> -- quieter and more intimate, with a grassy meadow dotted with smaller formations. Great for photography.</li>
+          <li><strong>Naigu Stone Forest</strong> -- a separate section with darker, more weathered rocks and far fewer tourists.</li>
+        </ul>
+        <p>The area is the homeland of the <strong>Sani people</strong>, a branch of the Yi ethnic group. If you time it right, you can catch traditional Sani dance performances and learn the legend of Ashima -- a beloved folk tale about a brave Sani girl who was turned to stone.</p>
+        <p>Budget half a day minimum. It's easily a day trip from Kunming.</p>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:19 AM</div>
+
+    <!-- Stone Forest photo -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar hidden"></div>
+      <div class="photo-bubble">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Shilin%2C_Yunnan_24740.jpg/1200px-Shilin%2C_Yunnan_24740.jpg" alt="Stone Forest, Yunnan">
+        <div class="photo-caption">Stone Forest (Shilin) -- limestone pillars rising like a petrified forest</div>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:19 AM</div>
+
+    <!-- 3. User: Where next -->
+    <div class="message-row user">
+      <div class="avatar user-avatar"></div>
+      <div class="bubble">
+        <p>Incredible. Where should I go next?</p>
+      </div>
+    </div>
+    <div class="timestamp user-time">9:22 AM</div>
+    <div class="read-receipt">Read 9:22 AM</div>
+
+    <!-- 3. AI: Dali -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar"></div>
+      <div class="bubble">
+        <p>Head to <strong>Dali</strong> -- it's about 4-5 hours from Kunming by high-speed train or a quick 50-minute flight. Dali is where a lot of people fall in love with Yunnan.</p>
+        <p>The setting is stunning: the old town sits between the <strong>Cangshan Mountains</strong> (nineteen peaks, up to 4,122m) and <strong>Erhai Lake</strong>, a pristine highland lake that shimmers different shades of blue throughout the day.</p>
+        <p>Dali is the heartland of the <strong>Bai people</strong>, one of Yunnan's largest ethnic minorities. Their culture permeates everything -- the architecture (white walls with ink-wash paintings), the food, the festivals.</p>
+        <p>What to do in Dali:</p>
+        <ul>
+          <li><strong>Three Pagodas (Chongsheng Temple)</strong> -- Dali's iconic landmark, dating back to the 9th century. The tallest pagoda stands 69 meters. The reflection pool in front creates a perfect mirror image.</li>
+          <li><strong>Dali Old Town</strong> -- wander the stone streets lined with Bai-style buildings, browse tie-dye shops (zharan is a Bai specialty), and sample local cheese fans (rushan and rubing).</li>
+          <li><strong>Erhai Lake</strong> -- rent a bike or e-scooter and ride the lakeside road. Stop at Bai fishing villages like Shuanglang and Xizhou. The sunsets here are legendary.</li>
+          <li><strong>Cangshan Mountains</strong> -- take the cable car up for panoramic views, or hike the Cloud Tourist Trail along the mountainside. Watch for alpine meadows and hidden temples.</li>
+          <li><strong>Xizhou Morning Market</strong> -- an authentic local market where Bai villagers sell fresh produce, herbs, and handmade goods. Try a Xizhou baba (savory flatbread) fresh off the griddle.</li>
+        </ul>
+        <p>I'd recommend 2-3 days in Dali. It has this wonderful relaxed energy that makes you want to stay longer.</p>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:23 AM</div>
+
+    <!-- Dali photos -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar hidden"></div>
+      <div class="photo-bubble">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Dali_2007_171.jpg/1200px-Dali_2007_171.jpg" alt="Three Pagodas of Dali">
+        <div class="photo-caption">Three Pagodas of Chongsheng Temple -- Dali's thousand-year-old landmark</div>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:23 AM</div>
+
+    <div class="message-row ai">
+      <div class="avatar ai-avatar hidden"></div>
+      <div class="photo-bubble">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Erhai_Lake_%26_Cangshan.jpg/1200px-Erhai_Lake_%26_Cangshan.jpg" alt="Erhai Lake and Cangshan Mountains">
+        <div class="photo-caption">Erhai Lake with the Cangshan range as a backdrop</div>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:24 AM</div>
+
+    <!-- 4. User: hiking -->
+    <div class="message-row user">
+      <div class="avatar user-avatar"></div>
+      <div class="bubble">
+        <p>I love hiking. Anything really epic?</p>
+      </div>
+    </div>
+    <div class="timestamp user-time">9:27 AM</div>
+    <div class="read-receipt">Read 9:27 AM</div>
+
+    <!-- 4. AI: Tiger Leaping Gorge -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar"></div>
+      <div class="bubble">
+        <p>Oh, you're going to love this. <strong>Tiger Leaping Gorge</strong> is one of the deepest gorges in the world and arguably the best multi-day trek in all of China.</p>
+        <p>It's located between Lijiang and Shangri-La, where the Jinsha River (upper Yangtze) carves between Jade Dragon Snow Mountain (5,596m) and Haba Snow Mountain (5,396m). The gorge drops nearly 3,900 meters from the mountaintops to the river -- that's deeper than the Grand Canyon.</p>
+        <p>The classic <strong>High Trail</strong> hike:</p>
+        <ul>
+          <li><strong>Distance:</strong> roughly 22km along the upper path</li>
+          <li><strong>Duration:</strong> 2 days / 1 night is standard, though some do it in one long day</li>
+          <li><strong>Terrain:</strong> mountain trail with serious elevation changes. The "28 Bends" section is a grueling zigzag climb, but the views from the top are worth every step.</li>
+          <li><strong>Accommodation:</strong> guesthouses along the trail -- Naxi Family Guesthouse and Tea Horse Guesthouse are popular stops with incredible valley views, hot meals, and cold beer.</li>
+          <li><strong>Best time:</strong> March to June and September to November. Avoid July-August (rainy, landslide risk).</li>
+        </ul>
+        <p>The sound of the Jinsha River roaring below, the scale of the mountains on either side -- it's genuinely humbling. Bring good shoes and sun protection.</p>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:28 AM</div>
+
+    <!-- Tiger Leaping Gorge photo -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar hidden"></div>
+      <div class="photo-bubble">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/%E8%99%8E%E8%B7%B3%E5%B3%A1.JPG/1200px-%E8%99%8E%E8%B7%B3%E5%B3%A1.JPG" alt="Tiger Leaping Gorge">
+        <div class="photo-caption">Tiger Leaping Gorge -- the Jinsha River thundering through one of the world's deepest canyons</div>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:28 AM</div>
+
+    <!-- 5. User: Lijiang -->
+    <div class="message-row user">
+      <div class="avatar user-avatar"></div>
+      <div class="bubble">
+        <p>Tell me about Lijiang!</p>
+      </div>
+    </div>
+    <div class="timestamp user-time">9:32 AM</div>
+    <div class="read-receipt">Read 9:32 AM</div>
+
+    <!-- 5. AI: Lijiang -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar"></div>
+      <div class="bubble">
+        <p><strong>Lijiang</strong> is probably Yunnan's most famous destination, and for good reason. The Old Town is a UNESCO World Heritage Site -- a maze of cobblestone lanes, arched bridges, and flowing canals that's been here since the Song Dynasty (over 800 years).</p>
+        <p>This is <strong>Naxi territory</strong>. The Naxi people have their own pictographic writing system called Dongba script -- one of the last living pictographic languages in the world. You'll see it on signs, in shops, and at the Dongba Culture Museum.</p>
+        <p>Lijiang highlights:</p>
+        <ul>
+          <li><strong>Lijiang Old Town</strong> -- get deliberately lost in the winding alleys. Visit Mu Palace (the former Naxi ruler's residence), wander to Wangu Tower on Lion Hill for a panoramic view, and explore the quieter Shuhe Ancient Town nearby.</li>
+          <li><strong>Jade Dragon Snow Mountain</strong> -- the massive 5,596m peak looming north of town. Take the cable car to 4,506m at Glacier Park for an otherworldly high-altitude experience. Blue Moon Valley at the base has surreal turquoise glacier-fed pools.</li>
+          <li><strong>Black Dragon Pool</strong> -- the classic postcard view: a pavilion reflected in still water with Jade Dragon Snow Mountain behind it.</li>
+          <li><strong>Baisha Village</strong> -- a quieter, more authentic Naxi village about 8km from town. See the famous Baisha Murals (15th century) blending Buddhist, Taoist, and Dongba imagery.</li>
+          <li><strong>Naxi Ancient Music</strong> -- evening concerts of traditional orchestral music that's been passed down for centuries.</li>
+        </ul>
+        <p>Fair warning: Lijiang Old Town can get crowded, especially during holidays. Early mornings and late evenings are the best times to feel its magic. Budget 2-3 days.</p>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:33 AM</div>
+
+    <!-- Lijiang photos -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar hidden"></div>
+      <div class="photo-bubble">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/55936-Lijiang_%2827941831943%29.jpg/1200px-55936-Lijiang_%2827941831943%29.jpg" alt="Lijiang Old Town">
+        <div class="photo-caption">Lijiang Old Town -- centuries of Naxi heritage in cobblestone lanes</div>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:34 AM</div>
+
+    <div class="message-row ai">
+      <div class="avatar ai-avatar hidden"></div>
+      <div class="photo-bubble">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Lijiang_Yunnan_China_Jade-Dragon-Snow-Mountain-01.jpg/1200px-Lijiang_Yunnan_China_Jade-Dragon-Snow-Mountain-01.jpg" alt="Jade Dragon Snow Mountain">
+        <div class="photo-caption">Jade Dragon Snow Mountain -- 5,596m of glaciated peaks towering over Lijiang</div>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:34 AM</div>
+
+    <!-- 6. User: Shangri-La -->
+    <div class="message-row user">
+      <div class="avatar user-avatar"></div>
+      <div class="bubble">
+        <p>What's Shangri-La like?</p>
+      </div>
+    </div>
+    <div class="timestamp user-time">9:38 AM</div>
+    <div class="read-receipt">Read 9:38 AM</div>
+
+    <!-- 6. AI: Shangri-La -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar"></div>
+      <div class="bubble">
+        <p><strong>Shangri-La</strong> (formerly Zhongdian) sits at 3,200 meters on the edge of the Tibetan Plateau. Yes, it was renamed after the mythical paradise in James Hilton's "Lost Horizon" -- and honestly, the name fits. This is where Yunnan starts to feel like Tibet.</p>
+        <p>The air is thinner, the landscape is vast -- rolling grasslands, yak herds, prayer flags, and monasteries against a backdrop of snow peaks. The population is predominantly <strong>Tibetan</strong>, and the culture shift from lowland Yunnan is dramatic and wonderful.</p>
+        <p>Must-see in Shangri-La:</p>
+        <ul>
+          <li><strong>Songzanlin Monastery</strong> -- the largest Tibetan Buddhist monastery in Yunnan, often called the "Little Potala Palace." It houses over 600 monks and the architecture is breathtaking -- golden roofs, massive prayer halls, and a sacred lake in front.</li>
+          <li><strong>Dukezong Old Town</strong> -- one of the best-preserved Tibetan old towns. Rebuilt after a 2014 fire, it features the world's largest prayer wheel (you need several people to turn it). The town has cozy Tibetan teahouses and handicraft shops.</li>
+          <li><strong>Potatso (Pudacuo) National Park</strong> -- pristine alpine lakes, old-growth forests, and meadows. Bita Lake and Shudu Lake are the highlights. The boardwalk trails make it accessible.</li>
+          <li><strong>Napa Lake</strong> -- a seasonal wetland where Tibetan herders graze horses and yaks. In winter, black-necked cranes (endangered) migrate here.</li>
+        </ul>
+        <p>Important: the altitude is real. Take it easy the first day, drink plenty of water, and avoid strenuous activity until you acclimate. Some people feel mild altitude sickness. It's about 4-5 hours by bus from Lijiang.</p>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:39 AM</div>
+
+    <!-- Shangri-La photos -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar hidden"></div>
+      <div class="photo-bubble">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/%E6%9D%BE%E8%B5%9E%E6%9E%97%E5%AF%BA_-_%E5%85%A8%E6%99%AF_-_2025-05-07_09_%28cropped%29.jpg/1200px-%E6%9D%BE%E8%B5%9E%E6%9E%97%E5%AF%BA_-_%E5%85%A8%E6%99%AF_-_2025-05-07_09_%28cropped%29.jpg" alt="Songzanlin Monastery">
+        <div class="photo-caption">Songzanlin Monastery -- the "Little Potala Palace" of Yunnan</div>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:40 AM</div>
+
+    <div class="message-row ai">
+      <div class="avatar ai-avatar hidden"></div>
+      <div class="photo-bubble">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/56988-Shangri-La_%2827941074693%29.jpg" alt="Dukezong Old Town, Shangri-La">
+        <div class="photo-caption">Dukezong Old Town -- Tibetan heritage at 3,200 meters</div>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:40 AM</div>
+
+    <!-- 7. User: One last place -->
+    <div class="message-row user">
+      <div class="avatar user-avatar"></div>
+      <div class="bubble">
+        <p>One last place? Something off the beaten path</p>
+      </div>
+    </div>
+    <div class="timestamp user-time">9:44 AM</div>
+    <div class="read-receipt">Read 9:44 AM</div>
+
+    <!-- 7. AI: Yuanyang -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar"></div>
+      <div class="bubble">
+        <p>Perfect -- go to <strong>Yuanyang Rice Terraces</strong>. They're in the far south of Yunnan, and they're one of those places that genuinely looks like another planet.</p>
+        <p>The <strong>Hani people</strong> have been carving these terraces into the hillsides for over 1,300 years. Thousands of curved, flooded paddies cascade down steep mountainsides from 2,000m elevation down to the valley floor. The whole system is a UNESCO World Heritage Site.</p>
+        <p>What makes Yuanyang special:</p>
+        <ul>
+          <li><strong>Bada Viewpoint</strong> -- the most famous vista. Over 3,000 terraces sweep down the mountain in fluid, organic lines. At sunrise and sunset, the flooded terraces become mirrors reflecting every color in the sky.</li>
+          <li><strong>Duoyishu</strong> -- the classic sunrise spot. Thousands of terraces catch the first light, creating a mosaic of gold, silver, and rose.</li>
+          <li><strong>Laohuzui (Tiger Mouth)</strong> -- terraces that curve in concentric patterns resembling a tiger's jaw. Spectacular at sunset.</li>
+          <li><strong>Hani Villages</strong> -- mushroom-shaped thatched-roof houses clustered on the ridgelines. The Hani people are incredibly welcoming, and the villages feel untouched by mass tourism.</li>
+        </ul>
+        <p><strong>Best time:</strong> November to March, when the terraces are flooded and become reflective pools. This is the photographic sweet spot. It's remote -- about 6-7 hours by bus from Kunming -- but that remoteness is part of the magic.</p>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:45 AM</div>
+
+    <!-- Yuanyang photo -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar hidden"></div>
+      <div class="photo-bubble">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/1_yuanyang_county_rice_terrace_bada_view_2012.jpg/1200px-1_yuanyang_county_rice_terrace_bada_view_2012.jpg" alt="Yuanyang Rice Terraces">
+        <div class="photo-caption">Yuanyang Rice Terraces -- 1,300 years of Hani ingenuity sculpted into the mountains</div>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:46 AM</div>
+
+    <!-- 8. User: Food -->
+    <div class="message-row user">
+      <div class="avatar user-avatar"></div>
+      <div class="bubble">
+        <p>What should I eat?? I'm a huge foodie</p>
+      </div>
+    </div>
+    <div class="timestamp user-time">9:49 AM</div>
+    <div class="read-receipt">Read 9:49 AM</div>
+
+    <!-- 8. AI: Food guide -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar"></div>
+      <div class="bubble">
+        <p>You are going to eat SO well. Yunnan's food is unlike anything else in China -- it's closer to Southeast Asian flavors in many ways, with tons of fresh herbs, wild mushrooms, sour and spicy profiles, and ingredients you won't find anywhere else.</p>
+        <p><strong>Signature dishes:</strong></p>
+        <ul>
+          <li><strong>Crossing-the-Bridge Rice Noodles (guoqiao mixian)</strong> -- Yunnan's most famous dish. A huge bowl of boiling broth arrives with platters of raw meat, vegetables, and rice noodles. You add everything yourself; the broth cooks it instantly. The ritual is half the fun.</li>
+          <li><strong>Wild Mushroom Hotpot</strong> -- Yunnan has more edible mushroom species than anywhere in China. In season (June-October), restaurants serve hotpots loaded with matsutake, porcini, chanterelles, and dozens of varieties you've never heard of.</li>
+          <li><strong>Erkuai</strong> -- chewy rice cakes, grilled or stir-fried, often served with chili sauce and pickled vegetables. A Kunming breakfast staple.</li>
+          <li><strong>Rushan and Rubing</strong> -- Bai-style dairy products. Rushan is fan-shaped dried milk cheese, often grilled and drizzled with rose jam. Rubing is pan-fried goat cheese. Both unique to Yunnan.</li>
+          <li><strong>Steam Pot Chicken (qiguo ji)</strong> -- chicken slow-cooked in a special clay pot with a central steam chimney. The broth that forms is incredibly pure and concentrated.</li>
+          <li><strong>Yunnan Ham (Xuanwei huotui)</strong> -- dry-cured for years, similar to jamon iberico. Often sliced thin as an appetizer or used to flavor soups and stir-fries.</li>
+          <li><strong>Grilled Fish (Dali-style)</strong> -- whole fish from Erhai Lake, grilled over charcoal and topped with Bai-style spiced sauce.</li>
+          <li><strong>Tibetan Yak Butter Tea</strong> -- in Shangri-La, it's the local essential. Salty, rich, and warming at altitude. An acquired taste but worth trying.</li>
+        </ul>
+        <p><strong>Drinks:</strong> Yunnan is China's premier coffee-growing region (Pu'er area), and the specialty coffee scene is booming. Also don't miss Pu'er tea -- the fermented dark tea that's been traded along the Ancient Tea Horse Road for centuries. Visit a tea house for a proper gongfu tea tasting.</p>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:50 AM</div>
+
+    <!-- 9. User: Tips -->
+    <div class="message-row user">
+      <div class="avatar user-avatar"></div>
+      <div class="bubble">
+        <p>Any practical tips before I go?</p>
+      </div>
+    </div>
+    <div class="timestamp user-time">9:54 AM</div>
+    <div class="read-receipt">Read 9:54 AM</div>
+
+    <!-- 9. AI: Practical tips -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar"></div>
+      <div class="bubble">
+        <p>Absolutely -- here's everything you need to know to plan well:</p>
+        <p><strong>When to go:</strong></p>
+        <ul>
+          <li><strong>March-May</strong> -- spring flowers, comfortable temps, fewer crowds. Best all-around season.</li>
+          <li><strong>September-November</strong> -- clear skies, autumn colors, rice harvest season. Excellent for photography.</li>
+          <li><strong>June-August</strong> -- rainy season. Mushroom season though, and lush green landscapes. Expect afternoon showers.</li>
+          <li><strong>December-February</strong> -- cold at altitude (Shangri-La can hit -10C), but Yuanyang terraces are at their best. Kunming stays mild.</li>
+        </ul>
+        <p><strong>Getting around:</strong></p>
+        <ul>
+          <li><strong>High-speed trains</strong> connect Kunming to Dali (2 hours) and Lijiang (3 hours). Book on 12306.cn or Trip.com.</li>
+          <li><strong>Buses</strong> fill the gaps -- Lijiang to Shangri-La (4-5 hours), Kunming to Yuanyang (6-7 hours).</li>
+          <li><strong>Flights</strong> -- Kunming has a major international airport. Lijiang and Shangri-La both have small airports with connections to Kunming and other Chinese cities.</li>
+          <li><strong>E-scooter rentals</strong> are popular around Erhai Lake in Dali. Bring your passport.</li>
+        </ul>
+        <p><strong>Essential packing:</strong></p>
+        <ul>
+          <li>Layers -- temperature swings of 15-20C in a single day are normal, especially at altitude.</li>
+          <li>Strong sunscreen and sunglasses -- UV is intense at elevation (Lijiang is 2,400m, Shangri-La 3,200m).</li>
+          <li>Good walking shoes -- cobblestone old towns and mountain trails demand them.</li>
+          <li>Rain jacket -- useful year-round but essential June-August.</li>
+          <li>Altitude sickness medication if heading to Shangri-La (acetazolamide / Diamox, consult your doctor).</li>
+        </ul>
+        <p><strong>Other tips:</strong></p>
+        <ul>
+          <li><strong>Cash</strong> -- while WeChat Pay and Alipay dominate, some rural areas and small vendors still prefer cash.</li>
+          <li><strong>VPN</strong> -- set one up before you arrive if you need access to Google, WhatsApp, etc.</li>
+          <li><strong>Language</strong> -- English is limited outside tourist hubs. Download offline Chinese on Google Translate or use Pleco dictionary app.</li>
+          <li><strong>Suggested itinerary:</strong> Kunming (1-2 days) - Dali (2-3 days) - Lijiang (2-3 days) - Tiger Leaping Gorge (2 days) - Shangri-La (2-3 days). Add Yuanyang as a separate trip from Kunming (2-3 days). Total: 12-17 days for the full circuit.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:55 AM</div>
+
+    <!-- 10. User: Thanks -->
+    <div class="message-row user">
+      <div class="avatar user-avatar"></div>
+      <div class="bubble">
+        <p>This is amazing, thanks so much!</p>
+      </div>
+    </div>
+    <div class="timestamp user-time">9:58 AM</div>
+    <div class="read-receipt">Read 9:58 AM</div>
+
+    <!-- 10. AI: Closing -->
+    <div class="message-row ai">
+      <div class="avatar ai-avatar"></div>
+      <div class="bubble">
+        <p>Happy travels! Yunnan is one of those places that stays with you long after you leave. Every town has a different feel, every meal is a discovery, and the landscapes shift from tropical to alpine in a single day's drive. You're going to have an incredible time. Feel free to message me anytime if you need more details on any of these spots. Safe travels!</p>
+      </div>
+    </div>
+    <div class="timestamp ai-time">9:58 AM</div>
+
+    <!-- Typing indicator -->
+    <div class="typing-indicator">
+      <div class="avatar ai-avatar"></div>
+      <div class="typing-bubble">
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Input bar -->
+  <div class="input-bar">
+    <div class="input-field">Type a message...</div>
+    <div class="send-button"></div>
+  </div>
+
+  <!-- Credits -->
+  <div class="credits">
+    <p>Photo credits -- all images via Wikimedia Commons:</p>
+    <p>
+      <a href="https://commons.wikimedia.org/wiki/File:Shilin,_Yunnan_24740.jpg">Stone Forest</a> |
+      <a href="https://commons.wikimedia.org/wiki/File:Dali_2007_171.jpg">Three Pagodas</a> |
+      <a href="https://commons.wikimedia.org/wiki/File:Erhai_Lake_%26_Cangshan.jpg">Erhai Lake</a> |
+      <a href="https://commons.wikimedia.org/wiki/File:55936-Lijiang_(27941831943).jpg">Lijiang Old Town</a> |
+      <a href="https://commons.wikimedia.org/wiki/File:Lijiang_Yunnan_China_Jade-Dragon-Snow-Mountain-01.jpg">Jade Dragon Snow Mountain</a> |
+      <a href="https://commons.wikimedia.org/wiki/File:%E8%99%8E%E8%B7%B3%E5%B3%A1.JPG">Tiger Leaping Gorge</a> |
+      <a href="https://commons.wikimedia.org/wiki/File:%E6%9D%BE%E8%B5%9E%E6%9E%97%E5%AF%BA_-_%E5%85%A8%E6%99%AF_-_2025-05-07_09_(cropped).jpg">Songzanlin Monastery</a> |
+      <a href="https://commons.wikimedia.org/wiki/File:56988-Shangri-La_(27941074693).jpg">Dukezong Old Town</a> |
+      <a href="https://commons.wikimedia.org/wiki/File:1_yuanyang_county_rice_terrace_bada_view_2012.jpg">Yuanyang Rice Terraces</a>
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
