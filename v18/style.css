@@ -1,0 +1,523 @@
+/* === CORK BOARD BASE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #c4a265;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(0,0,0,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(0,0,0,0.04) 0%, transparent 40%),
+    radial-gradient(circle at 40% 70%, rgba(255,255,255,0.04) 0%, transparent 30%),
+    radial-gradient(circle at 10% 10%, rgba(0,0,0,0.03) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(0,0,0,0.03) 0%, transparent 25%),
+    radial-gradient(circle at 60% 30%, rgba(255,255,255,0.03) 0%, transparent 15%),
+    radial-gradient(circle at 30% 90%, rgba(0,0,0,0.02) 0%, transparent 35%);
+  min-height: 100vh;
+  padding: 30px 20px 60px;
+  color: #555;
+  position: relative;
+}
+
+/* Cork board border/frame */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 12px solid #6b4226;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.15);
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* === BOARD LAYOUT === */
+.board {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 24px;
+  align-items: start;
+}
+
+/* === STICKY NOTE BASE === */
+.note {
+  position: relative;
+  padding: 28px 18px 18px;
+  min-width: 180px;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Pushpin on notes */
+.note::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at 4px 4px, #e04444, #cc3333 60%, #991111);
+  border-radius: 50%;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.4), inset 0 -1px 1px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+/* === NOTE COLORS === */
+.note-yellow { background: #fff9a8; }
+.note-pink { background: #ffb3ba; }
+.note-blue { background: #b3d9ff; }
+.note-green { background: #baffc9; }
+.note-orange { background: #ffd6a5; }
+.note-white { background: #fff; }
+
+/* === ROTATIONS via nth-child === */
+.note:nth-child(6n+1) { transform: rotate(-1.5deg); }
+.note:nth-child(6n+2) { transform: rotate(2deg); }
+.note:nth-child(6n+3) { transform: rotate(-0.8deg); }
+.note:nth-child(6n+4) { transform: rotate(1.8deg); }
+.note:nth-child(6n+5) { transform: rotate(-2.5deg); }
+.note:nth-child(6n+6) { transform: rotate(1deg); }
+
+/* === TORN EDGE (applied to select notes) === */
+.note-torn {
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% 95%,
+    97% 96%, 93% 94%, 88% 97%, 83% 95%,
+    78% 98%, 72% 95%, 67% 97%, 62% 94%,
+    57% 97%, 52% 95%, 47% 98%, 42% 95%,
+    37% 97%, 32% 94%, 27% 96%, 22% 95%,
+    17% 97%, 12% 95%, 7% 98%, 3% 96%, 0% 97%
+  );
+  padding-bottom: 28px;
+}
+
+/* === FOLDED CORNER (applied to select notes) === */
+.note-folded::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.08) 50%);
+  border-top-left-radius: 4px;
+}
+
+.note-yellow.note-folded::after {
+  background: linear-gradient(135deg, transparent 50%, #e6e092 50%);
+}
+.note-pink.note-folded::after {
+  background: linear-gradient(135deg, transparent 50%, #e6a0a7 50%);
+}
+.note-blue.note-folded::after {
+  background: linear-gradient(135deg, transparent 50%, #9ec4e8 50%);
+}
+.note-green.note-folded::after {
+  background: linear-gradient(135deg, transparent 50%, #a3e6b0 50%);
+}
+.note-orange.note-folded::after {
+  background: linear-gradient(135deg, transparent 50%, #e6c094 50%);
+}
+
+/* === NOTE TYPOGRAPHY === */
+.note h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #333;
+  transform: rotate(-0.5deg);
+}
+
+.note h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.note p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.note .small-text {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #666;
+}
+
+.note ul {
+  list-style: none;
+  padding-left: 4px;
+}
+
+.note ul li {
+  font-size: 0.88rem;
+  margin-bottom: 4px;
+  color: #555;
+}
+
+.note ul li::before {
+  content: "- ";
+  color: #999;
+}
+
+/* Checklist style */
+.checklist li::before {
+  content: none;
+}
+
+.checklist li {
+  padding-left: 22px;
+  position: relative;
+}
+
+.checklist li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 13px;
+  height: 13px;
+  border: 2px solid #888;
+  border-radius: 2px;
+}
+
+.checklist li.checked::after {
+  background: #888;
+  box-shadow: inset 0 0 0 2px #baffc9;
+}
+
+/* === HEADER NOTE === */
+.header-note {
+  grid-column: 2 / 4;
+  text-align: center;
+  padding: 24px 30px 20px;
+  z-index: 3;
+}
+
+.header-note h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #333;
+  transform: rotate(-1deg);
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+}
+
+.header-note .subtitle {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #666;
+  font-weight: 400;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #555;
+  text-decoration: none;
+  border-bottom: 1px dashed #999;
+}
+
+.back-link:hover {
+  color: #333;
+}
+
+/* === PHOTO STYLING === */
+.photo {
+  position: relative;
+  display: inline-block;
+  padding: 8px;
+  background: #fff;
+  box-shadow: 3px 4px 10px rgba(0,0,0,0.25);
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+/* Pushpin on photos */
+.photo::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at 4px 4px, #e04444, #cc3333 60%, #991111);
+  border-radius: 50%;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.4), inset 0 -1px 1px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+/* Photo rotations */
+.photo:nth-child(odd) { transform: rotate(1.5deg); }
+.photo:nth-child(even) { transform: rotate(-2deg); }
+.photo.rot-1 { transform: rotate(-1.2deg); }
+.photo.rot-2 { transform: rotate(2.5deg); }
+.photo.rot-3 { transform: rotate(-0.5deg); }
+.photo.rot-4 { transform: rotate(3deg); }
+.photo.rot-5 { transform: rotate(-2.8deg); }
+
+/* Tape strips on photos */
+.photo-taped::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 60px;
+  height: 16px;
+  background: rgba(210, 195, 160, 0.55);
+  border: 1px solid rgba(180, 165, 130, 0.3);
+  z-index: 3;
+}
+
+.photo-taped-corner::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -6px;
+  width: 40px;
+  height: 14px;
+  background: rgba(210, 195, 160, 0.55);
+  border: 1px solid rgba(180, 165, 130, 0.3);
+  transform: rotate(35deg);
+  z-index: 3;
+}
+
+.photo .caption {
+  font-size: 0.75rem;
+  color: #777;
+  text-align: center;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* === CLUSTER CONTAINERS === */
+.cluster {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+
+/* === STRING/CONNECTIONS === */
+.string-h {
+  border-top: 1px dashed #cc6666;
+  width: 80px;
+  align-self: center;
+  margin: -4px 0;
+}
+
+.string-v {
+  border-left: 1px dashed #cc6666;
+  height: 40px;
+  align-self: center;
+  margin: -6px 0;
+}
+
+.string-connector {
+  position: absolute;
+  border-top: 1px dashed #cc6666;
+}
+
+/* === GRID PLACEMENT === */
+.area-header { grid-column: 2 / 4; grid-row: 1; }
+.area-kunming { grid-column: 1 / 2; grid-row: 2 / 4; }
+.area-dali { grid-column: 3 / 5; grid-row: 2 / 4; }
+.area-lijiang { grid-column: 1 / 2; grid-row: 4 / 6; }
+.area-tlg { grid-column: 2 / 3; grid-row: 4 / 6; }
+.area-shangrila { grid-column: 3 / 4; grid-row: 4 / 6; }
+.area-yuanyang { grid-column: 1 / 2; grid-row: 6 / 8; }
+
+.area-todo { grid-column: 4; grid-row: 4 / 5; }
+.area-budget { grid-column: 4; grid-row: 5 / 6; }
+.area-food { grid-column: 2; grid-row: 2 / 3; }
+.area-route { grid-column: 2; grid-row: 3 / 4; }
+.area-tips { grid-column: 4; grid-row: 6 / 7; }
+
+.area-credits { grid-column: 2 / 4; grid-row: 8; }
+
+/* === SMALL NOTE === */
+.note-small {
+  padding: 14px 14px 12px;
+  font-size: 0.85rem;
+}
+
+.note-small h3 {
+  font-size: 0.9rem;
+}
+
+/* === UNDERLINE SCRIBBLE === */
+.underline-scribble {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #cc6666;
+  text-underline-offset: 3px;
+}
+
+/* === BUDGET NUMBERS === */
+.budget-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  margin-bottom: 3px;
+}
+
+.budget-line span:last-child {
+  font-weight: 600;
+}
+
+/* === CREDITS NOTE === */
+.credits-note {
+  font-size: 0.72rem;
+  line-height: 1.6;
+  padding: 18px 20px 16px;
+}
+
+.credits-note a {
+  color: #666;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.credits-note a:hover {
+  color: #333;
+}
+
+/* === STRINGS BETWEEN CLUSTERS (decorative absolute elements) === */
+.board-strings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.board-string {
+  position: absolute;
+  border-top: 1px dashed #cc6666;
+  transform-origin: left center;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1100px) {
+  .board {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .area-header { grid-column: 1 / 4; grid-row: auto; }
+  .area-kunming { grid-column: 1 / 2; grid-row: auto; }
+  .area-food { grid-column: 2 / 3; grid-row: auto; }
+  .area-dali { grid-column: 3 / 4; grid-row: auto; }
+  .area-route { grid-column: 1 / 2; grid-row: auto; }
+  .area-lijiang { grid-column: 2 / 3; grid-row: auto; }
+  .area-tlg { grid-column: 3 / 4; grid-row: auto; }
+  .area-shangrila { grid-column: 1 / 2; grid-row: auto; }
+  .area-yuanyang { grid-column: 2 / 3; grid-row: auto; }
+  .area-todo { grid-column: 3 / 4; grid-row: auto; }
+  .area-budget { grid-column: 1 / 2; grid-row: auto; }
+  .area-tips { grid-column: 2 / 3; grid-row: auto; }
+  .area-credits { grid-column: 1 / 4; grid-row: auto; }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px 40px;
+  }
+
+  body::before {
+    border-width: 6px;
+  }
+
+  .board {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .area-header { grid-column: 1 / 3; }
+  .area-kunming { grid-column: 1 / 2; }
+  .area-food { grid-column: 2 / 3; }
+  .area-dali { grid-column: 1 / 3; }
+  .area-route { grid-column: 1 / 3; }
+  .area-lijiang { grid-column: 1 / 2; }
+  .area-tlg { grid-column: 2 / 3; }
+  .area-shangrila { grid-column: 1 / 2; }
+  .area-yuanyang { grid-column: 2 / 3; }
+  .area-todo { grid-column: 1 / 2; }
+  .area-budget { grid-column: 2 / 3; }
+  .area-tips { grid-column: 1 / 3; }
+  .area-credits { grid-column: 1 / 3; }
+
+  .header-note h1 {
+    font-size: 1.4rem;
+  }
+
+  .note {
+    transform: rotate(0deg) !important;
+  }
+
+  .note:nth-child(odd) {
+    transform: rotate(-0.5deg) !important;
+  }
+
+  .note:nth-child(even) {
+    transform: rotate(0.5deg) !important;
+  }
+
+  .photo img {
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .board {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .area-header,
+  .area-kunming,
+  .area-food,
+  .area-dali,
+  .area-route,
+  .area-lijiang,
+  .area-tlg,
+  .area-shangrila,
+  .area-yuanyang,
+  .area-todo,
+  .area-budget,
+  .area-tips,
+  .area-credits {
+    grid-column: 1;
+  }
+
+  .header-note h1 {
+    font-size: 1.2rem;
+  }
+
+  .note {
+    min-width: unset;
+  }
+}

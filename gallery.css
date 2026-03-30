@@ -314,6 +314,50 @@ body {
 .m16-lines { display: flex; flex-direction: column; gap: 3px; width: 60%; }
 .m16-lines span { display: block; height: 1px; background: rgba(26,20,16,0.15); }
 
+/* === v18 Sticky Notes Board Mini === */
+.mini--v18 {
+  background-color: #c4a265;
+  background-image: radial-gradient(ellipse at 20% 50%, rgba(0,0,0,0.05) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(0,0,0,0.04) 0%, transparent 40%);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  min-height: 280px;
+  align-content: start;
+}
+.m18-note { padding: 8px; border-radius: 1px; position: relative; box-shadow: 2px 2px 6px rgba(0,0,0,0.2); }
+.m18-n1 { background: #fff9a8; transform: rotate(-2deg); grid-column: span 2; }
+.m18-n2 { background: #ffb3ba; transform: rotate(1deg); }
+.m18-n3 { background: #baffc9; transform: rotate(-1deg); }
+.m18-n4 { background: #b3d9ff; transform: rotate(2deg); }
+.m18-pin { display: block; width: 8px; height: 8px; border-radius: 50%; background: #cc3333; box-shadow: 0 1px 2px rgba(0,0,0,0.3); margin: 0 auto 4px; }
+.m18-title { display: block; font-family: system-ui, sans-serif; font-size: 0.45rem; font-weight: 700; color: #333; text-align: center; margin-bottom: 3px; }
+.m18-check { display: block; font-family: system-ui, sans-serif; font-size: 0.35rem; font-weight: 700; color: #333; margin-bottom: 2px; }
+.m18-line { display: block; height: 2px; background: rgba(0,0,0,0.12); margin-bottom: 2px; border-radius: 1px; }
+.m18-short { width: 60%; }
+.m18-photo { background: #fff; padding: 3px; box-shadow: 2px 2px 6px rgba(0,0,0,0.25); transform: rotate(3deg); position: relative; }
+.m18-photo::after { content: ""; display: block; height: 40px; background: linear-gradient(135deg, #8aaa8a, #6a8a6a); }
+.m18-p2 { transform: rotate(-2deg); }
+.m18-p2::after { background: linear-gradient(135deg, #8a9aaa, #6a7a8a); }
+
+/* === v19 Comic Book Mini === */
+.mini--v19 { background: #fff; min-height: 280px; display: flex; flex-direction: column; border: 3px solid #111; }
+.m19-cover { background: #2a1a4e; background-image: radial-gradient(circle, rgba(0,188,212,0.1) 0.8px, transparent 0.8px); background-size: 5px 5px; padding: 14px 10px; text-align: center; }
+.m19-issue { display: block; font-family: system-ui, sans-serif; font-size: 0.35rem; font-weight: 700; color: #ffd700; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 2px; }
+.m19-title { display: block; font-family: system-ui, sans-serif; font-size: 0.75rem; font-weight: 900; color: #fff; text-transform: uppercase; text-shadow: 2px 2px 0 #e23636; }
+.m19-panels { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 3px; background: #111; }
+.m19-panel { background: #fff; position: relative; overflow: hidden; min-height: 50px; }
+.m19-p1 { background: linear-gradient(135deg, #ddd 0%, #bbb 100%); }
+.m19-p1::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(0,188,212,0.12) 0.6px, transparent 0.6px); background-size: 3px 3px; }
+.m19-p2 { padding: 6px; display: flex; align-items: center; justify-content: center; }
+.m19-p3 { background: linear-gradient(135deg, #c8d8c8 0%, #a8b8a8 100%); }
+.m19-p3::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(0,188,212,0.12) 0.6px, transparent 0.6px); background-size: 3px 3px; }
+.m19-p4 { background: #ffd700; display: flex; align-items: center; justify-content: center; }
+.m19-caption { position: absolute; top: 3px; left: 3px; background: #ffd700; border: 1px solid #111; padding: 1px 4px; font-family: Georgia, serif; font-size: 0.28rem; font-style: italic; color: #111; z-index: 1; }
+.m19-speech { background: #ffecd2; border: 1.5px solid #111; border-radius: 10px; padding: 3px 6px; font-family: system-ui, sans-serif; font-size: 0.3rem; font-weight: 700; color: #111; text-transform: uppercase; position: relative; }
+.m19-speech::after { content: ""; position: absolute; bottom: -5px; left: 10px; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #ffecd2; filter: drop-shadow(0 1px 0 #111); }
+.m19-action { font-family: system-ui, sans-serif; font-size: 0.9rem; font-weight: 900; color: #e23636; text-shadow: 1px 1px 0 #111, -1px -1px 0 #111, 1px -1px 0 #111, -1px 1px 0 #111; transform: rotate(-8deg); text-transform: uppercase; }
+
 /* === v17 Magazine Editorial Mini === */
 .mini--v17 { background: #f7f6f2; position: relative; }
 .m17-sidebar { position: absolute; left: 0; top: 0; bottom: 0; width: 16px; background: #f7f6f2; writing-mode: vertical-rl; font-family: system-ui, sans-serif; font-size: 0.4rem; font-weight: 200; letter-spacing: 0.3em; color: #888; display: flex; align-items: center; justify-content: center; z-index: 2; border-right: 1px solid #e8e5df; }
