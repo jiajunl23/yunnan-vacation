@@ -1,0 +1,555 @@
+/* === Base Reset & Typography === */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #fef9ef;
+  color: #2d2d2d;
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: #7eb8d4;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #d4836b;
+}
+
+/* === Top Navigation Bar === */
+
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fef9ef;
+  border-bottom: 3px dashed #2d2d2d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  max-width: 100%;
+}
+
+.back-link {
+  font-size: 0.9rem;
+  color: #2d2d2d;
+  text-decoration: none;
+  border-bottom: 2px dotted #7eb8d4;
+  padding-bottom: 2px;
+}
+
+.back-link:hover {
+  color: #7eb8d4;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  transform: rotate(-2deg);
+  letter-spacing: -0.5px;
+}
+
+.version-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #e8a0bf;
+  color: #2d2d2d;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: 2px solid #2d2d2d;
+}
+
+/* === Main Storybook Container === */
+
+.storybook {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+/* === Book Cover / Header === */
+
+.book-cover {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  margin-bottom: 2rem;
+  border: 4px dashed #d4836b;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fef9ef 0%, #f5e6a3 30%, #fef9ef 60%, #e8a0bf 100%);
+  background-size: 400% 400%;
+  position: relative;
+}
+
+.book-cover h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  transform: rotate(-2deg);
+  color: #2d2d2d;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.book-cover .subtitle {
+  font-size: 1.15rem;
+  color: #d4836b;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  transform: rotate(1deg);
+}
+
+.book-cover .intro {
+  font-size: 1rem;
+  max-width: 550px;
+  margin: 0 auto;
+  color: #2d2d2d;
+}
+
+/* === Section Number Circles === */
+
+.section-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 auto 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.number-1 { border: 4px solid #7eb8d4; color: #7eb8d4; }
+.number-2 { border: 4px solid #d4836b; color: #d4836b; }
+.number-3 { border: 4px solid #7fb069; color: #7fb069; }
+.number-4 { border: 4px solid #e8a0bf; color: #e8a0bf; }
+.number-5 { border: 4px solid #f5e6a3; color: #b8a540; }
+.number-6 { border: 4px solid #7eb8d4; color: #7eb8d4; }
+
+/* === Destination Sections === */
+
+.destination {
+  position: relative;
+  padding: 2rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 16px;
+}
+
+.dest-1 { border: 3px dashed #7eb8d4; }
+.dest-2 { border: 3px dashed #d4836b; }
+.dest-3 { border: 3px dashed #7fb069; }
+.dest-4 { border: 3px dashed #e8a0bf; }
+.dest-5 { border: 3px dashed #f5e6a3; }
+.dest-6 { border: 3px dashed #7eb8d4; }
+
+/* === Section Titles === */
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.title-1 { color: #7eb8d4; transform: rotate(-1.5deg); }
+.title-2 { color: #d4836b; transform: rotate(2deg); }
+.title-3 { color: #7fb069; transform: rotate(-2deg); }
+.title-4 { color: #e8a0bf; transform: rotate(1.5deg); }
+.title-5 { color: #b8a540; transform: rotate(-1deg); }
+.title-6 { color: #7eb8d4; transform: rotate(2.5deg); }
+.title-food { color: #d4836b; transform: rotate(-1.5deg); }
+.title-notes { color: #7fb069; transform: rotate(1deg); }
+
+.destination p {
+  margin-bottom: 1rem;
+}
+
+/* === Postcard / Polaroid Images === */
+
+.postcard {
+  margin: 1.5rem auto;
+  max-width: 85%;
+  padding: 8px;
+  background-color: #fff;
+  box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.postcard img {
+  width: 100%;
+}
+
+.postcard-caption {
+  display: block;
+  text-align: center;
+  padding: 0.6rem 0.5rem 0.25rem;
+  font-size: 0.88rem;
+  color: #555;
+  font-style: italic;
+}
+
+.postcard-right {
+  transform: rotate(2deg);
+}
+
+.postcard-left {
+  transform: rotate(-2.5deg);
+}
+
+/* === Speech Bubbles === */
+
+.speech-bubble {
+  position: relative;
+  max-width: 88%;
+  margin: 1.5rem auto 1rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 40px;
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+}
+
+.bubble-1 {
+  background-color: #d9edf5;
+  border: 2px solid #7eb8d4;
+}
+.bubble-1::after {
+  border-top: 16px solid #7eb8d4;
+}
+
+.bubble-2 {
+  background-color: #f5ddd5;
+  border: 2px solid #d4836b;
+}
+.bubble-2::after {
+  border-top: 16px solid #d4836b;
+}
+
+.bubble-3 {
+  background-color: #ddefd5;
+  border: 2px solid #7fb069;
+}
+.bubble-3::after {
+  border-top: 16px solid #7fb069;
+}
+
+.bubble-4 {
+  background-color: #f8e0ec;
+  border: 2px solid #e8a0bf;
+}
+.bubble-4::after {
+  border-top: 16px solid #e8a0bf;
+}
+
+.bubble-5 {
+  background-color: #faf3d6;
+  border: 2px solid #d4c95a;
+}
+.bubble-5::after {
+  border-top: 16px solid #d4c95a;
+}
+
+.bubble-6 {
+  background-color: #d9edf5;
+  border: 2px solid #7eb8d4;
+}
+.bubble-6::after {
+  border-top: 16px solid #7eb8d4;
+}
+
+.speech-bubble p {
+  margin: 0;
+}
+
+/* === Connecting Dotted Path === */
+
+.connecting-path {
+  position: relative;
+  height: 60px;
+  margin: 0 auto;
+  width: 4px;
+}
+
+.connecting-path::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  transform: translateX(-50%);
+}
+
+.path-1::after { border-left: 4px dotted #d4836b; }
+.path-2::after { border-left: 4px dotted #7fb069; }
+.path-3::after { border-left: 4px dotted #e8a0bf; }
+.path-4::after { border-left: 4px dotted #f5e6a3; }
+.path-5::after { border-left: 4px dotted #7eb8d4; }
+.path-6::after { border-left: 4px dotted #d4836b; }
+.path-7::after { border-left: 4px dotted #7fb069; }
+
+/* === Wavy Divider (inside each connecting path) === */
+
+.connecting-path::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 12px;
+  border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%;
+  background: transparent;
+}
+
+.path-1::before { border-bottom: 3px solid #d4836b; border-radius: 0 0 50% 50%; }
+.path-2::before { border-bottom: 3px solid #7fb069; border-radius: 0 0 50% 50%; }
+.path-3::before { border-bottom: 3px solid #e8a0bf; border-radius: 0 0 50% 50%; }
+.path-4::before { border-bottom: 3px solid #f5e6a3; border-radius: 0 0 50% 50%; }
+.path-5::before { border-bottom: 3px solid #7eb8d4; border-radius: 0 0 50% 50%; }
+.path-6::before { border-bottom: 3px solid #d4836b; border-radius: 0 0 50% 50%; }
+.path-7::before { border-bottom: 3px solid #7fb069; border-radius: 0 0 50% 50%; }
+
+/* === Food Stamps Section === */
+
+.food-section {
+  padding: 2rem 1.5rem;
+  margin-bottom: 1rem;
+  border: 3px dashed #d4836b;
+  border-radius: 16px;
+}
+
+.food-intro {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.stamp-collection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.stamp {
+  background-color: #fff;
+  padding: 6px;
+  border: 3px dashed #2d2d2d;
+  border-image: repeating-linear-gradient(
+    0deg,
+    #2d2d2d 0px,
+    #2d2d2d 6px,
+    transparent 6px,
+    transparent 10px
+  ) 8;
+  position: relative;
+}
+
+.stamp-inner {
+  padding: 1rem;
+  border: 1px solid #eee;
+}
+
+.stamp h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.stamp p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.stamp-1 {
+  transform: rotate(-1.5deg);
+}
+.stamp-1 h3 { color: #7eb8d4; }
+
+.stamp-2 {
+  transform: rotate(2deg);
+}
+.stamp-2 h3 { color: #d4836b; }
+
+.stamp-3 {
+  transform: rotate(1deg);
+}
+.stamp-3 h3 { color: #7fb069; }
+
+.stamp-4 {
+  transform: rotate(-2deg);
+}
+.stamp-4 h3 { color: #e8a0bf; }
+
+.stamp-5 {
+  transform: rotate(1.5deg);
+}
+.stamp-5 h3 { color: #b8a540; }
+
+.stamp-6 {
+  transform: rotate(-1deg);
+}
+.stamp-6 h3 { color: #7eb8d4; }
+
+/* === Notebook Section === */
+
+.notebook-section {
+  padding: 2rem 1.5rem;
+  margin-bottom: 1rem;
+  border: 3px dashed #7fb069;
+  border-radius: 16px;
+  background-color: #fff;
+  background-image:
+    linear-gradient(transparent 0%, transparent calc(1.75rem * 1.75 - 1px), #cde6c0 calc(1.75rem * 1.75), transparent calc(1.75rem * 1.75 + 1px));
+  background-size: 100% calc(1.75rem * 1.75);
+  background-position: 0 3.5rem;
+}
+
+.notebook-page {
+  margin-top: 0.5rem;
+}
+
+.notebook-line {
+  padding: 0.6rem 0 0.6rem 1.5rem;
+  border-left: 3px solid #d4836b;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.notebook-line strong {
+  color: #2d2d2d;
+}
+
+/* === Footer === */
+
+.storybook-footer {
+  margin-top: 3rem;
+  padding: 2rem 1.5rem;
+  border-top: 4px dashed #2d2d2d;
+  text-align: center;
+}
+
+.closing-note {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #d4836b;
+  margin-bottom: 2rem;
+  transform: rotate(-1deg);
+}
+
+.photo-credits {
+  text-align: left;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+}
+
+.photo-credits h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #2d2d2d;
+}
+
+.photo-credits ul {
+  list-style: none;
+  padding: 0;
+}
+
+.photo-credits li {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  padding: 0.2rem 0;
+  color: #555;
+}
+
+.photo-credits li a {
+  color: #7eb8d4;
+}
+
+/* === Responsive === */
+
+@media (max-width: 600px) {
+  .top-bar {
+    padding: 0.5rem 1rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .storybook {
+    padding: 1.25rem 0.75rem 3rem;
+  }
+
+  .book-cover {
+    padding: 2rem 1rem;
+  }
+
+  .book-cover h1 {
+    font-size: 2.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .destination {
+    padding: 1.5rem 1rem;
+  }
+
+  .postcard {
+    max-width: 95%;
+  }
+
+  .stamp-collection {
+    grid-template-columns: 1fr;
+  }
+
+  .speech-bubble {
+    max-width: 95%;
+  }
+
+  .connecting-path {
+    height: 40px;
+  }
+
+  .notebook-line {
+    padding-left: 1rem;
+  }
+}

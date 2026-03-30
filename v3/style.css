@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  color: #333333;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 2.0;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 0;
+}
+
+.back-arrow {
+  text-decoration: none;
+  color: #999;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.back-arrow:hover {
+  color: #333333;
+}
+
+.version {
+  color: #999;
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
+main {
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+
+header {
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+}
+
+h1 {
+  font-size: 3.2rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: #333333;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #888;
+  letter-spacing: 0.01em;
+}
+
+section {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.marker {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #b8c9b5;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: #333333;
+  margin-bottom: 2.5rem;
+}
+
+p {
+  margin-bottom: 2rem;
+  color: #444;
+}
+
+img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  margin: 2.5rem 0;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background-color: #b8c9b5;
+  margin: 2rem 0;
+  opacity: 0.6;
+}
+
+footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.credits-heading {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #999;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer li {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: #999;
+  line-height: 2.2;
+}
+
+footer a {
+  color: #888;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+}
+
+footer a:hover {
+  color: #333333;
+  border-bottom-color: #333333;
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 1.5rem 1.2rem 0;
+  }
+
+  main {
+    padding: 0 1.2rem 4rem;
+  }
+
+  header {
+    padding-top: 5rem;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  body {
+    font-size: 17px;
+  }
+
+  section {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+}

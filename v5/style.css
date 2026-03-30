@@ -1,0 +1,485 @@
+/* === Reset & Base === */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+  background-color: #fff9f0;
+  letter-spacing: 0.02em;
+  word-spacing: 0.05em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+
+a {
+  color: inherit;
+}
+
+/* === Navigation === */
+.top-bar {
+  background-color: #5bb5e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.back-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 6px 16px;
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 30px;
+  transition: background 0.2s;
+}
+
+.back-link:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.nav-title {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+}
+
+.version-badge {
+  background: #f5a623;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 4px 14px;
+  border-radius: 30px;
+}
+
+/* === Hero === */
+.hero {
+  text-align: center;
+  padding: 60px 24px 50px;
+  background: linear-gradient(135deg, #5bb5e6 0%, #9b7ed8 50%, #f0a0b8 100%);
+  color: #fff;
+}
+
+.hero h1 {
+  font-weight: 800;
+  font-size: 3rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  opacity: 0.92;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === Sections / Destinations === */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.destination {
+  border-radius: 24px;
+  padding: 40px 36px;
+  margin: 32px 0;
+}
+
+.dest-blue   { background: #dff0fb; }
+.dest-orange { background: #fef0d9; }
+.dest-green  { background: #dff5dd; }
+.dest-purple { background: #ece3f7; }
+.dest-pink   { background: #fce4ec; }
+.dest-yellow { background: #fdf6d8; }
+.dest-food   { background: #fff9f0; border: 3px solid #f5a623; }
+.dest-tips   { background: #fff9f0; border: 3px solid #5bb5e6; }
+
+/* === Section Header with Pin === */
+.section-header {
+  margin-bottom: 28px;
+}
+
+.section-header h2 {
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: #333;
+  letter-spacing: 0.02em;
+}
+
+.section-intro {
+  font-size: 1.1rem;
+  margin-top: 8px;
+  color: #555;
+}
+
+/* Map pin markers */
+.pin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-right: 12px;
+  position: relative;
+  vertical-align: middle;
+}
+
+.pin::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.dest-blue .pin   { background: #5bb5e6; }
+.dest-orange .pin { background: #f5a623; }
+.dest-green .pin  { background: #6dbf67; }
+.dest-purple .pin { background: #9b7ed8; }
+.dest-pink .pin   { background: #f0a0b8; }
+.dest-yellow .pin { background: #d4a017; }
+
+/* === Content Blocks (image + text) === */
+.content-block {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 28px;
+  align-items: flex-start;
+}
+
+.content-block.image-left {
+  flex-direction: row;
+}
+
+.content-block.image-right {
+  flex-direction: row-reverse;
+}
+
+.image-wrap {
+  flex: 0 0 46%;
+}
+
+.text-wrap {
+  flex: 1;
+}
+
+.text-wrap p {
+  margin-bottom: 14px;
+}
+
+/* === Did You Know Boxes === */
+.did-you-know {
+  border-style: dashed;
+  border-width: 3px;
+  border-radius: 18px;
+  padding: 24px 28px;
+  margin: 24px 0;
+  background: rgba(255,255,255,0.7);
+}
+
+.did-you-know h3 {
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.blue-border   { border-color: #5bb5e6; }
+.blue-border h3 { color: #5bb5e6; }
+
+.orange-border  { border-color: #f5a623; }
+.orange-border h3 { color: #e0900a; }
+
+.green-border   { border-color: #6dbf67; }
+.green-border h3 { color: #4a9e44; }
+
+.purple-border  { border-color: #9b7ed8; }
+.purple-border h3 { color: #7b5dc0; }
+
+.pink-border    { border-color: #f0a0b8; }
+.pink-border h3 { color: #d4708a; }
+
+.yellow-border  { border-color: #d4a017; }
+.yellow-border h3 { color: #b8880a; }
+
+/* === Adventure Checklist === */
+.checklist {
+  margin: 24px 0 8px;
+}
+
+.checklist h3 {
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.checklist ul {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.checkbox {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  border-radius: 6px;
+  margin-top: 2px;
+}
+
+.blue-box   { background: #5bb5e6; }
+.orange-box { background: #f5a623; }
+.green-box  { background: #6dbf67; }
+.purple-box { background: #9b7ed8; }
+.pink-box   { background: #f0a0b8; }
+.yellow-box { background: #d4a017; }
+
+/* === Food Grid === */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.food-card {
+  border-radius: 18px;
+  padding: 24px;
+  color: #333;
+}
+
+.food-card h3 {
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.food-blue   { background: #dff0fb; }
+.food-orange { background: #fef0d9; }
+.food-green  { background: #dff5dd; }
+.food-purple { background: #ece3f7; }
+.food-pink   { background: #fce4ec; }
+.food-yellow { background: #fdf6d8; }
+
+/* === Tips Grid === */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.tip-box {
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.tip-box h3 {
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+  background: #444;
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 20px;
+}
+
+.tip-blue   { background: #dff0fb; }
+.tip-blue h3   { background: #5bb5e6; }
+
+.tip-orange { background: #fef0d9; }
+.tip-orange h3 { background: #f5a623; }
+
+.tip-green  { background: #dff5dd; }
+.tip-green h3  { background: #6dbf67; }
+
+.tip-purple { background: #ece3f7; }
+.tip-purple h3 { background: #9b7ed8; }
+
+.tip-pink   { background: #fce4ec; }
+.tip-pink h3   { background: #f0a0b8; }
+
+.tip-yellow { background: #fdf6d8; }
+.tip-yellow h3 { background: #d4a017; }
+
+.tip-box p, .tip-box ul {
+  margin-top: 8px;
+}
+
+/* Star bullet list */
+.star-list {
+  list-style: none;
+  padding: 0;
+}
+
+.star-list li {
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.star-list li::before {
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  color: #f5a623;
+  font-size: 1rem;
+}
+
+/* === Footer === */
+footer {
+  background: #333;
+  color: #ccc;
+  margin-top: 48px;
+  padding: 40px 24px;
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+footer h2 {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+.credits-list {
+  list-style: none;
+  padding: 0;
+  columns: 2;
+  column-gap: 32px;
+}
+
+.credits-list li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  break-inside: avoid;
+}
+
+.credits-list a {
+  color: #5bb5e6;
+  text-decoration: underline;
+}
+
+.footer-note {
+  margin-top: 24px;
+  font-size: 0.95rem;
+  color: #999;
+  text-align: center;
+}
+
+/* === Responsive === */
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .pin {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+    margin-right: 8px;
+  }
+
+  .content-block,
+  .content-block.image-left,
+  .content-block.image-right {
+    flex-direction: column;
+  }
+
+  .image-wrap {
+    flex: none;
+    width: 100%;
+  }
+
+  .destination {
+    padding: 28px 20px;
+    margin: 20px 0;
+  }
+
+  .food-grid,
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .credits-list {
+    columns: 1;
+  }
+
+  .nav-title {
+    font-size: 1.15rem;
+  }
+
+  .top-bar {
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 0 10px;
+  }
+
+  .destination {
+    padding: 20px 14px;
+    border-radius: 16px;
+  }
+}
