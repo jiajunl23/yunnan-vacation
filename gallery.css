@@ -195,6 +195,342 @@ body {
   line-height: 1.55;
 }
 
+/* ===== Card Preview Strips ===== */
+.card-preview {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.25rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* v1 - Lonely Planet */
+.card-preview--v1 {
+  background: #faf7f2;
+  flex-direction: column;
+  gap: 6px;
+}
+.card-preview--v1 .cp-rule {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #b85c38;
+}
+.card-preview--v1 .cp-text {
+  font-family: Georgia, serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #a0937f;
+}
+
+/* v2 - Flamboyant VIP */
+.card-preview--v2 {
+  background: #1a1a1a;
+  border-top: 1px solid #c9a96e;
+}
+.card-preview--v2 .cp-text {
+  font-family: system-ui, sans-serif;
+  font-weight: 200;
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  color: #c9a96e;
+  text-transform: uppercase;
+}
+
+/* v3 - Niche Refreshing */
+.card-preview--v3 {
+  background: #fafafa;
+  border-top: 1px solid #d4e4ed;
+}
+.card-preview--v3 .cp-text {
+  font-family: system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+  color: #b8c9b5;
+}
+
+/* v4 - Social Media */
+.card-preview--v4 {
+  background: #fff;
+  gap: 6px;
+  border-top: 1px solid #f0f0f0;
+}
+.cp-pill {
+  display: inline-block;
+  font-family: system-ui, sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.cp-pill--coral { background: #ff6b6b; color: #fff; }
+.cp-pill--teal { background: #4ecdc4; color: #fff; }
+.cp-pill--yellow { background: #ffe66d; color: #2c3e50; }
+
+/* v5 - School Vacation */
+.card-preview--v5 {
+  background: #5bb5e6;
+  border-top: 3px dashed #fff;
+}
+.card-preview--v5 .cp-text {
+  font-family: system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+/* v6 - Official Guide */
+.card-preview--v6 {
+  background: #1a3a5c;
+  border-top: 2px solid #b8860b;
+}
+.card-preview--v6 .cp-text {
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  color: #b8860b;
+  text-transform: uppercase;
+}
+
+/* v7 - Cartoon Storybook */
+.card-preview--v7 {
+  background: #fef9ef;
+  border-top: 3px dashed #d4836b;
+}
+.card-preview--v7 .cp-text {
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #7eb8d4;
+  transform: rotate(-2deg);
+}
+
+/* v8 - Cyberpunk */
+.card-preview--v8 {
+  background: #0a0a0a;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 240, 255, 0.03) 2px,
+    rgba(0, 240, 255, 0.03) 4px
+  );
+}
+.card-preview--v8 .cp-text {
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  color: #00f0ff;
+  text-shadow: 0 0 8px #00f0ff, 0 0 16px rgba(0, 240, 255, 0.4);
+  letter-spacing: 0.1em;
+}
+
+/* v9 - Stream of Consciousness */
+.card-preview--v9 {
+  background: #f5e6c8;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 27px,
+    #c0d0e0 27px,
+    #c0d0e0 28px
+  );
+  border-left: 2px solid #cc4444;
+  justify-content: flex-start;
+  padding-left: 1.5rem;
+}
+.card-preview--v9 .cp-text {
+  font-family: Georgia, serif;
+  font-size: 0.72rem;
+  font-style: italic;
+  color: #2c2416;
+  opacity: 0.7;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* v10 - AI Chat */
+.card-preview--v10 {
+  background: #f0f2f5;
+  flex-direction: column;
+  gap: 4px;
+  align-items: stretch;
+  padding: 10px 1rem;
+}
+.cp-bubble {
+  font-family: system-ui, sans-serif;
+  font-size: 0.65rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  max-width: 55%;
+  line-height: 1.4;
+}
+.cp-bubble--ai {
+  background: #e4e6eb;
+  color: #1a1a1a;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.cp-bubble--user {
+  background: #00c853;
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+/* v11 - RPG Quest */
+.card-preview--v11 {
+  background: #e8d5a3;
+  border-top: 2px solid #2a1f14;
+  gap: 10px;
+}
+.cp-badge {
+  font-family: system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.6rem;
+  color: #2a1f14;
+  background: #ffd700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+.cp-bar {
+  width: 60px;
+  height: 8px;
+  background: #2a1f14;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.cp-bar-fill {
+  display: block;
+  width: 85%;
+  height: 100%;
+  background: #cc3333;
+  border-radius: 4px;
+}
+
+/* v12 - Picasso Abstract */
+.card-preview--v12 {
+  background: #f8f4e8;
+  position: relative;
+}
+.card-preview--v12::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  background: rgba(0, 71, 171, 0.2);
+  top: 4px;
+  left: 15%;
+  transform: rotate(-8deg);
+}
+.card-preview--v12::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 45px;
+  background: rgba(230, 57, 70, 0.2);
+  top: 8px;
+  right: 20%;
+  transform: rotate(5deg);
+}
+.card-preview--v12 .cp-text {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #2b2b2b;
+  transform: rotate(-5deg);
+  position: relative;
+  z-index: 1;
+}
+
+/* v13 - Child's Booklet */
+.card-preview--v13 {
+  background: #fffef5;
+  border-top: 6px solid;
+  border-image: linear-gradient(90deg, #e74c3c 20%, #3498db 20%, #3498db 40%, #27ae60 40%, #27ae60 60%, #f1c40f 60%, #f1c40f 80%, #e67e22 80%) 1;
+}
+.card-preview--v13 .cp-text {
+  font-family: system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #3498db;
+  transform: rotate(-3deg);
+}
+
+/* v14 - Scientific Journal */
+.card-preview--v14 {
+  background: #fff;
+  border-top: 1px solid #ccc;
+  gap: 8px;
+}
+.card-preview--v14 .cp-text {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #000;
+}
+.cp-lines {
+  display: block;
+  width: 50px;
+  height: 20px;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 3px,
+    #ddd 3px,
+    #ddd 4px
+  );
+  opacity: 0.7;
+}
+
+/* v15 - BBC Documentary */
+.card-preview--v15 {
+  background: #1c1c1c;
+  flex-direction: column;
+  gap: 6px;
+}
+.card-preview--v15::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: #bb1919;
+}
+.card-preview--v15 .cp-text {
+  font-family: system-ui, sans-serif;
+  font-weight: 200;
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: #f5f0e8;
+  text-transform: uppercase;
+}
+
+/* v16 - Shanshui Scroll */
+.card-preview--v16 {
+  background: #f4ede0;
+  background-image: radial-gradient(ellipse at 50% 50%, #f4ede0 0%, #e8dfd0 100%);
+  gap: 12px;
+}
+.card-preview--v16 .cp-text {
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  color: #1a1410;
+  letter-spacing: 0.15em;
+}
+.cp-seal {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #cc3333;
+  border-radius: 2px;
+  transform: rotate(5deg);
+}
+
 /* ===== Card Style Tags ===== */
 .card-tag {
   display: inline-block;
