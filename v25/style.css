@@ -166,19 +166,24 @@ html, body {
   width: 80vw;
   min-width: 600px;
   height: 100vh;
-  overflow: hidden;
+  overflow: visible;
+  margin-left: -100px;
+  margin-right: -100px;
+  z-index: 1;
 }
 
 .photo-main,
 .photo-alt {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: -100px;
+  width: calc(100% + 200px);
   height: 100%;
   object-fit: cover;
   transition: opacity 0.8s ease;
   display: block;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
 }
 
 .photo-alt {
@@ -191,31 +196,6 @@ html, body {
 
 .photo-section:hover .photo-alt {
   opacity: 1;
-}
-
-/* Gradient edges -- images blend smoothly into background */
-.photo-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 200px;
-  background: linear-gradient(to right, #e8f2fa 0%, rgba(232,242,250,0.6) 40%, transparent 100%);
-  z-index: 2;
-  pointer-events: none;
-}
-
-.photo-section::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 200px;
-  background: linear-gradient(to left, #e8f2fa 0%, rgba(232,242,250,0.6) 40%, transparent 100%);
-  z-index: 2;
-  pointer-events: none;
 }
 
 /* Default overlay (fades out on hover) */

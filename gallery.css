@@ -493,28 +493,33 @@ body {
 .m24-vtext { position: absolute; bottom: 10px; left: 5px; writing-mode: vertical-rl; font-family: Georgia, serif; font-size: 0.5rem; font-weight: 700; color: #e63946; transform: rotate(180deg); z-index: 2; }
 
 /* === v25 The Final Edition Mini === */
-.mini--v25 { background: #e8f2fa; display: flex; min-height: 280px; overflow: hidden; align-items: stretch; position: relative; }
-.m25-title { width: 80px; flex-shrink: 0; background: linear-gradient(180deg, #fff 0%, #e8f2fa 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 6px; gap: 4px; }
-.m25-head { font-family: Georgia, serif; font-size: 0.65rem; font-weight: 400; color: #1a2e40; letter-spacing: 0.1em; }
-.m25-sub { font-size: 0.22rem; color: #2a8c7a; font-style: italic; text-align: center; }
-.m25-toc { margin-top: 6px; display: flex; flex-direction: column; gap: 2px; }
-.m25-toc span { font-size: 0.22rem; color: #5ba4d9; }
-.m25-photo { width: 65px; flex-shrink: 0; background: linear-gradient(135deg, #7a9a7a, #5a7a5a); position: relative; }
-.m25-p2 { background: linear-gradient(135deg, #8aa0b0, #6a8090); }
-.m25-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 4px; background: linear-gradient(transparent, rgba(26,46,64,0.6)); }
-.m25-cn { display: block; font-size: 0.5rem; color: rgba(255,255,255,0.7); }
-.m25-ph-title { display: block; font-size: 0.25rem; color: #fff; font-weight: 300; }
-.m25-sticker { width: 45px; flex-shrink: 0; background: #1a2e40; border-radius: 5px; margin: auto 3px; padding: 5px; transform: rotate(-3deg); box-shadow: 2px 3px 6px rgba(0,0,0,0.2); align-self: center; }
-.m25-label { display: block; font-size: 0.2rem; font-weight: 700; color: #1a2e40; background: #c9a96e; padding: 1px 3px; border-radius: 2px; margin-bottom: 2px; text-transform: uppercase; }
+.mini--v25 {
+  min-height: 280px; position: relative; overflow: hidden; display: flex; align-items: stretch;
+  background: linear-gradient(135deg, #4a7a6a 0%, #5a8a7a 30%, #7ab0a0 50%, #8abccc 70%, #a8d4e4 100%);
+}
+.m25-cover { width: 90px; flex-shrink: 0; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 12px 8px; }
+.m25-cover::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(26,46,64,0.5) 100%); }
+.m25-head { position: relative; z-index: 1; font-family: Georgia, serif; font-size: 0.9rem; font-weight: 200; color: #fff; letter-spacing: 0.12em; text-shadow: 0 1px 8px rgba(0,0,0,0.3); }
+.m25-sub { position: relative; z-index: 1; font-size: 0.2rem; color: rgba(255,255,255,0.7); font-style: italic; text-align: center; margin-top: 2px; }
+.m25-toc { position: relative; z-index: 1; margin-top: 8px; display: flex; flex-direction: column; gap: 1px; }
+.m25-toc span { font-size: 0.18rem; color: rgba(255,255,255,0.5); }
+.m25-photo { width: 70px; flex-shrink: 0; position: relative; }
+.m25-photo-inner { position: absolute; inset: -10px; background: linear-gradient(135deg, #6a8a6a, #5a7a5a); -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); }
+.m25-p2 .m25-photo-inner { background: linear-gradient(135deg, #7a9aaa, #5a7a8a); }
+.m25-overlay { position: absolute; bottom: 8px; left: 4px; z-index: 2; }
+.m25-cn { display: block; font-size: 0.45rem; color: rgba(255,255,255,0.6); }
+.m25-ph-title { display: block; font-size: 0.22rem; color: rgba(255,255,255,0.8); font-weight: 200; }
+.m25-sticker { width: 42px; flex-shrink: 0; background: #1a2e40; border-radius: 5px; margin: auto 2px; padding: 4px; transform: rotate(-3deg); box-shadow: 2px 3px 6px rgba(0,0,0,0.2); align-self: center; }
+.m25-label { display: block; font-size: 0.18rem; font-weight: 700; color: #1a2e40; background: #c9a96e; padding: 1px 3px; border-radius: 2px; margin-bottom: 2px; text-transform: uppercase; }
 .m25-sl { display: block; height: 2px; background: rgba(201,169,110,0.2); }
-.m25-food { width: 60px; flex-shrink: 0; background: #f5f0e6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6px; gap: 3px; }
-.m25-food-title { font-family: Georgia, serif; font-size: 0.35rem; color: #1a2e40; font-weight: 400; letter-spacing: 0.05em; }
-.m25-food-line { width: 30px; height: 1px; background: #c9a96e; }
-.m25-fl-short { width: 20px; }
-.m25-roadmap { position: absolute; bottom: 0; left: 0; right: 0; height: 14px; background: rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center; gap: 3px; }
-.m25-dot { width: 4px; height: 4px; border-radius: 50%; background: #5ba4d9; }
-.m25-dot--active { background: #2a8c7a; width: 6px; height: 6px; }
-.m25-seg { width: 14px; border-top: 1px dotted #5ba4d9; }
+.m25-food { width: 55px; flex-shrink: 0; background: rgba(245,240,230,0.85); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6px; gap: 3px; }
+.m25-food-title { font-family: Georgia, serif; font-size: 0.3rem; color: #1a2e40; font-weight: 200; letter-spacing: 0.05em; font-style: italic; }
+.m25-food-line { width: 25px; height: 1px; background: #c9a96e; }
+.m25-fl-short { width: 16px; }
+.m25-roadmap { position: absolute; bottom: 0; left: 0; right: 0; height: 12px; background: rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; gap: 3px; }
+.m25-dot { width: 3px; height: 3px; border-radius: 50%; background: #2a8c7a; }
+.m25-dot--active { background: #fff; width: 5px; height: 5px; }
+.m25-seg { width: 12px; border-top: 1px dotted rgba(42,140,122,0.5); }
 
 /* === v23 Airline Magazine Scroll Mini === */
 .mini--v23 { background: #e8f2fa; display: flex; min-height: 280px; overflow: hidden; align-items: stretch; position: relative; }
