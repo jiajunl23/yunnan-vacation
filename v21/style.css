@@ -438,19 +438,20 @@ html, body {
   height: 100%;
 }
 
-.title-block h1 {
-  font-size: 5rem;
+.title-block h1.title-en {
+  font-family: Georgia, serif;
+  font-size: 2.4rem;
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   color: #1a1410;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
-.title-block .title-en {
-  font-size: 1rem;
+.title-block .title-cn {
+  font-size: 1.3rem;
   font-weight: 400;
-  color: #5a5348;
-  letter-spacing: 0.08em;
+  color: #8c8578;
+  letter-spacing: 0.2em;
   margin-top: 8px;
 }
 
@@ -641,8 +642,8 @@ html, body {
     max-width: 300px;
   }
 
-  .title-block h1 {
-    font-size: 3.5rem;
+  .title-block h1.title-en {
+    font-size: 1.8rem;
   }
 
   .notes-cluster {
