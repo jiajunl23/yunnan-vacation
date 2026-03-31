@@ -388,6 +388,63 @@ body {
 .m19-speech::after { content: ""; position: absolute; bottom: -5px; left: 10px; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #ffecd2; filter: drop-shadow(0 1px 0 #111); }
 .m19-action { font-family: system-ui, sans-serif; font-size: 0.9rem; font-weight: 900; color: #e23636; text-shadow: 1px 1px 0 #111, -1px -1px 0 #111, 1px -1px 0 #111, -1px 1px 0 #111; transform: rotate(-8deg); text-transform: uppercase; }
 
+/* === v21 Shanshui Scroll Hybrid Mini === */
+.mini--v21 {
+  background: #f4ede0;
+  display: flex;
+  min-height: 280px;
+  overflow: hidden;
+}
+.m21-roller {
+  width: 10px;
+  flex-shrink: 0;
+  background: linear-gradient(90deg, #5a4530, #3a2e20, #5a4530);
+  border-left: 1px solid #b8963e;
+  border-right: 1px solid #b8963e;
+}
+.m21-scroll {
+  flex: 1;
+  padding: 14px 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  overflow: hidden;
+  background-image:
+    radial-gradient(ellipse 60px 90px at 30% 75%, rgba(140,133,120,0.1) 0%, transparent 70%),
+    radial-gradient(ellipse 80px 120px at 55% 70%, rgba(140,133,120,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 50px 70px at 80% 78%, rgba(140,133,120,0.07) 0%, transparent 70%),
+    linear-gradient(180deg, transparent 80%, rgba(200,210,220,0.06) 90%, transparent 100%);
+}
+.m21-title {
+  font-size: 1.2rem;
+  color: #1a1410;
+  letter-spacing: 0.15em;
+  writing-mode: vertical-rl;
+  flex-shrink: 0;
+}
+.m21-note {
+  background: rgba(244,237,224,0.88);
+  border: 1px solid rgba(26,20,16,0.12);
+  padding: 6px 8px;
+  flex-shrink: 0;
+  transform: rotate(-1deg);
+}
+.m21-cn { display: block; font-size: 0.7rem; color: #1a1410; margin-bottom: 2px; }
+.m21-line { display: block; height: 2px; width: 40px; background: rgba(26,20,16,0.1); }
+.m21-xhs {
+  background: rgba(244,237,224,0.92);
+  border: 1px solid rgba(26,20,16,0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+  width: 55px;
+}
+.m21-ximg { height: 35px; background: #d4cec0; filter: sepia(0.3); }
+.m21-xfoot { padding: 3px 4px; display: flex; justify-content: space-between; align-items: center; }
+.m21-seal-sm { width: 8px; height: 8px; border: 1.5px solid #cc3333; border-radius: 1px; transform: rotate(3deg); }
+.m21-likes { font-size: 0.25rem; color: #8c8578; }
+.m21-seal { width: 16px; height: 16px; border: 2px solid #cc3333; border-radius: 1px; transform: rotate(5deg); flex-shrink: 0; }
+
 /* === v17 Magazine Editorial Mini === */
 .mini--v17 { background: #f7f6f2; position: relative; }
 .m17-sidebar { position: absolute; left: 0; top: 0; bottom: 0; width: 16px; background: #f7f6f2; writing-mode: vertical-rl; font-family: system-ui, sans-serif; font-size: 0.4rem; font-weight: 200; letter-spacing: 0.3em; color: #888; display: flex; align-items: center; justify-content: center; z-index: 2; border-right: 1px solid #e8e5df; }

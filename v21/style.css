@@ -1,0 +1,639 @@
+/* ============================================================
+   v21 -- Shanshui Scroll + Sticky/XHS Hybrid
+   CSS-only horizontal hand scroll with ink wash landscape
+   ============================================================ */
+
+/* --- Reset & Horizontal Scroll Mechanics --- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100vh;
+  margin: 0;
+  font-family: "Songti SC", "Noto Serif SC", "Source Han Serif SC", "SimSun", Georgia, serif;
+  color: #1a1410;
+  background: #f4ede0;
+}
+
+/* --- Scroll Container with Shanshui Ink Wash Background --- */
+
+.scroll-container {
+  display: flex;
+  height: 100vh;
+  width: 9000px;
+  position: relative;
+  background-color: #f4ede0;
+  background-image:
+    /* === WATER / MIST BASE BANDS === */
+    /* Bottom water band across entire scroll */
+    linear-gradient(180deg, transparent 78%, rgba(180,195,210,0.06) 84%, rgba(180,195,210,0.10) 90%, rgba(180,195,210,0.04) 95%, transparent 100%),
+    /* Secondary water shimmer */
+    linear-gradient(180deg, transparent 82%, rgba(190,200,215,0.05) 87%, rgba(195,205,218,0.08) 92%, transparent 97%),
+    /* Upper mist band */
+    linear-gradient(180deg, transparent 20%, rgba(230,225,215,0.06) 30%, transparent 40%),
+
+    /* === OPENING AREA (0-800px): Faint water, empty rice paper === */
+    /* Faint ripple at bottom left */
+    radial-gradient(ellipse 400px 30px at 400px 92%, rgba(180,190,200,0.07) 0%, transparent 100%),
+    /* Light mist wisp */
+    radial-gradient(ellipse 300px 25px at 300px 50%, rgba(225,220,210,0.08) 0%, transparent 100%),
+
+    /* === KUNMING HILLS (800-2000px): Low gentle hills === */
+    /* Hill 1 - very low, soft */
+    radial-gradient(ellipse 350px 180px at 900px 88%, rgba(150,143,130,0.10) 0%, rgba(150,143,130,0.05) 45%, transparent 75%),
+    /* Hill 2 */
+    radial-gradient(ellipse 280px 150px at 1200px 90%, rgba(140,133,120,0.09) 0%, rgba(140,133,120,0.04) 50%, transparent 70%),
+    /* Hill 3 - slightly taller */
+    radial-gradient(ellipse 400px 220px at 1500px 87%, rgba(130,123,110,0.11) 0%, rgba(130,123,110,0.05) 40%, transparent 70%),
+    /* Hill 4 - background, very faint */
+    radial-gradient(ellipse 500px 200px at 1300px 83%, rgba(160,153,140,0.06) 0%, rgba(160,153,140,0.03) 40%, transparent 65%),
+    /* Tree clusters near Kunming hills */
+    radial-gradient(circle 7px at 920px 82%, rgba(60,50,40,0.10) 0%, transparent 100%),
+    radial-gradient(circle 5px at 940px 83%, rgba(60,50,40,0.08) 0%, transparent 100%),
+    radial-gradient(circle 9px at 1210px 84%, rgba(60,50,40,0.09) 0%, transparent 100%),
+    radial-gradient(circle 6px at 1230px 85%, rgba(60,50,40,0.08) 0%, transparent 100%),
+    /* Ink diffusion - Kunming area */
+    radial-gradient(circle 150px at 1100px 70%, rgba(100,90,80,0.04) 0%, transparent 100%),
+
+    /* === DALI / ERHAI AREA (2000-3500px): Medium mountains, lake reflection === */
+    /* Mountain 1 - medium height */
+    radial-gradient(ellipse 350px 350px at 2200px 82%, rgba(130,123,110,0.14) 0%, rgba(130,123,110,0.07) 40%, transparent 70%),
+    /* Mountain 2 - taller, darker (closer) */
+    radial-gradient(ellipse 300px 400px at 2600px 80%, rgba(110,103,90,0.16) 0%, rgba(110,103,90,0.08) 40%, transparent 70%),
+    /* Mountain 3 - background range */
+    radial-gradient(ellipse 600px 300px at 2400px 78%, rgba(155,148,135,0.08) 0%, rgba(155,148,135,0.04) 45%, transparent 70%),
+    /* Mountain 4 - medium */
+    radial-gradient(ellipse 280px 320px at 3000px 83%, rgba(120,113,100,0.13) 0%, rgba(120,113,100,0.06) 42%, transparent 68%),
+    /* Mountain 5 - far background, faint */
+    radial-gradient(ellipse 700px 250px at 2800px 72%, rgba(170,163,150,0.06) 0%, transparent 60%),
+    /* Erhai lake reflection shimmer */
+    radial-gradient(ellipse 800px 40px at 2600px 94%, rgba(170,185,200,0.10) 0%, transparent 100%),
+    radial-gradient(ellipse 500px 25px at 2400px 96%, rgba(175,190,205,0.07) 0%, transparent 100%),
+    /* Mist wisp across Dali mountains */
+    radial-gradient(ellipse 600px 40px at 2500px 55%, rgba(225,220,210,0.12) 0%, transparent 100%),
+    radial-gradient(ellipse 400px 30px at 3100px 48%, rgba(225,220,210,0.09) 0%, transparent 100%),
+    /* Tree clusters - Dali foothills */
+    radial-gradient(circle 8px at 2210px 78%, rgba(55,45,35,0.11) 0%, transparent 100%),
+    radial-gradient(circle 6px at 2240px 79%, rgba(55,45,35,0.09) 0%, transparent 100%),
+    radial-gradient(circle 10px at 2260px 77%, rgba(55,45,35,0.10) 0%, transparent 100%),
+    radial-gradient(circle 7px at 2610px 76%, rgba(55,45,35,0.10) 0%, transparent 100%),
+    radial-gradient(circle 5px at 2640px 78%, rgba(55,45,35,0.08) 0%, transparent 100%),
+    /* Ink diffusion - Dali */
+    radial-gradient(circle 200px at 2800px 65%, rgba(100,90,80,0.05) 0%, transparent 100%),
+
+    /* === LIJIANG / JADE DRAGON (3500-5000px): Tall dramatic peaks === */
+    /* Jade Dragon main peak - tallest, darkest */
+    radial-gradient(ellipse 250px 520px at 4200px 72%, rgba(80,73,60,0.20) 0%, rgba(80,73,60,0.10) 35%, transparent 70%),
+    /* Jade Dragon secondary peak */
+    radial-gradient(ellipse 200px 450px at 4500px 75%, rgba(90,83,70,0.17) 0%, rgba(90,83,70,0.08) 38%, transparent 68%),
+    /* Flanking mountain left */
+    radial-gradient(ellipse 350px 380px at 3800px 80%, rgba(110,103,90,0.15) 0%, rgba(110,103,90,0.07) 40%, transparent 70%),
+    /* Flanking mountain right */
+    radial-gradient(ellipse 300px 400px at 4800px 78%, rgba(100,93,80,0.14) 0%, rgba(100,93,80,0.07) 42%, transparent 68%),
+    /* Background range - very distant */
+    radial-gradient(ellipse 800px 280px at 4300px 65%, rgba(170,163,150,0.07) 0%, transparent 55%),
+    /* Snow cap suggestion on Jade Dragon */
+    radial-gradient(ellipse 80px 30px at 4200px 48%, rgba(240,238,232,0.15) 0%, transparent 100%),
+    radial-gradient(ellipse 60px 25px at 4500px 52%, rgba(240,238,232,0.12) 0%, transparent 100%),
+    /* Mist bands - Lijiang valley */
+    radial-gradient(ellipse 500px 45px at 4000px 60%, rgba(220,215,205,0.14) 0%, transparent 100%),
+    radial-gradient(ellipse 700px 35px at 4400px 50%, rgba(225,220,210,0.10) 0%, transparent 100%),
+    /* Tree clusters - Lijiang */
+    radial-gradient(circle 9px at 3810px 76%, rgba(50,42,32,0.12) 0%, transparent 100%),
+    radial-gradient(circle 7px at 3840px 77%, rgba(50,42,32,0.10) 0%, transparent 100%),
+    radial-gradient(circle 11px at 3870px 75%, rgba(50,42,32,0.11) 0%, transparent 100%),
+    radial-gradient(circle 6px at 4810px 74%, rgba(50,42,32,0.10) 0%, transparent 100%),
+    radial-gradient(circle 8px at 4840px 75%, rgba(50,42,32,0.09) 0%, transparent 100%),
+    /* Ink diffusion - dramatic */
+    radial-gradient(circle 250px at 4300px 58%, rgba(80,70,60,0.07) 0%, transparent 100%),
+
+    /* === TIGER LEAPING GORGE (5000-6000px): Deep dark gorge === */
+    /* Left gorge wall - very dark, steep */
+    radial-gradient(ellipse 200px 550px at 5200px 68%, rgba(55,48,38,0.22) 0%, rgba(55,48,38,0.10) 35%, transparent 70%),
+    /* Right gorge wall */
+    radial-gradient(ellipse 180px 500px at 5600px 70%, rgba(60,52,42,0.20) 0%, rgba(60,52,42,0.09) 38%, transparent 68%),
+    /* Gorge depth shadow between walls */
+    radial-gradient(ellipse 250px 300px at 5400px 85%, rgba(40,35,28,0.15) 0%, rgba(40,35,28,0.06) 50%, transparent 80%),
+    /* Background peaks flanking gorge */
+    radial-gradient(ellipse 350px 400px at 5000px 75%, rgba(90,83,70,0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 300px 380px at 5800px 77%, rgba(95,88,75,0.11) 0%, transparent 65%),
+    /* River suggestion at gorge bottom */
+    radial-gradient(ellipse 400px 15px at 5400px 97%, rgba(140,160,180,0.10) 0%, transparent 100%),
+    /* Spray/mist from river */
+    radial-gradient(ellipse 200px 60px at 5400px 90%, rgba(210,215,220,0.10) 0%, transparent 100%),
+    /* Ink diffusion - gorge darkness */
+    radial-gradient(circle 180px at 5400px 75%, rgba(50,40,30,0.08) 0%, transparent 100%),
+
+    /* === SHANGRI-LA (6000-7000px): High plateau, ethereal lighter mountains === */
+    /* Plateau mountains - lighter, more ethereal */
+    radial-gradient(ellipse 400px 350px at 6300px 78%, rgba(145,138,125,0.11) 0%, rgba(145,138,125,0.05) 45%, transparent 70%),
+    radial-gradient(ellipse 350px 320px at 6700px 80%, rgba(150,143,130,0.10) 0%, rgba(150,143,130,0.05) 42%, transparent 68%),
+    /* Distant ethereal range */
+    radial-gradient(ellipse 700px 250px at 6500px 68%, rgba(175,168,155,0.07) 0%, transparent 55%),
+    /* Monastery suggestion - small dark cluster */
+    radial-gradient(ellipse 40px 30px at 6350px 74%, rgba(70,60,48,0.12) 0%, transparent 100%),
+    radial-gradient(ellipse 30px 25px at 6370px 73%, rgba(70,60,48,0.10) 0%, transparent 100%),
+    /* High altitude mist */
+    radial-gradient(ellipse 600px 50px at 6500px 42%, rgba(230,225,218,0.12) 0%, transparent 100%),
+    radial-gradient(ellipse 400px 35px at 6200px 38%, rgba(230,225,218,0.08) 0%, transparent 100%),
+    /* Tree clusters - sparse at altitude */
+    radial-gradient(circle 6px at 6310px 76%, rgba(58,48,38,0.09) 0%, transparent 100%),
+    radial-gradient(circle 5px at 6340px 77%, rgba(58,48,38,0.07) 0%, transparent 100%),
+    radial-gradient(circle 7px at 6710px 77%, rgba(58,48,38,0.08) 0%, transparent 100%),
+
+    /* === YUANYANG (7000-8000px): Terraced landscape descending === */
+    /* Terraced hills - layered, descending */
+    radial-gradient(ellipse 450px 280px at 7300px 82%, rgba(135,128,115,0.12) 0%, rgba(135,128,115,0.05) 45%, transparent 70%),
+    radial-gradient(ellipse 350px 220px at 7700px 85%, rgba(140,133,120,0.10) 0%, rgba(140,133,120,0.04) 48%, transparent 68%),
+    /* Terrace line suggestions */
+    radial-gradient(ellipse 300px 8px at 7300px 80%, rgba(110,100,85,0.06) 0%, transparent 100%),
+    radial-gradient(ellipse 280px 8px at 7350px 82%, rgba(110,100,85,0.05) 0%, transparent 100%),
+    radial-gradient(ellipse 260px 8px at 7400px 84%, rgba(110,100,85,0.05) 0%, transparent 100%),
+    radial-gradient(ellipse 240px 8px at 7450px 86%, rgba(110,100,85,0.04) 0%, transparent 100%),
+    radial-gradient(ellipse 220px 8px at 7500px 88%, rgba(110,100,85,0.04) 0%, transparent 100%),
+    /* Water reflection in terraces */
+    radial-gradient(ellipse 400px 30px at 7400px 93%, rgba(175,188,200,0.08) 0%, transparent 100%),
+    /* Mist wisp */
+    radial-gradient(ellipse 350px 30px at 7500px 50%, rgba(220,215,205,0.09) 0%, transparent 100%),
+    /* Tree clusters */
+    radial-gradient(circle 8px at 7310px 78%, rgba(55,45,35,0.10) 0%, transparent 100%),
+    radial-gradient(circle 6px at 7340px 79%, rgba(55,45,35,0.08) 0%, transparent 100%),
+
+    /* === CLOSING (8000-9000px): Fading to rice paper === */
+    /* Very faint distant hills */
+    radial-gradient(ellipse 400px 120px at 8200px 90%, rgba(170,163,150,0.06) 0%, transparent 65%),
+    radial-gradient(ellipse 300px 100px at 8500px 91%, rgba(175,168,155,0.04) 0%, transparent 60%),
+    /* Final mist wisp */
+    radial-gradient(ellipse 350px 25px at 8400px 55%, rgba(225,220,210,0.07) 0%, transparent 100%),
+    /* Last ink spot */
+    radial-gradient(circle 100px at 8300px 80%, rgba(100,90,80,0.03) 0%, transparent 100%);
+
+  background-repeat: no-repeat;
+  background-size: 9000px 100vh;
+}
+
+/* --- Scroll Rollers --- */
+
+.roller {
+  width: 30px;
+  min-width: 30px;
+  height: 100vh;
+  background: linear-gradient(90deg, #5a4530, #3a2e20, #5a4530);
+  border-left: 2px solid #b8963e;
+  border-right: 2px solid #b8963e;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.roller::before, .roller::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 20px;
+  background: #3a2e20;
+  border: 2px solid #b8963e;
+  border-radius: 4px;
+}
+
+.roller::before { top: 10px; }
+.roller::after { bottom: 10px; }
+
+/* --- Sections --- */
+
+.scroll-section {
+  flex-shrink: 0;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 30px;
+  white-space: normal;
+}
+
+.section-title   { width: 600px; }
+.section-kunming { width: 900px; }
+.section-mist    { width: 400px; }
+.section-dali    { width: 1000px; }
+.section-lijiang { width: 1000px; }
+.section-gorge   { width: 800px; }
+.section-shangrila { width: 900px; }
+.section-yuanyang  { width: 900px; }
+.section-food      { width: 800px; }
+.section-closing   { width: 600px; }
+
+/* --- Rice Paper Sticky Notes --- */
+
+.scroll-note {
+  background: rgba(244,237,224,0.88);
+  border: 1px solid rgba(26,20,16,0.15);
+  padding: 16px 14px;
+  max-width: 220px;
+  white-space: normal;
+  box-shadow: 2px 2px 8px rgba(26,20,16,0.08);
+  position: relative;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.scroll-note.tilt-left  { transform: rotate(-1.5deg); }
+.scroll-note.tilt-right { transform: rotate(1.2deg); }
+.scroll-note.tilt-slight { transform: rotate(-0.5deg); }
+
+.scroll-note h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  letter-spacing: 0.05em;
+}
+
+.scroll-note h3 small {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #5a5348;
+  margin-top: 2px;
+}
+
+.scroll-note p {
+  margin-top: 8px;
+  color: #2a2420;
+}
+
+/* Red seal stamp on notes */
+.seal {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #cc3333;
+  background: rgba(204,51,51,0.08);
+  transform: rotate(3deg);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.seal-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: #cc3333;
+  font-weight: 700;
+}
+
+/* Small note variant */
+.scroll-note.small {
+  max-width: 160px;
+  padding: 10px 10px;
+  font-size: 0.78rem;
+}
+
+/* --- XHS Scroll-Integrated Cards --- */
+
+.xhs-scroll {
+  background: rgba(244,237,224,0.92);
+  border: 1px solid rgba(26,20,16,0.12);
+  border-radius: 4px;
+  overflow: hidden;
+  max-width: 260px;
+  white-space: normal;
+  box-shadow: 2px 3px 10px rgba(26,20,16,0.1);
+  position: relative;
+}
+
+.xhs-scroll .xhs-img-wrap {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.xhs-scroll .xhs-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: sepia(0.3) contrast(0.9) brightness(1.05);
+}
+
+.xhs-scroll .xhs-img-title {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  color: #1a1410;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(244,237,224,0.8);
+  line-height: 1.3;
+}
+
+.xhs-scroll .xhs-body {
+  padding: 10px 12px;
+}
+
+.xhs-scroll .xhs-desc {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #3a3530;
+  margin-bottom: 8px;
+}
+
+.xhs-scroll .xhs-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px 10px;
+  border-top: 1px solid rgba(26,20,16,0.06);
+}
+
+.xhs-scroll .xhs-handle {
+  font-size: 0.72rem;
+  color: #cc3333;
+  font-weight: 600;
+}
+
+/* Seal avatar in XHS footer */
+.xhs-scroll .xhs-avatar-seal {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #cc3333;
+  background: rgba(204,51,51,0.06);
+  transform: rotate(2deg);
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.xhs-scroll .xhs-likes {
+  font-size: 0.72rem;
+  color: #8c8578;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Ink brush heart mark */
+.xhs-scroll .xhs-heart {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(ellipse 5px 6px at 3px 4px, rgba(26,20,16,0.6) 0%, transparent 100%),
+              radial-gradient(ellipse 5px 6px at 7px 4px, rgba(26,20,16,0.6) 0%, transparent 100%),
+              radial-gradient(ellipse 4px 5px at 5px 7px, rgba(26,20,16,0.5) 0%, transparent 100%);
+}
+
+/* --- Sepia-filtered images (standalone) --- */
+
+.ink-photo {
+  width: 200px;
+  border: 1px solid rgba(26,20,16,0.12);
+  box-shadow: 2px 2px 6px rgba(26,20,16,0.08);
+  filter: sepia(0.3) contrast(0.9) brightness(1.05);
+  display: block;
+}
+
+.ink-photo.wide {
+  width: 240px;
+}
+
+/* --- Title Section --- */
+
+.title-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.title-block h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #1a1410;
+  line-height: 1.1;
+}
+
+.title-block .title-en {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #5a5348;
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+}
+
+.title-block .title-seal {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #cc3333;
+  background: rgba(204,51,51,0.06);
+  transform: rotate(5deg);
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #cc3333;
+  font-weight: 700;
+}
+
+.back-link {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.72rem;
+  color: #8c8578;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #5a5348;
+}
+
+/* --- Layout helpers for placing notes/cards within sections --- */
+
+.placed {
+  position: absolute;
+}
+
+/* --- Closing Section --- */
+
+.closing-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.closing-block .poetry {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #2a2420;
+  margin-bottom: 20px;
+  max-width: 280px;
+}
+
+.closing-block .poetry p {
+  margin-bottom: 4px;
+}
+
+.closing-seals {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.closing-seals .seal-lg {
+  width: 32px;
+  height: 32px;
+  border: 2.5px solid #cc3333;
+  background: rgba(204,51,51,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #cc3333;
+  font-weight: 700;
+}
+
+.closing-seals .seal-lg:nth-child(2) { transform: rotate(4deg); }
+.closing-seals .seal-lg:nth-child(3) { transform: rotate(-2deg); }
+
+.credits {
+  font-size: 0.65rem;
+  line-height: 1.6;
+  color: #8c8578;
+  max-width: 320px;
+}
+
+.credits a {
+  color: #8c8578;
+  text-decoration: underline;
+}
+
+.credits a:hover {
+  color: #5a5348;
+}
+
+.version-label {
+  font-size: 0.6rem;
+  color: #b0a99a;
+  margin-top: 12px;
+}
+
+/* --- Food/Tips cluster --- */
+
+.notes-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 20px 10px;
+}
+
+/* --- Responsive: Vertical scroll on mobile --- */
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: auto;
+    overflow-y: auto;
+    height: auto;
+  }
+
+  .scroll-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-size: 100% 9000px;
+    background-image:
+      linear-gradient(180deg, transparent 78%, rgba(180,195,210,0.06) 84%, rgba(180,195,210,0.10) 90%, rgba(180,195,210,0.04) 95%, transparent 100%),
+      radial-gradient(ellipse 80% 120px at 50% 1200px, rgba(140,133,120,0.10) 0%, transparent 70%),
+      radial-gradient(ellipse 70% 200px at 50% 2200px, rgba(120,113,100,0.13) 0%, transparent 65%),
+      radial-gradient(ellipse 60% 250px at 50% 3500px, rgba(80,73,60,0.16) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 200px at 50% 4500px, rgba(55,48,38,0.18) 0%, transparent 65%),
+      radial-gradient(ellipse 65% 180px at 50% 5500px, rgba(145,138,125,0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 75% 150px at 50% 6500px, rgba(135,128,115,0.10) 0%, transparent 65%);
+  }
+
+  .roller {
+    width: 100%;
+    min-width: 100%;
+    height: 30px;
+    background: linear-gradient(180deg, #5a4530, #3a2e20, #5a4530);
+    border-left: none;
+    border-right: none;
+    border-top: 2px solid #b8963e;
+    border-bottom: 2px solid #b8963e;
+  }
+
+  .roller::before, .roller::after {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 40px;
+  }
+
+  .roller::before { left: 10px; top: 50%; transform: translateY(-50%); }
+  .roller::after { right: 10px; left: auto; bottom: auto; top: 50%; transform: translateY(-50%); }
+
+  .scroll-section {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: auto;
+    min-height: auto;
+    padding: 40px 20px;
+  }
+
+  .section-mist {
+    min-height: 100px;
+  }
+
+  .placed {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin-bottom: 16px;
+  }
+
+  .scroll-note, .xhs-scroll, .ink-photo {
+    max-width: 100%;
+  }
+
+  .ink-photo, .ink-photo.wide {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .title-block h1 {
+    font-size: 3.5rem;
+  }
+
+  .notes-cluster {
+    flex-direction: column;
+  }
+
+  .scroll-note.small {
+    max-width: 100%;
+  }
+}
