@@ -11,18 +11,18 @@ body {
   background-color: #f5f3f0;
   background-image:
     /* Large oval color splats -- like a paint fight wall */
-    radial-gradient(ellipse 600px 400px at 5% 15%, rgba(255,107,107,0.12) 0%, transparent 70%),
-    radial-gradient(ellipse 500px 350px at 85% 8%, rgba(78,205,196,0.10) 0%, transparent 70%),
-    radial-gradient(ellipse 700px 500px at 45% 35%, rgba(255,230,109,0.08) 0%, transparent 65%),
-    radial-gradient(ellipse 550px 400px at 15% 60%, rgba(91,164,217,0.10) 0%, transparent 70%),
-    radial-gradient(ellipse 600px 450px at 75% 55%, rgba(155,126,232,0.08) 0%, transparent 65%),
-    radial-gradient(ellipse 500px 350px at 50% 80%, rgba(255,107,107,0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 650px 400px at 90% 85%, rgba(85,239,196,0.09) 0%, transparent 65%),
-    radial-gradient(ellipse 450px 300px at 25% 90%, rgba(255,165,107,0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 800px 500px at 60% 10%, rgba(78,205,196,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 500px 400px at 35% 50%, rgba(162,155,254,0.06) 0%, transparent 65%),
-    radial-gradient(ellipse 600px 350px at 70% 35%, rgba(255,190,118,0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 450px 350px at 10% 40%, rgba(85,239,196,0.06) 0%, transparent 65%);
+    radial-gradient(ellipse 600px 400px at 5% 15%, rgba(255,107,107,0.28) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 350px at 85% 8%, rgba(78,205,196,0.24) 0%, transparent 70%),
+    radial-gradient(ellipse 700px 500px at 45% 35%, rgba(255,230,109,0.20) 0%, transparent 65%),
+    radial-gradient(ellipse 550px 400px at 15% 60%, rgba(91,164,217,0.24) 0%, transparent 70%),
+    radial-gradient(ellipse 600px 450px at 75% 55%, rgba(155,126,232,0.20) 0%, transparent 65%),
+    radial-gradient(ellipse 500px 350px at 50% 80%, rgba(255,107,107,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 650px 400px at 90% 85%, rgba(85,239,196,0.22) 0%, transparent 65%),
+    radial-gradient(ellipse 450px 300px at 25% 90%, rgba(255,165,107,0.20) 0%, transparent 70%),
+    radial-gradient(ellipse 800px 500px at 60% 10%, rgba(78,205,196,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 400px at 35% 50%, rgba(162,155,254,0.16) 0%, transparent 65%),
+    radial-gradient(ellipse 600px 350px at 70% 35%, rgba(255,190,118,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 450px 350px at 10% 40%, rgba(85,239,196,0.16) 0%, transparent 65%);
   background-attachment: fixed;
   min-height: 100vh;
   color: #333;
