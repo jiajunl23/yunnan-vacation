@@ -404,37 +404,39 @@ body {
 .m18-p2 { transform: rotate(-2deg); }
 .m18-p2::after { background: linear-gradient(135deg, #8a9aaa, #6a7a8a); }
 
-/* === v20 Sticky + Social Hybrid Mini === */
+/* === v20 Social Sticker Board Mini === */
 .mini--v20 {
-  background-color: #c4a265;
-  background-image: radial-gradient(ellipse at 30% 40%, rgba(0,0,0,0.05) 0%, transparent 50%), radial-gradient(ellipse at 70% 60%, rgba(0,0,0,0.04) 0%, transparent 40%);
-  padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 6px;
+  background-color: #f5f3f0;
+  background-image:
+    radial-gradient(ellipse 120px 80px at 10% 20%, rgba(255,107,107,0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 100px 70px at 80% 15%, rgba(78,205,196,0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 130px 90px at 50% 60%, rgba(255,230,109,0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 110px 80px at 20% 80%, rgba(91,164,217,0.20) 0%, transparent 70%),
+    radial-gradient(ellipse 100px 70px at 75% 75%, rgba(155,126,232,0.16) 0%, transparent 65%);
+  padding: 8px;
+  columns: 3;
+  column-gap: 6px;
   min-height: 280px;
-  align-content: start;
 }
-.m20-note { padding: 6px 8px; border-radius: 1px; position: relative; box-shadow: 2px 2px 6px rgba(0,0,0,0.2); }
-.m20-n1 { background: #fff9a8; transform: rotate(-2deg); grid-column: span 2; }
-.m20-n2 { background: #ffb3ba; transform: rotate(1.5deg); }
-.m20-n3 { background: #baffc9; transform: rotate(-1deg); }
-.m20-pin { display: block; width: 8px; height: 8px; border-radius: 50%; background: #cc3333; box-shadow: 0 1px 2px rgba(0,0,0,0.3); margin: 0 auto 3px; }
-.m20-title { display: block; font-family: system-ui, sans-serif; font-size: 0.4rem; font-weight: 700; color: #333; text-align: center; margin-bottom: 2px; }
-.m20-line { display: block; height: 2px; background: rgba(0,0,0,0.18); margin-bottom: 2px; border-radius: 1px; }
-.m20-short { width: 60%; }
-.m20-social { background: #fff; border-radius: 6px; overflow: hidden; position: relative; box-shadow: 2px 2px 8px rgba(0,0,0,0.15); transform: rotate(1deg); }
-.m20-s2 { transform: rotate(-1.5deg); grid-column: span 2; }
-.m20-accent { height: 3px; background: linear-gradient(90deg, #ff6b6b, #ffe66d); }
-.m20-accent--teal { background: linear-gradient(90deg, #4ecdc4, #2c3e50); }
-.m20-simg { height: 35px; background: linear-gradient(135deg, #ff6b6b, #ffe66d); }
-.m20-sbody { padding: 4px 6px; }
-.m20-sbody .mini-text { color: rgba(0,0,0,0.35); margin-top: 2px; }
-.m20-pill { display: inline-block; font-family: system-ui, sans-serif; font-size: 0.3rem; font-weight: 700; background: #ff6b6b; color: #fff; padding: 1px 5px; border-radius: 8px; margin-bottom: 2px; text-transform: uppercase; }
-.m20-pill--teal { background: #4ecdc4; }
-.m20-photo { background: #fff; padding: 3px; box-shadow: 2px 2px 6px rgba(0,0,0,0.25); transform: rotate(-2deg); position: relative; }
-.m20-photo::after { content: ""; display: block; height: 36px; background: linear-gradient(135deg, #8aaa8a, #6a8a6a); }
-.m20-note .mini-text { color: rgba(0,0,0,0.4); }
+.m20-post { break-inside: avoid; background: #fff; border-radius: 5px; overflow: hidden; margin-bottom: 6px; position: relative; box-shadow: 0 2px 4px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.06); }
+.m20-post::before { content: ""; position: absolute; top: -5px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; border-radius: 50%; background: radial-gradient(circle at 3px 3px, #e85050, #cc3333 60%, #991111); box-shadow: 0 1px 2px rgba(0,0,0,0.3); z-index: 5; }
+.m20-post1 { transform: rotate(-1.5deg); }
+.m20-post2 { transform: rotate(2deg); }
+.m20-post2::before { background: radial-gradient(circle at 3px 3px, #5bc0de, #3aa8cc 60%, #2288aa); }
+.m20-post3 { transform: rotate(-0.8deg); }
+.m20-post3::before { background: radial-gradient(circle at 3px 3px, #6dd66d, #44bb44 60%, #228822); }
+.m20-post4 { transform: rotate(1.5deg); }
+.m20-post4::before { background: radial-gradient(circle at 3px 3px, #f0ad4e, #dd9933 60%, #bb7711); }
+.m20-pimg { height: 40px; background: linear-gradient(135deg, #8aaa8a, #6a8a6a); }
+.m20-pimg2 { background: linear-gradient(135deg, #8aa0b0, #6a8090); }
+.m20-pimg3 { background: linear-gradient(135deg, #a09080, #806858); }
+.m20-pimg4 { background: linear-gradient(135deg, #7a9a7a, #5a7a5a); }
+.m20-post .mini-text { padding: 3px 5px; font-size: 0.25rem; }
+.m20-sticker { break-inside: avoid; padding: 6px 8px; margin-bottom: 6px; border-radius: 2px; font-size: 0.3rem; font-weight: 700; color: #333; position: relative; box-shadow: 1px 2px 5px rgba(0,0,0,0.12); }
+.m20-sticker::before { content: ""; position: absolute; top: -4px; left: 50%; transform: translateX(-50%); width: 7px; height: 7px; border-radius: 50%; background: radial-gradient(circle at 3px 3px, #f0ad4e, #dd9933 60%, #bb7711); box-shadow: 0 1px 2px rgba(0,0,0,0.25); z-index: 5; }
+.m20-st-yellow { background: #fff9a8; transform: rotate(-3deg); }
+.m20-st-pink { background: #ffb3ba; transform: rotate(4deg); }
+.m20-st-blue { background: #b3d9ff; transform: rotate(-2deg); }
 
 /* === v19 Comic Book Mini === */
 .mini--v19 { background: #fff; min-height: 280px; display: flex; flex-direction: column; border: 3px solid #111; }
