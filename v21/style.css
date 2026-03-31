@@ -222,16 +222,31 @@ html, body {
   white-space: normal;
 }
 
-.section-title   { width: 600px; }
-.section-kunming { width: 900px; }
-.section-mist    { width: 400px; }
-.section-dali    { width: 1000px; }
-.section-lijiang { width: 1000px; }
-.section-gorge   { width: 800px; }
-.section-shangrila { width: 900px; }
-.section-yuanyang  { width: 900px; }
-.section-food      { width: 800px; }
-.section-closing   { width: 600px; }
+.section-title   { width: 40vw; min-width: 320px; }
+.section-kunming { width: 600px; }
+.section-mist    { display: none; }
+.section-dali    { width: 700px; }
+.section-lijiang { width: 700px; }
+.section-gorge   { width: 550px; }
+.section-shangrila { width: 600px; }
+.section-yuanyang  { width: 600px; }
+.section-food      { width: 550px; }
+.section-closing   { width: 400px; }
+
+/* --- Scroll Hint --- */
+.scroll-hint {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: Georgia, serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #8c8578;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  writing-mode: vertical-rl;
+}
 
 /* --- Rice Paper Sticky Notes --- */
 
