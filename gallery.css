@@ -388,6 +388,29 @@ body {
 .m19-speech::after { content: ""; position: absolute; bottom: -5px; left: 10px; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #ffecd2; filter: drop-shadow(0 1px 0 #111); }
 .m19-action { font-family: system-ui, sans-serif; font-size: 0.9rem; font-weight: 900; color: #e23636; text-shadow: 1px 1px 0 #111, -1px -1px 0 #111, 1px -1px 0 #111, -1px 1px 0 #111; transform: rotate(-8deg); text-transform: uppercase; }
 
+/* === v22 BBC x Shanshui Fusion Mini === */
+.mini--v22 { background: #1c1c1c; display: flex; flex-direction: column; min-height: 280px; overflow: hidden; }
+.m22-title-card { flex: 0 0 auto; padding: 14px 10px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  background-image: radial-gradient(ellipse 80px 60px at 30% 70%, rgba(200,195,185,0.05) 0%, transparent 70%), radial-gradient(ellipse 60px 50px at 70% 65%, rgba(200,195,185,0.04) 0%, transparent 70%);
+}
+.m22-thin { font-family: system-ui, sans-serif; font-size: 0.28rem; font-weight: 200; letter-spacing: 0.35em; color: #6b6b6b; text-transform: uppercase; }
+.m22-cn { font-size: 0.5rem; color: rgba(200,195,185,0.3); letter-spacing: 0.1em; }
+.m22-redline { width: 20px; height: 1.5px; background: #cc3333; }
+.m22-main { font-family: system-ui, sans-serif; font-size: 1rem; font-weight: 200; letter-spacing: 0.4em; color: #f5f0e8; text-transform: uppercase; }
+.m22-pano { height: 45px; background: linear-gradient(90deg, #1c1c1c, #4a4a4a 15%, #5a5a5a 50%, #4a4a4a 85%, #1c1c1c); }
+.m22-light { background: #f4ede0; padding: 8px 12px; display: flex; gap: 8px; align-items: center;
+  background-image: radial-gradient(ellipse 50px 40px at 40% 60%, rgba(140,133,120,0.06) 0%, transparent 70%);
+}
+.m22-prose { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.m22-prose span { display: block; height: 2px; background: rgba(26,20,16,0.12); border-radius: 1px; }
+.m22-prose span:last-child { width: 65%; }
+.m22-note { background: rgba(244,237,224,0.88); border: 1px solid rgba(26,20,16,0.12); padding: 4px; transform: rotate(-1deg); flex-shrink: 0; }
+.m22-note span { display: block; width: 30px; height: 2px; background: rgba(26,20,16,0.1); }
+.m22-chapter { background: #1c1c1c; padding: 10px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 3px;
+  background-image: radial-gradient(ellipse 70px 50px at 50% 60%, rgba(200,195,185,0.06) 0%, transparent 70%);
+}
+.m22-ch { font-family: system-ui, sans-serif; font-size: 0.3rem; font-weight: 200; letter-spacing: 0.3em; color: #6b6b6b; text-transform: uppercase; }
+
 /* === v21 Shanshui Scroll Hybrid Mini === */
 .mini--v21 {
   background: #f4ede0;

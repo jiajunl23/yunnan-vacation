@@ -1,0 +1,956 @@
+/* ============================================ */
+/* V22: BBC Documentary x Shanshui Scroll Fusion */
+/* ============================================ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #1c1c1c;
+  color: #f5f0e8;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* ============================================ */
+/* UTILITY */
+/* ============================================ */
+
+.vermilion-line {
+  width: 40px;
+  height: 2px;
+  background: #cc3333;
+  margin: 1rem auto;
+}
+
+/* ============================================ */
+/* BACK LINK */
+/* ============================================ */
+
+.back-link {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.back-link:hover {
+  color: #f5f0e8;
+}
+
+/* ============================================ */
+/* DARK SECTIONS (base) */
+/* ============================================ */
+
+.dark-section {
+  background-color: #1c1c1c;
+  color: #f5f0e8;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================ */
+/* OPENING TITLE CARD */
+/* ============================================ */
+
+.opening-title {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.opening-content {
+  position: relative;
+  z-index: 2;
+}
+
+.journey-label {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 200;
+  font-size: 0.85rem;
+  letter-spacing: 0.4em;
+  color: #6b6b6b;
+  margin-bottom: 1rem;
+}
+
+.chinese-deco {
+  font-family: 'Songti SC', 'Noto Serif CJK SC', serif;
+  font-size: 1.5rem;
+  color: rgba(200,195,185,0.3);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.main-title {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 200;
+  font-size: 5rem;
+  letter-spacing: 0.5em;
+  color: #f5f0e8;
+  margin: 0;
+  padding-right: -0.5em;
+}
+
+.subtitle {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1rem;
+  color: rgba(200,195,185,0.5);
+  max-width: 480px;
+  margin: 1rem auto 0;
+  line-height: 1.8;
+}
+
+/* ============================================ */
+/* CHAPTER CARDS */
+/* ============================================ */
+
+.chapter-card {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.chapter-label {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  color: #cc3333;
+  margin-bottom: 1rem;
+}
+
+.chapter-chinese {
+  font-family: 'Songti SC', 'Noto Serif CJK SC', serif;
+  font-size: 1.2rem;
+  color: rgba(200,195,185,0.4);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.chapter-name {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 200;
+  font-size: 3rem;
+  letter-spacing: 0.3em;
+  color: #f5f0e8;
+  margin: 0;
+}
+
+.chapter-subtitle {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.95rem;
+  color: rgba(200,195,185,0.45);
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+/* ============================================ */
+/* INVERTED SHANSHUI: Opening */
+/* ============================================ */
+
+.dark-ink-opening::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 600px 200px at 10% 80%, rgba(200,195,185,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 800px 150px at 85% 75%, rgba(200,195,185,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 400px 300px at 50% 90%, rgba(200,195,185,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 700px 100px at 30% 85%, rgba(220,215,210,0.05) 0%, transparent 65%),
+    radial-gradient(ellipse 500px 180px at 70% 88%, rgba(200,195,185,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 300px 400px at 20% 70%, rgba(220,215,210,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse 600px 80px at 60% 82%, rgba(200,195,185,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 450px 250px at 40% 78%, rgba(220,215,210,0.03) 0%, transparent 55%),
+    radial-gradient(ellipse 350px 120px at 75% 70%, rgba(200,195,185,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 500px 60px at 50% 95%, rgba(220,215,210,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ============================================ */
+/* INVERTED SHANSHUI: Chapters 1-2 (SUBTLE) */
+/* ============================================ */
+
+.dark-ink-ch1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 500px 180px at 15% 75%, rgba(200,195,185,0.05) 0%, transparent 65%),
+    radial-gradient(ellipse 700px 120px at 80% 80%, rgba(200,195,185,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 400px 250px at 50% 85%, rgba(200,195,185,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse 600px 90px at 35% 78%, rgba(220,215,210,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 350px 200px at 65% 82%, rgba(200,195,185,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 300px 300px at 25% 88%, rgba(220,215,210,0.03) 0%, transparent 45%),
+    radial-gradient(ellipse 550px 70px at 55% 72%, rgba(200,195,185,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 450px 160px at 45% 90%, rgba(220,215,210,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse 380px 130px at 70% 68%, rgba(200,195,185,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 500px 50px at 40% 95%, rgba(220,215,210,0.05) 0%, transparent 65%),
+    radial-gradient(ellipse 250px 180px at 90% 70%, rgba(200,195,185,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse 420px 100px at 20% 65%, rgba(220,215,210,0.04) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.dark-ink-ch2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 600px 200px at 20% 70%, rgba(200,195,185,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 150px at 75% 78%, rgba(200,195,185,0.06) 0%, transparent 65%),
+    radial-gradient(ellipse 700px 100px at 45% 85%, rgba(220,215,210,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 400px 280px at 60% 75%, rgba(200,195,185,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 350px 180px at 30% 82%, rgba(220,215,210,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 550px 80px at 50% 90%, rgba(200,195,185,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse 300px 220px at 85% 68%, rgba(220,215,210,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 480px 130px at 15% 88%, rgba(200,195,185,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 420px 170px at 40% 72%, rgba(220,215,210,0.03) 0%, transparent 45%),
+    radial-gradient(ellipse 600px 60px at 55% 95%, rgba(200,195,185,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 380px 140px at 70% 65%, rgba(220,215,210,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 250px 200px at 10% 60%, rgba(200,195,185,0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ============================================ */
+/* INVERTED SHANSHUI: Chapters 3-4 (BOLD/DRAMATIC) */
+/* ============================================ */
+
+.dark-ink-ch3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 700px 250px at 10% 70%, rgba(200,195,185,0.14) 0%, transparent 65%),
+    radial-gradient(ellipse 800px 180px at 85% 75%, rgba(200,195,185,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 350px at 50% 85%, rgba(200,195,185,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 600px 120px at 30% 80%, rgba(220,215,210,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 450px 220px at 70% 88%, rgba(200,195,185,0.11) 0%, transparent 55%),
+    radial-gradient(ellipse 350px 400px at 20% 65%, rgba(220,215,210,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 700px 100px at 60% 78%, rgba(200,195,185,0.13) 0%, transparent 60%),
+    radial-gradient(ellipse 550px 280px at 40% 72%, rgba(220,215,210,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 400px 160px at 75% 65%, rgba(200,195,185,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 600px 80px at 50% 92%, rgba(220,215,210,0.14) 0%, transparent 65%),
+    radial-gradient(ellipse 300px 200px at 90% 82%, rgba(200,195,185,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 500px 140px at 15% 58%, rgba(220,215,210,0.11) 0%, transparent 55%),
+    radial-gradient(ellipse 650px 90px at 45% 68%, rgba(200,195,185,0.13) 0%, transparent 60%),
+    radial-gradient(ellipse 380px 300px at 55% 60%, rgba(220,215,210,0.10) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.dark-ink-ch4::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 800px 300px at 5% 65%, rgba(200,195,185,0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 700px 200px at 90% 70%, rgba(200,195,185,0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 400px at 50% 80%, rgba(200,195,185,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 750px 150px at 25% 75%, rgba(220,215,210,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 260px at 75% 85%, rgba(200,195,185,0.13) 0%, transparent 55%),
+    radial-gradient(ellipse 400px 450px at 15% 60%, rgba(220,215,210,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 800px 120px at 55% 72%, rgba(200,195,185,0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 320px at 35% 68%, rgba(220,215,210,0.13) 0%, transparent 55%),
+    radial-gradient(ellipse 450px 190px at 80% 58%, rgba(200,195,185,0.14) 0%, transparent 50%),
+    radial-gradient(ellipse 700px 100px at 45% 90%, rgba(220,215,210,0.17) 0%, transparent 65%),
+    radial-gradient(ellipse 350px 250px at 95% 78%, rgba(200,195,185,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 550px 170px at 10% 52%, rgba(220,215,210,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 700px 110px at 40% 62%, rgba(200,195,185,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 420px 350px at 60% 55%, rgba(220,215,210,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 300px 180px at 30% 50%, rgba(200,195,185,0.10) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+/* ============================================ */
+/* INVERTED SHANSHUI: Chapters 5-6 (FADING) */
+/* ============================================ */
+
+.dark-ink-ch5::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 600px 200px at 15% 72%, rgba(200,195,185,0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 700px 150px at 80% 78%, rgba(200,195,185,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 450px 300px at 50% 84%, rgba(200,195,185,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 550px 100px at 35% 76%, rgba(220,215,210,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 400px 200px at 65% 86%, rgba(200,195,185,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 300px 350px at 22% 62%, rgba(220,215,210,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 650px 90px at 58% 70%, rgba(200,195,185,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 500px 240px at 42% 80%, rgba(220,215,210,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 380px 150px at 72% 66%, rgba(200,195,185,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 550px 70px at 48% 92%, rgba(220,215,210,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 280px 190px at 88% 74%, rgba(200,195,185,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 460px 120px at 18% 56%, rgba(220,215,210,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.dark-ink-ch6::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 550px 180px at 18% 74%, rgba(200,195,185,0.06) 0%, transparent 65%),
+    radial-gradient(ellipse 650px 140px at 82% 76%, rgba(200,195,185,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 280px at 48% 82%, rgba(200,195,185,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 600px 110px at 32% 78%, rgba(220,215,210,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 380px 220px at 68% 84%, rgba(200,195,185,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 320px 320px at 25% 64%, rgba(220,215,210,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 600px 80px at 55% 72%, rgba(200,195,185,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 480px 200px at 45% 88%, rgba(220,215,210,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 350px 140px at 74% 68%, rgba(200,195,185,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 500px 65px at 50% 94%, rgba(220,215,210,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 300px 170px at 85% 72%, rgba(200,195,185,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 440px 110px at 12% 58%, rgba(220,215,210,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ============================================ */
+/* INVERTED SHANSHUI: Food + Closing */
+/* ============================================ */
+
+.dark-ink-food::before,
+.dark-ink-food-body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 500px 160px at 12% 78%, rgba(200,195,185,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 130px at 85% 72%, rgba(200,195,185,0.05) 0%, transparent 55%),
+    radial-gradient(ellipse 400px 240px at 48% 86%, rgba(200,195,185,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 550px 90px at 35% 80%, rgba(220,215,210,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 350px 200px at 70% 82%, rgba(200,195,185,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 280px 280px at 20% 66%, rgba(220,215,210,0.04) 0%, transparent 45%),
+    radial-gradient(ellipse 600px 70px at 58% 90%, rgba(200,195,185,0.05) 0%, transparent 55%),
+    radial-gradient(ellipse 450px 180px at 42% 74%, rgba(220,215,210,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 380px 120px at 76% 64%, rgba(200,195,185,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 500px 55px at 50% 94%, rgba(220,215,210,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.dark-ink-closing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 700px 220px at 10% 80%, rgba(200,195,185,0.08) 0%, transparent 65%),
+    radial-gradient(ellipse 600px 160px at 88% 74%, rgba(200,195,185,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 300px at 50% 88%, rgba(200,195,185,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 650px 100px at 30% 82%, rgba(220,215,210,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 400px 240px at 72% 78%, rgba(200,195,185,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 350px 350px at 20% 68%, rgba(220,215,210,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 600px 80px at 60% 70%, rgba(200,195,185,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 480px 200px at 40% 76%, rgba(220,215,210,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 380px 150px at 78% 66%, rgba(200,195,185,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 550px 70px at 45% 94%, rgba(220,215,210,0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ============================================ */
+/* PANORAMA SECTIONS */
+/* ============================================ */
+
+.panorama-container {
+  position: relative;
+  height: 80vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: #1c1c1c;
+}
+
+.panorama-wrapper {
+  width: 180vw;
+  height: 80vh;
+  position: relative;
+}
+
+.panorama-wrapper.panorama-wide {
+  width: 200vw;
+}
+
+.panorama-wrapper.panorama-widest {
+  width: 240vw;
+}
+
+.panorama-wrapper img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* Ink wash bleeding edges */
+.panorama-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(to right, #1c1c1c 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.panorama-container::after {
+  content: '';
+  position: sticky;
+  top: 0;
+  right: 0;
+  float: right;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(to left, #1c1c1c 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Make ::after sticky to viewport right edge during scroll */
+.panorama-container::after {
+  position: sticky;
+  right: 0;
+  margin-top: -80vh;
+  display: block;
+}
+
+/* ============================================ */
+/* Scrollbar styling for panoramas */
+/* ============================================ */
+
+.panorama-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+.panorama-container::-webkit-scrollbar-track {
+  background: #1c1c1c;
+}
+
+.panorama-container::-webkit-scrollbar-thumb {
+  background: rgba(200,195,185,0.2);
+  border-radius: 2px;
+}
+
+.panorama-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(200,195,185,0.4);
+}
+
+/* ============================================ */
+/* LIGHT SECTIONS (Rice Paper) */
+/* ============================================ */
+
+.light-section {
+  background-color: #f4ede0;
+  color: #1a1410;
+  padding: 5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Faint dark ink wash on light sections */
+.light-ink-kunming::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 500px 180px at 10% 20%, rgba(26,20,16,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 120px at 85% 30%, rgba(26,20,16,0.03) 0%, transparent 55%),
+    radial-gradient(ellipse 400px 250px at 50% 80%, rgba(26,20,16,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 550px 80px at 30% 60%, rgba(26,20,16,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 350px 200px at 70% 70%, rgba(26,20,16,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse 450px 100px at 40% 90%, rgba(26,20,16,0.05) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.light-ink-dali::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 600px 200px at 15% 25%, rgba(26,20,16,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 150px at 80% 35%, rgba(26,20,16,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 450px 280px at 45% 75%, rgba(26,20,16,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 600px 90px at 35% 55%, rgba(26,20,16,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 380px 180px at 75% 65%, rgba(26,20,16,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 500px 110px at 50% 85%, rgba(26,20,16,0.04) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.light-ink-lijiang::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 550px 190px at 12% 22%, rgba(26,20,16,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 650px 140px at 82% 32%, rgba(26,20,16,0.05) 0%, transparent 55%),
+    radial-gradient(ellipse 480px 300px at 48% 78%, rgba(26,20,16,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 580px 95px at 32% 58%, rgba(26,20,16,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 400px 200px at 72% 68%, rgba(26,20,16,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 520px 100px at 42% 88%, rgba(26,20,16,0.05) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.light-ink-gorge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 600px 220px at 8% 18%, rgba(26,20,16,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 700px 160px at 88% 28%, rgba(26,20,16,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 500px 320px at 52% 82%, rgba(26,20,16,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 620px 100px at 28% 52%, rgba(26,20,16,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 420px 220px at 68% 72%, rgba(26,20,16,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 540px 110px at 38% 92%, rgba(26,20,16,0.06) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.light-ink-shangrila::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 520px 170px at 14% 24%, rgba(26,20,16,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 580px 130px at 84% 34%, rgba(26,20,16,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 440px 260px at 46% 76%, rgba(26,20,16,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 560px 85px at 34% 56%, rgba(26,20,16,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 370px 190px at 74% 66%, rgba(26,20,16,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 490px 100px at 44% 86%, rgba(26,20,16,0.04) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.light-ink-yuanyang::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 540px 175px at 11% 21%, rgba(26,20,16,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 610px 135px at 86% 31%, rgba(26,20,16,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 460px 270px at 47% 77%, rgba(26,20,16,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 570px 88px at 33% 57%, rgba(26,20,16,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 385px 195px at 73% 67%, rgba(26,20,16,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 505px 105px at 43% 87%, rgba(26,20,16,0.05) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+/* ============================================ */
+/* PROSE COLUMNS */
+/* ============================================ */
+
+.prose-column {
+  max-width: 640px;
+  margin: 0 auto;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  line-height: 2.0;
+  position: relative;
+  z-index: 1;
+}
+
+.prose-column p {
+  margin-bottom: 1.5rem;
+}
+
+.prose-light {
+  color: #f5f0e8;
+}
+
+.prose-light p {
+  color: rgba(245,240,232,0.9);
+}
+
+.pull-quote {
+  font-size: 26px;
+  text-align: center;
+  line-height: 1.8;
+  margin: 2.5rem auto;
+  max-width: 560px;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.prose-light .pull-quote {
+  color: rgba(245,240,232,0.8);
+}
+
+/* ============================================ */
+/* LIGHT SECTION IMAGES */
+/* ============================================ */
+
+.light-section-image {
+  max-width: 720px;
+  margin: 2.5rem auto;
+  position: relative;
+  z-index: 1;
+}
+
+.light-section-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: sepia(0.15) contrast(0.95);
+}
+
+.image-caption {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: rgba(26,20,16,0.5);
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+/* ============================================ */
+/* RICE PAPER NOTES */
+/* ============================================ */
+
+.rice-note {
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(244,237,224,0.88);
+  border: 1px solid rgba(26,20,16,0.15);
+  box-shadow: 0 2px 12px rgba(26,20,16,0.06);
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.rice-note.tilt-left {
+  transform: rotate(-1.5deg);
+}
+
+.rice-note.tilt-right {
+  transform: rotate(1.5deg);
+}
+
+.rice-note.tilt-slight {
+  transform: rotate(0.8deg);
+}
+
+.note-heading {
+  font-family: 'Songti SC', 'Noto Serif CJK SC', Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1410;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.rice-note p {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #1a1410;
+}
+
+.note-seal {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #cc3333;
+  color: #cc3333;
+  font-family: 'Songti SC', 'Noto Serif CJK SC', serif;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+}
+
+/* ============================================ */
+/* XHS CARDS */
+/* ============================================ */
+
+.xhs-card {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(244,237,224,0.92);
+  border: 1px solid rgba(26,20,16,0.12);
+  box-shadow: 0 2px 16px rgba(26,20,16,0.06);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.xhs-image-wrap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.xhs-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.3) contrast(0.9);
+}
+
+.xhs-body {
+  padding: 1rem;
+}
+
+.xhs-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1410;
+  margin-bottom: 0.35rem;
+}
+
+.xhs-handle {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.75rem;
+  color: #cc3333;
+  margin-bottom: 0.25rem;
+}
+
+.xhs-likes {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.7rem;
+  color: #6b6b6b;
+}
+
+/* ============================================ */
+/* FOOD SECTION */
+/* ============================================ */
+
+.food-section {
+  padding: 5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================ */
+/* CLOSING SECTION */
+/* ============================================ */
+
+.closing-section {
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.closing-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.poem {
+  margin: 2rem 0;
+}
+
+.poem p {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 2.0;
+  color: rgba(245,240,232,0.8);
+}
+
+/* Red seal stamps */
+.seal-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.red-seal {
+  width: 44px;
+  height: 44px;
+  border: 2px solid #cc3333;
+  color: #cc3333;
+  font-family: 'Songti SC', 'Noto Serif CJK SC', serif;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+/* End credits */
+.end-credits {
+  margin-top: 4rem;
+}
+
+.credits-heading {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 200;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  color: #6b6b6b;
+  margin-bottom: 1.5rem;
+}
+
+.end-credits p {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: rgba(245,240,232,0.4);
+  line-height: 1.8;
+}
+
+.production-credit {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(200,195,185,0.1);
+}
+
+.production-credit p {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: rgba(245,240,232,0.5);
+}
+
+.edition-label {
+  margin-top: 0.5rem;
+  font-size: 0.65rem;
+  color: rgba(245,240,232,0.3);
+  letter-spacing: 0.2em;
+}
+
+/* ============================================ */
+/* RESPONSIVE: MOBILE */
+/* ============================================ */
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  .chapter-name {
+    font-size: 1.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  .journey-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+  }
+
+  .panorama-container {
+    height: auto;
+    overflow-x: hidden;
+  }
+
+  .panorama-wrapper,
+  .panorama-wrapper.panorama-wide,
+  .panorama-wrapper.panorama-widest {
+    width: 100%;
+    height: auto;
+  }
+
+  .panorama-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .panorama-container::before {
+    width: 40px;
+  }
+
+  .panorama-container::after {
+    width: 40px;
+    margin-top: 0;
+  }
+
+  .light-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .prose-column {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .pull-quote {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    max-width: 320px;
+  }
+
+  .chapter-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .rice-note {
+    max-width: 280px;
+  }
+
+  .xhs-card {
+    max-width: 280px;
+  }
+
+  .food-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .closing-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .poem p {
+    font-size: 0.95rem;
+  }
+
+  .seal-row {
+    gap: 1rem;
+  }
+
+  .red-seal {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
