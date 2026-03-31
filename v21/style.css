@@ -45,90 +45,91 @@ html, body {
     radial-gradient(ellipse 300px 25px at 300px 50%, rgba(225,220,210,0.08) 0%, transparent 100%),
 
     /* === KUNMING HILLS (800-2000px): Low gentle hills === */
-    /* Hill 1 - very low, soft */
-    radial-gradient(ellipse 350px 180px at 900px 88%, rgba(150,143,130,0.10) 0%, rgba(150,143,130,0.05) 45%, transparent 75%),
+    /* Hill 1 - low, gentle brush stroke */
+    radial-gradient(ellipse 450px 220px at 900px 88%, rgba(130,120,105,0.18) 0%, rgba(130,120,105,0.08) 45%, transparent 75%),
     /* Hill 2 */
-    radial-gradient(ellipse 280px 150px at 1200px 90%, rgba(140,133,120,0.09) 0%, rgba(140,133,120,0.04) 50%, transparent 70%),
-    /* Hill 3 - slightly taller */
-    radial-gradient(ellipse 400px 220px at 1500px 87%, rgba(130,123,110,0.11) 0%, rgba(130,123,110,0.05) 40%, transparent 70%),
-    /* Hill 4 - background, very faint */
-    radial-gradient(ellipse 500px 200px at 1300px 83%, rgba(160,153,140,0.06) 0%, rgba(160,153,140,0.03) 40%, transparent 65%),
-    /* Tree clusters near Kunming hills */
-    radial-gradient(circle 7px at 920px 82%, rgba(60,50,40,0.10) 0%, transparent 100%),
-    radial-gradient(circle 5px at 940px 83%, rgba(60,50,40,0.08) 0%, transparent 100%),
-    radial-gradient(circle 9px at 1210px 84%, rgba(60,50,40,0.09) 0%, transparent 100%),
-    radial-gradient(circle 6px at 1230px 85%, rgba(60,50,40,0.08) 0%, transparent 100%),
-    /* Ink diffusion - Kunming area */
-    radial-gradient(circle 150px at 1100px 70%, rgba(100,90,80,0.04) 0%, transparent 100%),
+    radial-gradient(ellipse 380px 190px at 1200px 89%, rgba(120,110,95,0.16) 0%, rgba(120,110,95,0.07) 50%, transparent 70%),
+    /* Hill 3 - taller */
+    radial-gradient(ellipse 500px 280px at 1500px 85%, rgba(110,100,85,0.20) 0%, rgba(110,100,85,0.08) 40%, transparent 70%),
+    /* Hill 4 - background range */
+    radial-gradient(ellipse 650px 250px at 1300px 80%, rgba(145,138,125,0.10) 0%, rgba(145,138,125,0.05) 40%, transparent 65%),
+    /* Brush strokes - Kunming hillside foliage */
+    radial-gradient(ellipse 120px 25px at 920px 82%, rgba(50,42,32,0.14) 0%, transparent 100%),
+    radial-gradient(ellipse 90px 20px at 1050px 84%, rgba(50,42,32,0.12) 0%, transparent 100%),
+    radial-gradient(ellipse 150px 30px at 1250px 81%, rgba(55,45,35,0.13) 0%, transparent 100%),
+    /* Ink wash sweep - Kunming area */
+    radial-gradient(ellipse 500px 120px at 1100px 75%, rgba(100,90,80,0.08) 0%, transparent 100%),
 
     /* === DALI / ERHAI AREA (2000-3500px): Medium mountains, lake reflection === */
-    /* Mountain 1 - medium height */
-    radial-gradient(ellipse 350px 350px at 2200px 82%, rgba(130,123,110,0.14) 0%, rgba(130,123,110,0.07) 40%, transparent 70%),
+    /* Mountain 1 - medium height, bold */
+    radial-gradient(ellipse 450px 420px at 2200px 82%, rgba(110,100,85,0.22) 0%, rgba(110,100,85,0.10) 40%, transparent 70%),
     /* Mountain 2 - taller, darker (closer) */
-    radial-gradient(ellipse 300px 400px at 2600px 80%, rgba(110,103,90,0.16) 0%, rgba(110,103,90,0.08) 40%, transparent 70%),
-    /* Mountain 3 - background range */
-    radial-gradient(ellipse 600px 300px at 2400px 78%, rgba(155,148,135,0.08) 0%, rgba(155,148,135,0.04) 45%, transparent 70%),
+    radial-gradient(ellipse 400px 480px at 2600px 78%, rgba(90,80,65,0.25) 0%, rgba(90,80,65,0.12) 40%, transparent 70%),
+    /* Mountain 3 - background range, broad wash */
+    radial-gradient(ellipse 800px 350px at 2400px 75%, rgba(140,133,120,0.12) 0%, rgba(140,133,120,0.06) 45%, transparent 70%),
     /* Mountain 4 - medium */
-    radial-gradient(ellipse 280px 320px at 3000px 83%, rgba(120,113,100,0.13) 0%, rgba(120,113,100,0.06) 42%, transparent 68%),
-    /* Mountain 5 - far background, faint */
-    radial-gradient(ellipse 700px 250px at 2800px 72%, rgba(170,163,150,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 380px 380px at 3000px 82%, rgba(105,95,80,0.20) 0%, rgba(105,95,80,0.09) 42%, transparent 68%),
+    /* Mountain 5 - far background */
+    radial-gradient(ellipse 900px 300px at 2800px 70%, rgba(160,153,140,0.08) 0%, transparent 60%),
     /* Erhai lake reflection shimmer */
     radial-gradient(ellipse 800px 40px at 2600px 94%, rgba(170,185,200,0.10) 0%, transparent 100%),
     radial-gradient(ellipse 500px 25px at 2400px 96%, rgba(175,190,205,0.07) 0%, transparent 100%),
     /* Mist wisp across Dali mountains */
     radial-gradient(ellipse 600px 40px at 2500px 55%, rgba(225,220,210,0.12) 0%, transparent 100%),
     radial-gradient(ellipse 400px 30px at 3100px 48%, rgba(225,220,210,0.09) 0%, transparent 100%),
-    /* Tree clusters - Dali foothills */
-    radial-gradient(circle 8px at 2210px 78%, rgba(55,45,35,0.11) 0%, transparent 100%),
-    radial-gradient(circle 6px at 2240px 79%, rgba(55,45,35,0.09) 0%, transparent 100%),
-    radial-gradient(circle 10px at 2260px 77%, rgba(55,45,35,0.10) 0%, transparent 100%),
-    radial-gradient(circle 7px at 2610px 76%, rgba(55,45,35,0.10) 0%, transparent 100%),
-    radial-gradient(circle 5px at 2640px 78%, rgba(55,45,35,0.08) 0%, transparent 100%),
-    /* Ink diffusion - Dali */
-    radial-gradient(circle 200px at 2800px 65%, rgba(100,90,80,0.05) 0%, transparent 100%),
+    /* Brush strokes - Dali mountain foliage */
+    radial-gradient(ellipse 180px 35px at 2220px 77%, rgba(50,42,32,0.15) 0%, transparent 100%),
+    radial-gradient(ellipse 140px 28px at 2450px 79%, rgba(50,42,32,0.12) 0%, transparent 100%),
+    radial-gradient(ellipse 200px 40px at 2630px 76%, rgba(45,38,28,0.14) 0%, transparent 100%),
+    radial-gradient(ellipse 160px 32px at 2900px 78%, rgba(50,42,32,0.11) 0%, transparent 100%),
+    /* Ink wash sweep - Dali lakeside */
+    radial-gradient(ellipse 700px 150px at 2600px 70%, rgba(90,80,70,0.06) 0%, transparent 100%),
 
     /* === LIJIANG / JADE DRAGON (3500-5000px): Tall dramatic peaks === */
-    /* Jade Dragon main peak - tallest, darkest */
-    radial-gradient(ellipse 250px 520px at 4200px 72%, rgba(80,73,60,0.20) 0%, rgba(80,73,60,0.10) 35%, transparent 70%),
+    /* Jade Dragon main peak - tallest, boldest ink stroke */
+    radial-gradient(ellipse 350px 600px at 4200px 68%, rgba(60,52,40,0.30) 0%, rgba(60,52,40,0.14) 35%, transparent 70%),
     /* Jade Dragon secondary peak */
-    radial-gradient(ellipse 200px 450px at 4500px 75%, rgba(90,83,70,0.17) 0%, rgba(90,83,70,0.08) 38%, transparent 68%),
-    /* Flanking mountain left */
-    radial-gradient(ellipse 350px 380px at 3800px 80%, rgba(110,103,90,0.15) 0%, rgba(110,103,90,0.07) 40%, transparent 70%),
+    radial-gradient(ellipse 280px 530px at 4500px 72%, rgba(70,62,48,0.26) 0%, rgba(70,62,48,0.12) 38%, transparent 68%),
+    /* Flanking mountain left - bold */
+    radial-gradient(ellipse 450px 450px at 3800px 78%, rgba(90,80,65,0.22) 0%, rgba(90,80,65,0.10) 40%, transparent 70%),
     /* Flanking mountain right */
-    radial-gradient(ellipse 300px 400px at 4800px 78%, rgba(100,93,80,0.14) 0%, rgba(100,93,80,0.07) 42%, transparent 68%),
-    /* Background range - very distant */
-    radial-gradient(ellipse 800px 280px at 4300px 65%, rgba(170,163,150,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 400px 480px at 4800px 76%, rgba(85,75,60,0.20) 0%, rgba(85,75,60,0.10) 42%, transparent 68%),
+    /* Background range - broad ink wash */
+    radial-gradient(ellipse 1000px 350px at 4300px 62%, rgba(150,143,130,0.10) 0%, transparent 55%),
     /* Snow cap suggestion on Jade Dragon */
     radial-gradient(ellipse 80px 30px at 4200px 48%, rgba(240,238,232,0.15) 0%, transparent 100%),
     radial-gradient(ellipse 60px 25px at 4500px 52%, rgba(240,238,232,0.12) 0%, transparent 100%),
     /* Mist bands - Lijiang valley */
     radial-gradient(ellipse 500px 45px at 4000px 60%, rgba(220,215,205,0.14) 0%, transparent 100%),
     radial-gradient(ellipse 700px 35px at 4400px 50%, rgba(225,220,210,0.10) 0%, transparent 100%),
-    /* Tree clusters - Lijiang */
-    radial-gradient(circle 9px at 3810px 76%, rgba(50,42,32,0.12) 0%, transparent 100%),
-    radial-gradient(circle 7px at 3840px 77%, rgba(50,42,32,0.10) 0%, transparent 100%),
-    radial-gradient(circle 11px at 3870px 75%, rgba(50,42,32,0.11) 0%, transparent 100%),
-    radial-gradient(circle 6px at 4810px 74%, rgba(50,42,32,0.10) 0%, transparent 100%),
-    radial-gradient(circle 8px at 4840px 75%, rgba(50,42,32,0.09) 0%, transparent 100%),
-    /* Ink diffusion - dramatic */
-    radial-gradient(circle 250px at 4300px 58%, rgba(80,70,60,0.07) 0%, transparent 100%),
+    /* Brush strokes - Lijiang mountain forests, bold sweeping marks */
+    radial-gradient(ellipse 250px 45px at 3820px 75%, rgba(40,33,24,0.18) 0%, transparent 100%),
+    radial-gradient(ellipse 200px 38px at 4050px 73%, rgba(40,33,24,0.15) 0%, transparent 100%),
+    radial-gradient(ellipse 180px 35px at 4350px 76%, rgba(45,38,28,0.16) 0%, transparent 100%),
+    radial-gradient(ellipse 220px 42px at 4650px 74%, rgba(40,33,24,0.14) 0%, transparent 100%),
+    radial-gradient(ellipse 300px 50px at 4200px 68%, rgba(50,42,32,0.12) 0%, transparent 100%),
+    /* Ink wash sweep - dramatic mountain atmosphere */
+    radial-gradient(ellipse 800px 200px at 4300px 60%, rgba(70,60,50,0.09) 0%, transparent 100%),
 
     /* === TIGER LEAPING GORGE (5000-6000px): Deep dark gorge === */
-    /* Left gorge wall - very dark, steep */
-    radial-gradient(ellipse 200px 550px at 5200px 68%, rgba(55,48,38,0.22) 0%, rgba(55,48,38,0.10) 35%, transparent 70%),
+    /* Left gorge wall - very dark, steep, dramatic stroke */
+    radial-gradient(ellipse 280px 650px at 5200px 65%, rgba(40,34,25,0.32) 0%, rgba(40,34,25,0.14) 35%, transparent 70%),
     /* Right gorge wall */
-    radial-gradient(ellipse 180px 500px at 5600px 70%, rgba(60,52,42,0.20) 0%, rgba(60,52,42,0.09) 38%, transparent 68%),
-    /* Gorge depth shadow between walls */
-    radial-gradient(ellipse 250px 300px at 5400px 85%, rgba(40,35,28,0.15) 0%, rgba(40,35,28,0.06) 50%, transparent 80%),
+    radial-gradient(ellipse 250px 600px at 5600px 67%, rgba(45,38,28,0.28) 0%, rgba(45,38,28,0.12) 38%, transparent 68%),
+    /* Gorge depth shadow - bold ink wash */
+    radial-gradient(ellipse 350px 400px at 5400px 82%, rgba(30,25,18,0.20) 0%, rgba(30,25,18,0.08) 50%, transparent 80%),
     /* Background peaks flanking gorge */
-    radial-gradient(ellipse 350px 400px at 5000px 75%, rgba(90,83,70,0.12) 0%, transparent 65%),
-    radial-gradient(ellipse 300px 380px at 5800px 77%, rgba(95,88,75,0.11) 0%, transparent 65%),
+    radial-gradient(ellipse 450px 480px at 5000px 73%, rgba(75,68,55,0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 400px 450px at 5800px 75%, rgba(80,72,58,0.16) 0%, transparent 65%),
     /* River suggestion at gorge bottom */
     radial-gradient(ellipse 400px 15px at 5400px 97%, rgba(140,160,180,0.10) 0%, transparent 100%),
     /* Spray/mist from river */
     radial-gradient(ellipse 200px 60px at 5400px 90%, rgba(210,215,220,0.10) 0%, transparent 100%),
-    /* Ink diffusion - gorge darkness */
-    radial-gradient(circle 180px at 5400px 75%, rgba(50,40,30,0.08) 0%, transparent 100%),
+    /* Bold ink wash stroke - gorge darkness */
+    radial-gradient(ellipse 600px 250px at 5400px 75%, rgba(40,32,22,0.12) 0%, transparent 100%),
+    /* Vertical gorge wall brush strokes */
+    radial-gradient(ellipse 60px 400px at 5250px 70%, rgba(45,38,28,0.10) 0%, transparent 100%),
+    radial-gradient(ellipse 50px 350px at 5550px 72%, rgba(45,38,28,0.09) 0%, transparent 100%),
 
     /* === SHANGRI-LA (6000-7000px): High plateau, ethereal lighter mountains === */
     /* Plateau mountains - lighter, more ethereal */
@@ -142,10 +143,10 @@ html, body {
     /* High altitude mist */
     radial-gradient(ellipse 600px 50px at 6500px 42%, rgba(230,225,218,0.12) 0%, transparent 100%),
     radial-gradient(ellipse 400px 35px at 6200px 38%, rgba(230,225,218,0.08) 0%, transparent 100%),
-    /* Tree clusters - sparse at altitude */
-    radial-gradient(circle 6px at 6310px 76%, rgba(58,48,38,0.09) 0%, transparent 100%),
-    radial-gradient(circle 5px at 6340px 77%, rgba(58,48,38,0.07) 0%, transparent 100%),
-    radial-gradient(circle 7px at 6710px 77%, rgba(58,48,38,0.08) 0%, transparent 100%),
+    /* Brush strokes - sparse plateau vegetation */
+    radial-gradient(ellipse 130px 28px at 6320px 76%, rgba(55,45,35,0.10) 0%, transparent 100%),
+    radial-gradient(ellipse 100px 22px at 6550px 78%, rgba(55,45,35,0.08) 0%, transparent 100%),
+    radial-gradient(ellipse 160px 30px at 6720px 77%, rgba(55,45,35,0.09) 0%, transparent 100%),
 
     /* === YUANYANG (7000-8000px): Terraced landscape descending === */
     /* Terraced hills - layered, descending */
@@ -161,9 +162,10 @@ html, body {
     radial-gradient(ellipse 400px 30px at 7400px 93%, rgba(175,188,200,0.08) 0%, transparent 100%),
     /* Mist wisp */
     radial-gradient(ellipse 350px 30px at 7500px 50%, rgba(220,215,205,0.09) 0%, transparent 100%),
-    /* Tree clusters */
-    radial-gradient(circle 8px at 7310px 78%, rgba(55,45,35,0.10) 0%, transparent 100%),
-    radial-gradient(circle 6px at 7340px 79%, rgba(55,45,35,0.08) 0%, transparent 100%),
+    /* Brush strokes - terraced hillside vegetation */
+    radial-gradient(ellipse 180px 35px at 7320px 77%, rgba(50,42,32,0.12) 0%, transparent 100%),
+    radial-gradient(ellipse 140px 28px at 7550px 79%, rgba(50,42,32,0.10) 0%, transparent 100%),
+    radial-gradient(ellipse 200px 40px at 7700px 76%, rgba(45,38,28,0.11) 0%, transparent 100%),
 
     /* === CLOSING (8000-9000px): Fading to rice paper === */
     /* Very faint distant hills */
@@ -171,8 +173,8 @@ html, body {
     radial-gradient(ellipse 300px 100px at 8500px 91%, rgba(175,168,155,0.04) 0%, transparent 60%),
     /* Final mist wisp */
     radial-gradient(ellipse 350px 25px at 8400px 55%, rgba(225,220,210,0.07) 0%, transparent 100%),
-    /* Last ink spot */
-    radial-gradient(circle 100px at 8300px 80%, rgba(100,90,80,0.03) 0%, transparent 100%);
+    /* Closing ink wash stroke */
+    radial-gradient(ellipse 400px 100px at 8300px 82%, rgba(100,90,80,0.05) 0%, transparent 100%);
 
   background-repeat: no-repeat;
   background-size: 9000px 100vh;
