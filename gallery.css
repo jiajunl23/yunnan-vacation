@@ -340,6 +340,36 @@ body {
 .m18-p2 { transform: rotate(-2deg); }
 .m18-p2::after { background: linear-gradient(135deg, #8a9aaa, #6a7a8a); }
 
+/* === v20 Sticky + Social Hybrid Mini === */
+.mini--v20 {
+  background-color: #c4a265;
+  background-image: radial-gradient(ellipse at 30% 40%, rgba(0,0,0,0.05) 0%, transparent 50%), radial-gradient(ellipse at 70% 60%, rgba(0,0,0,0.04) 0%, transparent 40%);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  min-height: 280px;
+  align-content: start;
+}
+.m20-note { padding: 6px 8px; border-radius: 1px; position: relative; box-shadow: 2px 2px 6px rgba(0,0,0,0.2); }
+.m20-n1 { background: #fff9a8; transform: rotate(-2deg); grid-column: span 2; }
+.m20-n2 { background: #ffb3ba; transform: rotate(1.5deg); }
+.m20-n3 { background: #baffc9; transform: rotate(-1deg); }
+.m20-pin { display: block; width: 8px; height: 8px; border-radius: 50%; background: #cc3333; box-shadow: 0 1px 2px rgba(0,0,0,0.3); margin: 0 auto 3px; }
+.m20-title { display: block; font-family: system-ui, sans-serif; font-size: 0.4rem; font-weight: 700; color: #333; text-align: center; margin-bottom: 2px; }
+.m20-line { display: block; height: 2px; background: rgba(0,0,0,0.1); margin-bottom: 2px; border-radius: 1px; }
+.m20-short { width: 60%; }
+.m20-social { background: #fff; border-radius: 6px; overflow: hidden; position: relative; box-shadow: 2px 2px 8px rgba(0,0,0,0.15); transform: rotate(1deg); }
+.m20-s2 { transform: rotate(-1.5deg); grid-column: span 2; }
+.m20-accent { height: 3px; background: linear-gradient(90deg, #ff6b6b, #ffe66d); }
+.m20-accent--teal { background: linear-gradient(90deg, #4ecdc4, #2c3e50); }
+.m20-simg { height: 35px; background: linear-gradient(135deg, #ff6b6b, #ffe66d); }
+.m20-sbody { padding: 4px 6px; }
+.m20-pill { display: inline-block; font-family: system-ui, sans-serif; font-size: 0.3rem; font-weight: 700; background: #ff6b6b; color: #fff; padding: 1px 5px; border-radius: 8px; margin-bottom: 2px; text-transform: uppercase; }
+.m20-pill--teal { background: #4ecdc4; }
+.m20-photo { background: #fff; padding: 3px; box-shadow: 2px 2px 6px rgba(0,0,0,0.25); transform: rotate(-2deg); position: relative; }
+.m20-photo::after { content: ""; display: block; height: 36px; background: linear-gradient(135deg, #8aaa8a, #6a8a6a); }
+
 /* === v19 Comic Book Mini === */
 .mini--v19 { background: #fff; min-height: 280px; display: flex; flex-direction: column; border: 3px solid #111; }
 .m19-cover { background: #2a1a4e; background-image: radial-gradient(circle, rgba(0,188,212,0.1) 0.8px, transparent 0.8px); background-size: 5px 5px; padding: 14px 10px; text-align: center; }
