@@ -349,7 +349,7 @@ body {
 .m15-narrator { padding: 10px 16px; font-family: Georgia, serif; font-size: 0.35rem; font-style: italic; color: #f5f0e8; text-align: center; line-height: 1.7; }
 .m15-chapter { text-align: center; padding: 8px; font-family: system-ui, sans-serif; font-size: 0.35rem; font-weight: 200; letter-spacing: 0.35em; color: #6b6b6b; text-transform: uppercase; border-top: 1px solid #333; }
 
-/* === v16 Shanshui Scroll Mini === */
+/* === v16 Shan Shui Scroll Mini === */
 .mini--v16 { background: #f4ede0; background-image: radial-gradient(ellipse at 50% 50%, #f4ede0, #e8dfd0); display: flex; flex-direction: column; }
 .m16-roller { height: 10px; background: linear-gradient(180deg, #5a4530, #3a2e20, #5a4530); border-top: 1px solid #b8963e; border-bottom: 1px solid #b8963e; position: relative; }
 .m16-roller::before, .m16-roller::after { content: ""; position: absolute; top: -2px; width: 14px; height: 14px; background: #3a2e20; border-radius: 50%; border: 1px solid #b8963e; }
@@ -455,7 +455,7 @@ body {
 .m22-divider { width: 30px; flex-shrink: 0; background: #1c1c1c; display: flex; align-items: center; justify-content: center; border-left: 1px solid #333; border-right: 1px solid #333; }
 .m22-ch { font-family: system-ui, sans-serif; font-size: 0.2rem; font-weight: 200; letter-spacing: 0.15em; color: #c9a96e; text-transform: uppercase; writing-mode: vertical-rl; }
 
-/* === v21 Shanshui Scroll Hybrid Mini === */
+/* === v21 Shan Shui Scroll Hybrid Mini === */
 .mini--v21 {
   background: #f4ede0;
   display: flex;

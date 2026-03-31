@@ -1,5 +1,5 @@
 /* ============================================================
-   v21 -- Shanshui Scroll + Sticky/XHS Hybrid
+   v21 -- Shan Shui Scroll + Sticky/XHS Hybrid
    CSS-only horizontal hand scroll with ink wash landscape
    ============================================================ */
 
@@ -21,7 +21,7 @@ html, body {
   background: #f4ede0;
 }
 
-/* --- Scroll Container with Shanshui Ink Wash Background --- */
+/* --- Scroll Container with Shan Shui Ink Wash Background --- */
 
 .scroll-container {
   display: flex;
