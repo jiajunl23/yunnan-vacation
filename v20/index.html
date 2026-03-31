@@ -3,288 +3,231 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yunnan Trip Plan -- Board + Social Hybrid</title>
+  <title>Yunnan Travel -- Social Feed with Sticker Annotations</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="board">
+<nav class="feed-nav">
+  <a href="../index.html" class="nav-back">Back</a>
+  <span class="nav-title">Yunnan Travel</span>
+  <span class="nav-badge">v20</span>
+</nav>
 
-  <!-- HEADER -->
-  <div class="area-header">
-    <div class="note note-yellow header-note">
-      <h1>YUNNAN TRIP PLAN!!</h1>
-      <div class="subtitle">Summer 2026</div>
-      <a href="../index.html" class="back-link">&larr; back to gallery</a>
+<div class="feed">
+
+  <!-- Post 1: Kunming -->
+  <div class="post">
+    <div class="post-img">
+      <img src="../images/stone-forest.jpg" alt="Stone Forest" loading="lazy">
+      <span class="post-overlay-title">The Spring City awaits</span>
+    </div>
+    <div class="post-caption">
+      <p>Kunming -- 15 degrees year-round, no heating, no AC. The Stone Forest rises 85km southeast, 270 million years of limestone carved by wind and rain into an alien landscape.</p>
+    </div>
+    <div class="post-footer">
+      <span class="post-avatar avatar-coral"></span>
+      <span class="post-user">YunnanTravel</span>
+      <span class="post-likes">2.3k</span>
     </div>
   </div>
 
-  <!-- KUNMING -- Sticky note style -->
-  <div class="area-kunming cluster">
-    <div class="note note-yellow note-folded">
-      <h2>1. KUNMING - Spring City!</h2>
-      <p>Capital of Yunnan and gateway to the province. Known as the "Spring City" for its perfect year-round climate. Start here to adjust and explore the incredible Stone Forest.</p>
+  <!-- Post 2: Dali/Pagodas -->
+  <div class="post">
+    <div class="post-img">
+      <img src="../images/three-pagodas-reflection.jpg" alt="Three Pagodas" loading="lazy">
+      <span class="post-overlay-title">Between mountain and water</span>
     </div>
-
-    <div class="string-v"></div>
-
-    <div class="photo rot-1">
-      <img src="../images/stone-forest.jpg" alt="Stone Forest, Kunming" loading="lazy">
-      <div class="caption">Stone Forest (Shilin)</div>
+    <div class="post-caption">
+      <p>Dali sits between Cangshan and Erhai, where the Bai people have preserved centuries of indigo tie-dye, marble carving, and the most welcoming culture in all of Yunnan.</p>
     </div>
-
-    <div class="string-v"></div>
-
-    <div class="note note-green note-small note-torn">
-      <p><strong>Fun fact:</strong> 15C year-round! No heating or AC needed.</p>
+    <div class="post-footer">
+      <span class="post-avatar avatar-teal"></span>
+      <span class="post-user">DaliDays</span>
+      <span class="post-likes">4.1k</span>
     </div>
   </div>
 
-  <!-- DALI -- Xiaohongshu style -->
-  <div class="area-dali cluster">
-    <div class="xhs-card social-pinned rot-social-1">
-      <div class="xhs-img">
-        <img src="../images/three-pagodas.jpg" alt="Three Pagodas, Dali" loading="lazy">
-        <span class="xhs-handle">@YunnanTravel</span>
-        <span class="xhs-overlay-title">Lake views, cheese, and tie-dye heaven</span>
-      </div>
-      <div class="xhs-caption">
-        <p>Ancient walled city nestled between Cangshan Mountains and Erhai Lake. The Bai culture shines through in architecture, indigo tie-dye, and incredible local cheese. Rent a bike and ride the lake shore!!</p>
-      </div>
-      <div class="xhs-footer">
-        <span class="xhs-avatar"></span>
-        <span class="xhs-user">YunnanTravel</span>
-        <span class="xhs-likes">2.3k</span>
-      </div>
+  <!-- Sticker 1 -->
+  <div class="sticker sticker-yellow" style="transform:rotate(-4deg)">
+    Don't miss the sunrise at Duoyishu!!
+  </div>
+
+  <!-- Post 3: Erhai Lake -->
+  <div class="post">
+    <div class="post-img">
+      <img src="../images/erhai-lake-cangshan.jpg" alt="Erhai Lake" loading="lazy">
+      <span class="post-overlay-title">The lake that mirrors the sky</span>
     </div>
-
-    <div class="string-h"></div>
-
-    <div class="social-photo rot-3">
-      <img src="../images/erhai-lake-cangshan.jpg" alt="Erhai Lake and Cangshan" loading="lazy">
-      <div class="social-photo-caption">Erhai Lake &amp; Cangshan</div>
+    <div class="post-caption">
+      <p>Rent a bike and cycle the full 130km shoreline. Every turn reveals a new village, a new shade of blue, a new reason to stay another day.</p>
     </div>
-
-    <div class="note note-blue note-small">
-      <p><strong>Don't miss:</strong> Rushan cheese!! The Bai people's special grilled milk fan -- tastes incredible with rose jam.</p>
+    <div class="post-footer">
+      <span class="post-avatar avatar-blue"></span>
+      <span class="post-user">ErhaiVibes</span>
+      <span class="post-likes">3.8k</span>
     </div>
   </div>
 
-  <!-- FOOD TO TRY -- Xiaohongshu style -->
-  <div class="area-food">
-    <div class="xhs-card social-pinned rot-social-2">
-      <div class="xhs-img xhs-img--gradient-food">
-        <span class="xhs-handle">@YunnanFoodie</span>
-        <span class="xhs-overlay-title">Yunnan Food Guide</span>
-      </div>
-      <div class="xhs-caption">
-        <p><strong>Cross-bridge noodles</strong> -- the one you HAVE to try<br>
-        <strong>Steam pot chicken</strong> -- slow-cooked perfection<br>
-        <strong>Wild mushrooms</strong> -- seasonal, unforgettable<br>
-        <strong>Pu'er tea</strong> -- aged dark tea magic<br>
-        <strong>Rushan</strong> -- Bai grilled milk fan<br>
-        <strong>Erkuai</strong> -- chewy grilled rice cakes</p>
-      </div>
-      <div class="xhs-footer">
-        <span class="xhs-avatar xhs-avatar--teal"></span>
-        <span class="xhs-user">YunnanFoodie</span>
-        <span class="xhs-likes">15k</span>
-      </div>
-    </div>
+  <!-- Sticker 2 -->
+  <div class="sticker sticker-pink" style="transform:rotate(3deg)">
+    Book trains early -- KM to DL sells out!
   </div>
 
-  <!-- ROUTE -- Sticky note style -->
-  <div class="area-route">
-    <div class="note note-blue note-torn">
-      <h3>ROUTE</h3>
-      <p style="font-weight: 600; line-height: 1.8;">
-        Kunming &rarr; Dali &rarr; Lijiang &rarr; TLG &rarr; Shangri-La &rarr; (back to KM) &rarr; Yuanyang
-      </p>
-      <p class="small-text">~2-3 weeks total to do it right</p>
-    </div>
-  </div>
-
-  <!-- LIJIANG -- Sticky note style -->
-  <div class="area-lijiang cluster">
-    <div class="note note-blue note-folded">
-      <h2>3. LIJIANG - UNESCO Old Town</h2>
-      <p>Cobblestone lanes, canals, and the mighty Jade Dragon Snow Mountain looming above. A UNESCO World Heritage site and home to the Naxi people. Get lost in the old town at night.</p>
-    </div>
-
-    <div class="string-v"></div>
-
-    <div class="photo photo-taped rot-4">
+  <!-- Post 4: Lijiang -->
+  <div class="post">
+    <div class="post-img">
       <img src="../images/lijiang-old-town.jpg" alt="Lijiang Old Town" loading="lazy">
-      <div class="caption">Lijiang Old Town</div>
+      <span class="post-overlay-title">800 years of canals and lanterns</span>
     </div>
+    <div class="post-caption">
+      <p>The Naxi people built this UNESCO old town with no walls and no straight streets. At night the lanterns come alive and the sound of traditional Naxi orchestra drifts through the alleys.</p>
+    </div>
+    <div class="post-footer">
+      <span class="post-avatar avatar-purple"></span>
+      <span class="post-user">LijiangNights</span>
+      <span class="post-likes">5.6k</span>
+    </div>
+  </div>
 
-    <div class="photo rot-5">
+  <!-- Post 5: Jade Dragon -->
+  <div class="post">
+    <div class="post-img">
       <img src="../images/jade-dragon-snow-mountain.jpg" alt="Jade Dragon Snow Mountain" loading="lazy">
-      <div class="caption">Jade Dragon Snow Mtn</div>
+      <span class="post-overlay-title">5,596m of unclimbed snow</span>
     </div>
-
-    <div class="note note-yellow note-small note-torn">
-      <p><em>Naxi music at night!</em> Traditional orchestras play in the old town squares. Don't miss it.</p>
+    <div class="post-caption">
+      <p>No one has ever summited Jade Dragon. The Naxi consider it sacred -- and standing at the glacier park viewpoint, you understand why. Bring layers, altitude hits fast up here.</p>
     </div>
-  </div>
-
-  <!-- TIGER LEAPING GORGE -- Xiaohongshu style -->
-  <div class="area-tlg cluster">
-    <div class="xhs-card social-pinned rot-social-3">
-      <div class="xhs-img">
-        <img src="../images/tiger-leaping-gorge.jpg" alt="Tiger Leaping Gorge" loading="lazy">
-        <span class="xhs-handle">@AdventureYunnan</span>
-        <span class="xhs-overlay-title">The hike that ruins all other hikes</span>
-      </div>
-      <div class="xhs-caption">
-        <p>One of the deepest gorges in the world. 2-day high trail with jaw-dropping views of the Jinsha River thousands of meters below. Not for the faint-hearted!!</p>
-      </div>
-      <div class="xhs-footer">
-        <span class="xhs-avatar xhs-avatar--teal"></span>
-        <span class="xhs-user">AdventureYunnan</span>
-        <span class="xhs-likes">5.1k</span>
-      </div>
-    </div>
-
-    <div class="string-v"></div>
-
-    <div class="note note-pink note-small note-folded">
-      <p><strong>Pack:</strong> good shoes, rain jacket, snacks, headlamp, altitude pills</p>
+    <div class="post-footer">
+      <span class="post-avatar avatar-green"></span>
+      <span class="post-user">MountainChaser</span>
+      <span class="post-likes">7.2k</span>
     </div>
   </div>
 
-  <!-- SHANGRI-LA -- Sticky note style -->
-  <div class="area-shangrila cluster">
-    <div class="note note-green note-folded">
-      <h2>5. SHANGRI-LA</h2>
-      <p>Tibetan Buddhist culture at 3,160m elevation. The massive Songzanlin Monastery is often called "Little Potala Palace." Yak butter tea, prayer flags, and thin mountain air.</p>
+  <!-- Sticker 3 -->
+  <div class="sticker sticker-blue" style="transform:rotate(-2deg)">
+    Best noodles EVER at the night market
+  </div>
+
+  <!-- Post 6: Tiger Leaping Gorge -->
+  <div class="post">
+    <div class="post-img">
+      <img src="../images/tiger-leaping-gorge-above.jpg" alt="Tiger Leaping Gorge" loading="lazy">
+      <span class="post-overlay-title">The hike that ruins all other hikes</span>
     </div>
-
-    <div class="string-v"></div>
-
-    <div class="photo photo-taped rot-3">
-      <img src="../images/songzanlin-monastery.jpg" alt="Songzanlin Monastery" loading="lazy">
-      <div class="caption">Songzanlin Monastery</div>
+    <div class="post-caption">
+      <p>Two days on the high trail above one of the deepest gorges on Earth. The Jinsha River roars thousands of meters below while snow peaks tower above. Life-changing stuff.</p>
     </div>
-
-    <div class="photo rot-2">
-      <img src="../images/dukezong-old-town.jpg" alt="Dukezong Old Town" loading="lazy">
-      <div class="caption">Dukezong Old Town</div>
-    </div>
-
-    <div class="note note-yellow note-small note-torn">
-      <p><strong>Altitude: 3,160m</strong> -- take it slow! Drink water, rest on arrival, no running.</p>
+    <div class="post-footer">
+      <span class="post-avatar avatar-coral"></span>
+      <span class="post-user">AdventureYunnan</span>
+      <span class="post-likes">5.1k</span>
     </div>
   </div>
 
-  <!-- YUANYANG -- Xiaohongshu style -->
-  <div class="area-yuanyang cluster">
-    <div class="xhs-card social-pinned rot-social-4">
-      <div class="xhs-img">
-        <img src="../images/yuanyang-rice-terraces.jpg" alt="Yuanyang Rice Terraces" loading="lazy">
-        <span class="xhs-handle">@YunnanTravel</span>
-        <span class="xhs-overlay-title">1,300 years of patience, carved into mountains</span>
-      </div>
-      <div class="xhs-caption">
-        <p>The Hani people carved these staggering rice terraces over 1,300 years. Flooded and reflecting the sky at sunrise -- one of the most beautiful landscapes on Earth!!</p>
-      </div>
-      <div class="xhs-footer">
-        <span class="xhs-avatar"></span>
-        <span class="xhs-user">YunnanTravel</span>
-        <span class="xhs-likes">8.7k</span>
-      </div>
+  <!-- Sticker 4 -->
+  <div class="sticker sticker-green" style="transform:rotate(5deg)">
+    Altitude tip: take it slow in Shangri-La
+  </div>
+
+  <!-- Post 7: Shangri-La -->
+  <div class="post">
+    <div class="post-img">
+      <img src="../images/songzanlin-monastery-full.jpg" alt="Songzanlin Monastery" loading="lazy">
+      <span class="post-overlay-title">Where the plateau begins</span>
     </div>
-
-    <div class="string-v"></div>
-
-    <div class="note note-blue note-small note-folded">
-      <p><strong>Best Nov-April</strong>, sunrise at Duoyishu viewpoint. Get there before 6am!</p>
+    <div class="post-caption">
+      <p>Songzanlin Monastery houses 700 monks at 3,380m. Yak butter tea, prayer flags snapping in thin air, and the feeling that you've crossed into a different world entirely.</p>
+    </div>
+    <div class="post-footer">
+      <span class="post-avatar avatar-teal"></span>
+      <span class="post-user">PlateauDreams</span>
+      <span class="post-likes">6.4k</span>
     </div>
   </div>
 
-  <!-- TO DO -- Sticky note style -->
-  <div class="area-todo">
-    <div class="note note-green note-torn">
-      <h3 class="underline-scribble">TO DO</h3>
-      <ul class="checklist">
-        <li class="checked">Book flights</li>
-        <li class="checked">Get visa</li>
-        <li>Pack altitude pills</li>
-        <li>Download offline maps</li>
-        <li>Book Dali hostel</li>
-        <li>Reserve TLG guesthouse</li>
-        <li>Travel insurance</li>
-      </ul>
+  <!-- Sticker 5 -->
+  <div class="sticker sticker-orange" style="transform:rotate(-6deg)">
+    Pack layers!! Weather changes with altitude
+  </div>
+
+  <!-- Post 8: Yuanyang -->
+  <div class="post">
+    <div class="post-img">
+      <img src="../images/yuanyang-rice-terraces.jpg" alt="Yuanyang Rice Terraces" loading="lazy">
+      <span class="post-overlay-title">1,300 years carved into mountains</span>
+    </div>
+    <div class="post-caption">
+      <p>The Hani people sculpted these terraces over 1,300 years. At sunrise the flooded paddies turn into mirrors reflecting fire and cloud. Get to Duoyishu viewpoint before 6am.</p>
+    </div>
+    <div class="post-footer">
+      <span class="post-avatar avatar-purple"></span>
+      <span class="post-user">YunnanTravel</span>
+      <span class="post-likes">8.7k</span>
     </div>
   </div>
 
-  <!-- BUDGET -- Sticky note style -->
-  <div class="area-budget">
-    <div class="note note-yellow note-folded">
-      <h3 class="underline-scribble">BUDGET</h3>
-      <div class="budget-line"><span>Flights</span><span>~3000 RMB</span></div>
-      <div class="budget-line"><span>Hotels</span><span>~200/night</span></div>
-      <div class="budget-line"><span>Food</span><span>~100/day</span></div>
-      <div class="budget-line"><span>Transport (local)</span><span>~80/day</span></div>
-      <div class="budget-line"><span>Entrance fees</span><span>~500 total</span></div>
-      <hr style="border: none; border-top: 1px dashed #999; margin: 8px 0;">
-      <div class="budget-line"><span><strong>Total est.</strong></span><span><strong>~8000-10000 RMB</strong></span></div>
-      <p class="small-text" style="margin-top: 6px;">for ~14 days, budget style</p>
+  <!-- Sticker 6 -->
+  <div class="sticker sticker-pink" style="transform:rotate(2deg)">
+    Rushan cheese = life changing
+  </div>
+
+  <!-- Post 9: Food Guide -->
+  <div class="post post-no-img">
+    <div class="post-img post-img-gradient">
+      <span class="post-overlay-title">Yunnan Food Guide</span>
+    </div>
+    <div class="post-caption">
+      <p><strong>Cross-bridge noodles</strong> -- the one you HAVE to try</p>
+      <p><strong>Steam pot chicken</strong> -- slow-cooked perfection</p>
+      <p><strong>Wild mushrooms</strong> -- seasonal and unforgettable</p>
+      <p><strong>Pu'er tea</strong> -- aged dark tea from the source</p>
+      <p><strong>Rushan</strong> -- Bai grilled milk fan with rose jam</p>
+      <p><strong>Erkuai</strong> -- chewy grilled rice cakes</p>
+    </div>
+    <div class="post-footer">
+      <span class="post-avatar avatar-green"></span>
+      <span class="post-user">YunnanFoodie</span>
+      <span class="post-likes">15k</span>
     </div>
   </div>
 
-  <!-- TRAVEL TIPS -- Xiaohongshu style -->
-  <div class="area-tips">
-    <div class="xhs-card social-pinned rot-social-5">
-      <div class="xhs-img xhs-img--gradient-tips">
-        <span class="xhs-handle">@YunnanTravel</span>
-        <span class="xhs-overlay-title">Pro Travel Tips</span>
-      </div>
-      <div class="xhs-caption">
-        <p><strong>Best time:</strong> Mar-May or Sep-Nov<br>
-        <strong>Payment:</strong> WeChat Pay everywhere<br>
-        <strong>Rail:</strong> KM to Dali ~2hrs, KM to LJ ~3hrs<br>
-        <strong>Layers:</strong> weather varies by altitude<br>
-        <strong>Language:</strong> learn a few Mandarin phrases<br>
-        <strong>UV:</strong> sunscreen is non-negotiable!</p>
-      </div>
-      <div class="xhs-footer">
-        <span class="xhs-avatar"></span>
-        <span class="xhs-user">YunnanTravel</span>
-        <span class="xhs-likes">3.2k</span>
-      </div>
-    </div>
+  <!-- Sticker 7 -->
+  <div class="sticker sticker-yellow" style="transform:rotate(-3deg)">
+    This hike changed my life
   </div>
 
-  <!-- CREDITS -->
-  <div class="area-credits">
-    <div class="note note-white credits-note">
-      <p><strong>Photos from Wikimedia Commons:</strong></p>
-      <p>
-        Stone Forest (Shilin, Yunnan) --
-        <a href="https://commons.wikimedia.org/wiki/File:Shilin,_Yunnan_24740.jpg" target="_blank">source</a> |
-        Three Pagodas (Dali) --
-        <a href="https://commons.wikimedia.org/wiki/File:Dali_2007_171.jpg" target="_blank">source</a> |
-        Erhai Lake &amp; Cangshan --
-        <a href="https://commons.wikimedia.org/wiki/File:Erhai_Lake_%26_Cangshan.jpg" target="_blank">source</a> |
-        Lijiang Old Town --
-        <a href="https://commons.wikimedia.org/wiki/File:55936-Lijiang_(27941831943).jpg" target="_blank">source</a> |
-        Jade Dragon Snow Mountain --
-        <a href="https://commons.wikimedia.org/wiki/File:Lijiang_Yunnan_China_Jade-Dragon-Snow-Mountain-01.jpg" target="_blank">source</a> |
-        Tiger Leaping Gorge --
-        <a href="https://commons.wikimedia.org/wiki/File:%E8%99%8E%E8%B7%B3%E5%B3%A1.JPG" target="_blank">source</a> |
-        Songzanlin Monastery --
-        <a href="https://commons.wikimedia.org/wiki/File:%E6%9D%BE%E8%B5%9E%E6%9E%97%E5%AF%BA_-_%E5%85%A8%E6%99%AF_-_2025-05-07_09_(cropped).jpg" target="_blank">source</a> |
-        Dukezong Old Town --
-        <a href="https://commons.wikimedia.org/wiki/File:56988-Shangri-La_(27941074693).jpg" target="_blank">source</a> |
-        Yuanyang Rice Terraces --
-        <a href="https://commons.wikimedia.org/wiki/File:1_yuanyang_county_rice_terrace_bada_view_2012.jpg" target="_blank">source</a>
-      </p>
-      <p style="margin-top: 6px;">All images used under Creative Commons licenses. v20 -- Board + Social Hybrid edition.</p>
-    </div>
+  <!-- Sticker 8 -->
+  <div class="sticker sticker-green" style="transform:rotate(4deg)">
+    Pu'er tea from the source
   </div>
 
 </div>
+
+<footer class="feed-footer">
+  <p><strong>Photos from Wikimedia Commons:</strong></p>
+  <p>
+    Stone Forest --
+    <a href="https://commons.wikimedia.org/wiki/File:Shilin,_Yunnan_24740.jpg" target="_blank">source</a> |
+    Three Pagodas --
+    <a href="https://commons.wikimedia.org/wiki/File:Dali_2007_171.jpg" target="_blank">source</a> |
+    Erhai Lake --
+    <a href="https://commons.wikimedia.org/wiki/File:Erhai_Lake_%26_Cangshan.jpg" target="_blank">source</a> |
+    Lijiang Old Town --
+    <a href="https://commons.wikimedia.org/wiki/File:55936-Lijiang_(27941831943).jpg" target="_blank">source</a> |
+    Jade Dragon Snow Mountain --
+    <a href="https://commons.wikimedia.org/wiki/File:Lijiang_Yunnan_China_Jade-Dragon-Snow-Mountain-01.jpg" target="_blank">source</a> |
+    Tiger Leaping Gorge --
+    <a href="https://commons.wikimedia.org/wiki/File:%E8%99%8E%E8%B7%B3%E5%B3%A1.JPG" target="_blank">source</a> |
+    Songzanlin Monastery --
+    <a href="https://commons.wikimedia.org/wiki/File:%E6%9D%BE%E8%B5%9E%E6%9E%97%E5%AF%BA_-_%E5%85%A8%E6%99%AF_-_2025-05-07_09_(cropped).jpg" target="_blank">source</a> |
+    Yuanyang Rice Terraces --
+    <a href="https://commons.wikimedia.org/wiki/File:1_yuanyang_county_rice_terrace_bada_view_2012.jpg" target="_blank">source</a>
+  </p>
+  <p>All images used under Creative Commons licenses. v20 -- Social Feed with Sticker Annotations edition.</p>
+</footer>
 
 </body>
 </html>
