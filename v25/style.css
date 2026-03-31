@@ -421,7 +421,14 @@ html, body {
   flex-shrink: 0;
   width: 80vw;
   height: 100vh;
-  background: #f5f0e6;
+  background-color: #f5f0e6;
+  background-image:
+    linear-gradient(rgba(245,240,230,0.88), rgba(245,240,230,0.88)),
+    url('../images/cross-bridge-noodles.jpg'),
+    url('../images/mushroom-hotpot.jpg');
+  background-size: auto, 50% auto, 50% auto;
+  background-position: center, left center, right center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
   padding: 50px 60px;
   overflow-y: auto;
   display: flex;
