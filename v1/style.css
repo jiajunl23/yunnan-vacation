@@ -69,7 +69,7 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Lijiang_Yunnan_China_Jade-Dragon-Snow-Mountain-01.jpg/1600px-Lijiang_Yunnan_China_Jade-Dragon-Snow-Mountain-01.jpg');
+  background-image: url('../images/jade-dragon-snow-mountain.jpg');
   background-size: cover;
   background-position: center 30%;
 }
