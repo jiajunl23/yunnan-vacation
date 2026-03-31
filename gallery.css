@@ -34,64 +34,45 @@ body {
 /* ===== Gallery / Masonry ===== */
 .gallery { max-width: 1200px; margin: 0 auto 6rem; padding: 0 2rem; }
 
-/* Version journey path */
-.version-path {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  padding: 0 1rem;
-  margin-bottom: 0.75rem;
-  flex-wrap: wrap;
-}
-.vp-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #b0c8d8;
-  flex-shrink: 0;
-}
-.vp-dot--start {
-  background: #4a8faa;
-  width: 8px;
-  height: 8px;
-}
-.vp-dot--end {
-  background: #2a8c7a;
-  width: 8px;
-  height: 8px;
-}
-.vp-seg {
-  width: 12px;
-  height: 0;
-  border-top: 1.5px dotted #b0c8d8;
-  flex-shrink: 0;
-}
-.vp-label {
-  font-family: "Courier New", monospace;
-  font-size: 0.55rem;
-  color: #7a9aaa;
-  padding: 0 3px;
-  flex-shrink: 0;
-}
-.vp-arrow {
-  font-family: "Courier New", monospace;
-  font-size: 0.55rem;
-  color: #c9a96e;
-  padding-left: 6px;
-  flex-shrink: 0;
-}
-.vp-arrow::before {
-  content: " \2192 ";
-  color: #b0c8d8;
-}
-.version-path-caption {
+/* Gallery caption */
+.gallery-caption {
   text-align: center;
   font-family: Georgia, serif;
   font-size: 0.8rem;
   font-style: italic;
   color: #7a9aaa;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Card sequence badges */
+.card-seq {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.card-seq-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(74,143,170,0.85);
+  color: #fff;
+  font-family: "Courier New", monospace;
+  font-size: 0.55rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+.card-seq-arrow {
+  color: rgba(74,143,170,0.4);
+  font-size: 0.7rem;
+  line-height: 1;
 }
 
 .masonry { columns: 3; column-gap: 1.75rem; }
@@ -103,6 +84,7 @@ body {
   display: block; break-inside: avoid; margin-bottom: 1.75rem;
   background: #fff; border-radius: 6px; overflow: hidden;
   text-decoration: none; color: inherit;
+  position: relative;
   transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
   box-shadow: 0 2px 12px rgba(46,61,74,0.08);
   border-left: 3px solid transparent;
