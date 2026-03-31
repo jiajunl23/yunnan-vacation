@@ -1,0 +1,694 @@
+/* v24 -- Abstract Artist Scroll */
+
+/* === RESET & BASE === */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100vh;
+  background: #f8f4e8;
+  font-family: 'Space Mono', monospace;
+  color: #2b2b2b;
+}
+
+.scroll {
+  display: flex;
+  height: 100vh;
+  width: max-content;
+}
+
+/* === BACK LINK === */
+.back-link {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 1000;
+  color: #f8f4e8;
+  background: #2b2b2b;
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transform: rotate(-3deg);
+  border: 3px solid #e63946;
+}
+
+.back-link:hover {
+  background: #0047ab;
+}
+
+/* === PANELS === */
+.panel {
+  position: relative;
+  width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Colored blocks via pseudo-elements */
+.panel-1::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  background: rgba(0, 71, 171, 0.15);
+  top: 10%;
+  left: 5%;
+  transform: rotate(12deg);
+  z-index: 1;
+}
+.panel-1::after {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 180px;
+  background: rgba(230, 184, 0, 0.2);
+  bottom: 15%;
+  right: 8%;
+  transform: rotate(-8deg);
+  z-index: 1;
+}
+
+.panel-2::before {
+  content: '';
+  position: absolute;
+  width: 280px;
+  height: 220px;
+  background: rgba(230, 57, 70, 0.15);
+  top: 5%;
+  right: 10%;
+  transform: rotate(-15deg);
+  z-index: 1;
+}
+.panel-2::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 260px;
+  background: rgba(85, 107, 47, 0.18);
+  bottom: 8%;
+  left: 12%;
+  transform: rotate(6deg);
+  z-index: 1;
+}
+
+.panel-3::before {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 180px;
+  background: rgba(230, 184, 0, 0.18);
+  top: 15%;
+  left: 8%;
+  transform: rotate(10deg);
+  z-index: 1;
+}
+.panel-3::after {
+  content: '';
+  position: absolute;
+  width: 240px;
+  height: 200px;
+  background: rgba(0, 71, 171, 0.12);
+  bottom: 20%;
+  right: 5%;
+  transform: rotate(-12deg);
+  z-index: 1;
+}
+
+.panel-4::before {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 240px;
+  background: rgba(230, 57, 70, 0.12);
+  top: 8%;
+  left: 15%;
+  transform: rotate(-7deg);
+  z-index: 1;
+}
+.panel-4::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 160px;
+  background: rgba(85, 107, 47, 0.2);
+  bottom: 10%;
+  right: 12%;
+  transform: rotate(14deg);
+  z-index: 1;
+}
+
+.panel-5::before {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 200px;
+  background: rgba(43, 43, 43, 0.1);
+  top: 12%;
+  right: 8%;
+  transform: rotate(8deg);
+  z-index: 1;
+}
+.panel-5::after {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 280px;
+  background: rgba(230, 184, 0, 0.15);
+  bottom: 5%;
+  left: 10%;
+  transform: rotate(-10deg);
+  z-index: 1;
+}
+
+.panel-6::before {
+  content: '';
+  position: absolute;
+  width: 280px;
+  height: 250px;
+  background: rgba(0, 71, 171, 0.18);
+  top: 5%;
+  left: 6%;
+  transform: rotate(-14deg);
+  z-index: 1;
+}
+.panel-6::after {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 180px;
+  background: rgba(230, 57, 70, 0.14);
+  bottom: 12%;
+  right: 10%;
+  transform: rotate(9deg);
+  z-index: 1;
+}
+
+.panel-7::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 220px;
+  background: rgba(85, 107, 47, 0.16);
+  top: 10%;
+  right: 6%;
+  transform: rotate(-11deg);
+  z-index: 1;
+}
+.panel-7::after {
+  content: '';
+  position: absolute;
+  width: 240px;
+  height: 200px;
+  background: rgba(230, 184, 0, 0.2);
+  bottom: 8%;
+  left: 8%;
+  transform: rotate(13deg);
+  z-index: 1;
+}
+
+/* === IMAGE WRAPS === */
+.img-wrap {
+  position: absolute;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Parallelogram */
+.img-parallelogram {
+  width: 500px;
+  height: 420px;
+  top: 12%;
+  left: 8%;
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  transform: rotate(-4deg);
+}
+
+/* Circle */
+.img-circle {
+  width: 460px;
+  height: 460px;
+  top: 15%;
+  left: 10%;
+  clip-path: circle(50% at 50% 50%);
+  transform: rotate(3deg);
+}
+
+/* Hexagon */
+.img-hexagon {
+  width: 480px;
+  height: 440px;
+  top: 10%;
+  left: 6%;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  transform: rotate(-5deg);
+}
+
+/* Diamond */
+.img-diamond {
+  width: 440px;
+  height: 440px;
+  top: 14%;
+  left: 12%;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  transform: rotate(6deg);
+}
+
+/* Notched rectangle */
+.img-notched {
+  width: 520px;
+  height: 400px;
+  top: 12%;
+  left: 5%;
+  clip-path: polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 15% 100%, 0% 85%);
+  transform: rotate(-3deg);
+}
+
+/* Pentagon */
+.img-pentagon {
+  width: 460px;
+  height: 460px;
+  top: 8%;
+  left: 10%;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  transform: rotate(4deg);
+}
+
+/* Trapezoid */
+.img-trapezoid {
+  width: 500px;
+  height: 400px;
+  top: 15%;
+  left: 8%;
+  clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+  transform: rotate(-6deg);
+}
+
+/* === TEXT OVERLAYS === */
+.text-overlay {
+  position: absolute;
+  z-index: 10;
+  max-width: 420px;
+  padding: 1.5rem;
+}
+
+.chinese-char {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 5rem;
+  font-weight: 900;
+  opacity: 0.12;
+  position: absolute;
+  z-index: -1;
+  line-height: 1;
+}
+
+.char-1 { top: -1rem; left: -0.5rem; color: #0047ab; }
+.char-2 { top: -0.5rem; right: 0; color: #e63946; font-size: 4.5rem; }
+.char-3 { top: -1.5rem; left: 0; color: #556b2f; font-size: 4rem; }
+.char-4 { top: -0.5rem; left: -1rem; color: #e6b800; font-size: 5rem; }
+.char-5 { top: -1rem; right: 0.5rem; color: #2b2b2b; font-size: 4.5rem; }
+.char-6 { top: 0; left: -0.5rem; color: #e63946; font-size: 4rem; }
+.char-7 { top: -1rem; left: 0; color: #0047ab; font-size: 5rem; }
+
+.text-overlay h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+  color: #2b2b2b;
+}
+
+.text-overlay p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #2b2b2b;
+}
+
+.sz-lg { font-size: 1.3em; font-weight: 900; }
+.sz-md { font-size: 1em; font-weight: 700; }
+.sz-sm { font-size: 0.8em; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* Text overlay positions and rotations -- each different angle from its image */
+.text-overlay-1 {
+  bottom: 18%;
+  right: 8%;
+  transform: rotate(5deg);
+  margin-top: -2rem;
+}
+
+.text-overlay-2 {
+  bottom: 12%;
+  right: 6%;
+  transform: rotate(-4deg);
+  margin-left: -3rem;
+}
+
+.text-overlay-3 {
+  bottom: 15%;
+  right: 10%;
+  transform: rotate(7deg);
+  margin-top: -1.5rem;
+}
+
+.text-overlay-4 {
+  bottom: 10%;
+  right: 5%;
+  transform: rotate(-6deg);
+  margin-left: -2rem;
+}
+
+.text-overlay-5 {
+  bottom: 20%;
+  right: 8%;
+  transform: rotate(4deg);
+  margin-top: -2.5rem;
+}
+
+.text-overlay-6 {
+  bottom: 14%;
+  right: 6%;
+  transform: rotate(-8deg);
+  margin-left: -1rem;
+}
+
+.text-overlay-7 {
+  bottom: 18%;
+  right: 10%;
+  transform: rotate(6deg);
+  margin-top: -1rem;
+}
+
+/* === STICKERS === */
+.sticker {
+  position: absolute;
+  z-index: 20;
+  padding: 1.2rem 1.4rem;
+  max-width: 280px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #f8f4e8;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+}
+
+.sticker strong {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-family: 'Space Mono', monospace;
+}
+
+.sticker p {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+}
+
+.sticker-img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  margin-top: 0.6rem;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+
+/* Sticker 1: cobalt bg, ochre border, rotate -12deg */
+.sticker-1 {
+  background: rgba(0, 71, 171, 0.92);
+  border: 4px solid #e6b800;
+  transform: rotate(-12deg);
+  top: 8%;
+  right: 5%;
+}
+
+/* Sticker 2: charcoal bg, red border, rotate 15deg */
+.sticker-2 {
+  background: rgba(43, 43, 43, 0.92);
+  border: 4px solid #e63946;
+  transform: rotate(15deg);
+  top: 6%;
+  right: 3%;
+  max-width: 300px;
+}
+
+/* Sticker 3: olive bg, white border, rotate -8deg */
+.sticker-3 {
+  background: rgba(85, 107, 47, 0.92);
+  border: 4px solid #f8f4e8;
+  transform: rotate(-8deg);
+  top: 5%;
+  right: 6%;
+}
+
+/* Sticker 4: red bg, white border, rotate 10deg */
+.sticker-4 {
+  background: rgba(230, 57, 70, 0.92);
+  border: 4px solid #f8f4e8;
+  transform: rotate(10deg);
+  top: 7%;
+  right: 4%;
+}
+
+/* Sticker 5: charcoal bg, ochre border, rotate -15deg */
+.sticker-5 {
+  background: rgba(43, 43, 43, 0.92);
+  border: 4px solid #e6b800;
+  transform: rotate(-15deg);
+  top: 4%;
+  right: 5%;
+}
+
+/* Sticker 6: olive bg, ochre border, rotate 12deg */
+.sticker-6 {
+  background: rgba(85, 107, 47, 0.92);
+  border: 4px solid #e6b800;
+  transform: rotate(12deg);
+  top: 6%;
+  right: 3%;
+}
+
+/* Sticker 7: cobalt bg, white border, rotate -6deg */
+.sticker-7 {
+  background: rgba(0, 71, 171, 0.92);
+  border: 4px solid #f8f4e8;
+  transform: rotate(-6deg);
+  top: 8%;
+  right: 6%;
+}
+
+/* Sticker 8: charcoal bg, red border, rotate 8deg -- floating */
+.sticker-8 {
+  background: rgba(43, 43, 43, 0.92);
+  border: 4px solid #e63946;
+  transform: rotate(8deg);
+  position: fixed;
+  bottom: 15%;
+  right: 3%;
+  z-index: 50;
+}
+
+/* Sticker 9: cobalt bg, ochre border, rotate -10deg -- floating */
+.sticker-9 {
+  background: rgba(0, 71, 171, 0.92);
+  border: 4px solid #e6b800;
+  transform: rotate(-10deg);
+  position: fixed;
+  bottom: 16%;
+  right: 22%;
+  z-index: 50;
+}
+
+/* === CREDITS === */
+.panel-credits {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60vw;
+  background: #2b2b2b;
+}
+
+.credits-content {
+  text-align: center;
+  color: #f8f4e8;
+  max-width: 500px;
+  padding: 2rem;
+}
+
+.credits-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #e6b800;
+}
+
+.credits-content p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.credits-back a {
+  color: #e6b800;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border-bottom: 2px solid #e6b800;
+  padding-bottom: 2px;
+}
+
+/* === FIXED BOTTOM ROADMAP === */
+.roadmap {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.2rem;
+  z-index: 100;
+  padding: 0.6rem 1.4rem;
+  background: rgba(43, 43, 43, 0.7);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+}
+
+.dot {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #f8f4e8;
+  transition: transform 0.2s, background 0.2s;
+  cursor: pointer;
+}
+
+.dot:hover {
+  transform: scale(1.3);
+}
+
+.dot.active {
+  transform: scale(1.4);
+}
+
+.dot-1 { background: #0047ab; }
+.dot-2 { background: #e63946; }
+.dot-3 { background: #e6b800; }
+.dot-4 { background: #f8f4e8; }
+.dot-5 { background: #556b2f; }
+.dot-6 { background: #e63946; }
+.dot-7 { background: #0047ab; }
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+  }
+
+  .scroll {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .panel {
+    width: 100vw;
+    min-width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .img-wrap {
+    position: relative;
+    width: 90% !important;
+    height: 280px !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin: 1rem auto;
+  }
+
+  /* Simplified clip-paths on mobile */
+  .img-parallelogram { clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); transform: rotate(-2deg); }
+  .img-circle { clip-path: circle(48% at 50% 50%); transform: rotate(1deg); }
+  .img-hexagon { clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); transform: rotate(-2deg); }
+  .img-diamond { clip-path: polygon(50% 5%, 95% 50%, 50% 95%, 5% 50%); transform: rotate(2deg); }
+  .img-notched { clip-path: polygon(0% 0%, 90% 0%, 100% 10%, 100% 100%, 10% 100%, 0% 90%); transform: rotate(-1deg); }
+  .img-pentagon { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); transform: rotate(1deg); }
+  .img-trapezoid { clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%); transform: rotate(-2deg); }
+
+  .text-overlay {
+    position: relative;
+    bottom: auto !important;
+    right: auto !important;
+    left: auto !important;
+    top: auto !important;
+    transform: rotate(0deg) !important;
+    margin: 1rem auto !important;
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  .chinese-char {
+    font-size: 3rem !important;
+  }
+
+  .sticker {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    margin: 1rem auto;
+    max-width: 90%;
+  }
+
+  .sticker-1 { transform: rotate(-4deg); }
+  .sticker-2 { transform: rotate(5deg); }
+  .sticker-3 { transform: rotate(-3deg); }
+  .sticker-4 { transform: rotate(4deg); }
+  .sticker-5 { transform: rotate(-5deg); }
+  .sticker-6 { transform: rotate(4deg); }
+  .sticker-7 { transform: rotate(-2deg); }
+  .sticker-8 { transform: rotate(3deg); }
+  .sticker-9 { transform: rotate(-4deg); }
+
+  .sticker-8, .sticker-9 {
+    position: relative !important;
+  }
+
+  .panel-credits {
+    min-width: 100vw;
+    min-height: 50vh;
+  }
+
+  .panel::before, .panel::after {
+    width: 150px !important;
+    height: 100px !important;
+  }
+
+  .roadmap {
+    bottom: 0.5rem;
+    gap: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}

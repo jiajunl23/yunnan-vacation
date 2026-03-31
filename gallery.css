@@ -388,28 +388,20 @@ body {
 .m19-speech::after { content: ""; position: absolute; bottom: -5px; left: 10px; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #ffecd2; filter: drop-shadow(0 1px 0 #111); }
 .m19-action { font-family: system-ui, sans-serif; font-size: 0.9rem; font-weight: 900; color: #e23636; text-shadow: 1px 1px 0 #111, -1px -1px 0 #111, 1px -1px 0 #111, -1px 1px 0 #111; transform: rotate(-8deg); text-transform: uppercase; }
 
-/* === v22 BBC x Shanshui Fusion Mini === */
-.mini--v22 { background: #1c1c1c; display: flex; flex-direction: column; min-height: 280px; overflow: hidden; }
-.m22-title-card { flex: 0 0 auto; padding: 14px 10px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 2px;
-  background-image: radial-gradient(ellipse 80px 60px at 30% 70%, rgba(200,195,185,0.05) 0%, transparent 70%), radial-gradient(ellipse 60px 50px at 70% 65%, rgba(200,195,185,0.04) 0%, transparent 70%);
-}
-.m22-thin { font-family: system-ui, sans-serif; font-size: 0.28rem; font-weight: 200; letter-spacing: 0.35em; color: #6b6b6b; text-transform: uppercase; }
-.m22-cn { font-size: 0.5rem; color: rgba(200,195,185,0.3); letter-spacing: 0.1em; }
-.m22-redline { width: 20px; height: 1.5px; background: #cc3333; }
-.m22-main { font-family: system-ui, sans-serif; font-size: 1rem; font-weight: 200; letter-spacing: 0.4em; color: #f5f0e8; text-transform: uppercase; }
-.m22-pano { height: 45px; background: linear-gradient(90deg, #1c1c1c, #4a4a4a 15%, #5a5a5a 50%, #4a4a4a 85%, #1c1c1c); }
-.m22-light { background: #f4ede0; padding: 8px 12px; display: flex; gap: 8px; align-items: center;
-  background-image: radial-gradient(ellipse 50px 40px at 40% 60%, rgba(140,133,120,0.06) 0%, transparent 70%);
-}
-.m22-prose { flex: 1; display: flex; flex-direction: column; gap: 2px; }
-.m22-prose span { display: block; height: 2px; background: rgba(26,20,16,0.12); border-radius: 1px; }
-.m22-prose span:last-child { width: 65%; }
-.m22-note { background: rgba(244,237,224,0.88); border: 1px solid rgba(26,20,16,0.12); padding: 4px; transform: rotate(-1deg); flex-shrink: 0; }
-.m22-note span { display: block; width: 30px; height: 2px; background: rgba(26,20,16,0.1); }
-.m22-chapter { background: #1c1c1c; padding: 10px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 3px;
-  background-image: radial-gradient(ellipse 70px 50px at 50% 60%, rgba(200,195,185,0.06) 0%, transparent 70%);
-}
-.m22-ch { font-family: system-ui, sans-serif; font-size: 0.3rem; font-weight: 200; letter-spacing: 0.3em; color: #6b6b6b; text-transform: uppercase; }
+/* === v22 Dark Cinematic Scroll Mini === */
+.mini--v22 { background: #1c1c1c; display: flex; min-height: 280px; overflow: hidden; align-items: stretch; }
+.m22-title { width: 60px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; border-right: 1px solid #333; }
+.m22-goldline { width: 16px; height: 1.5px; background: #c9a96e; }
+.m22-thin { font-family: system-ui, sans-serif; font-size: 0.25rem; font-weight: 200; letter-spacing: 0.3em; color: #666; text-transform: uppercase; }
+.m22-main { font-family: Georgia, serif; font-size: 0.6rem; font-weight: 400; letter-spacing: 0.2em; color: #f5f0e8; }
+.m22-photo { width: 70px; flex-shrink: 0; background: linear-gradient(135deg, #3a3a3a, #2a2a2a); }
+.m22-sticker { width: 55px; flex-shrink: 0; background: #111; border-radius: 6px; margin: auto 3px; padding: 5px; box-shadow: 2px 3px 8px rgba(0,0,0,0.4); align-self: center; }
+.m22-s1 { transform: rotate(-4deg); }
+.m22-s2 { transform: rotate(5deg); }
+.m22-sh { display: block; font-family: system-ui, sans-serif; font-size: 0.3rem; font-weight: 800; color: #c9a96e; text-transform: uppercase; margin-bottom: 2px; }
+.m22-sl { display: block; height: 2px; background: rgba(201,169,110,0.15); }
+.m22-divider { width: 30px; flex-shrink: 0; background: #1c1c1c; display: flex; align-items: center; justify-content: center; border-left: 1px solid #333; border-right: 1px solid #333; }
+.m22-ch { font-family: system-ui, sans-serif; font-size: 0.2rem; font-weight: 200; letter-spacing: 0.15em; color: #c9a96e; text-transform: uppercase; writing-mode: vertical-rl; }
 
 /* === v21 Shanshui Scroll Hybrid Mini === */
 .mini--v21 {
@@ -483,6 +475,22 @@ body {
 .m17-lines span:last-child { width: 70%; }
 .m17-inset { width: 40px; height: 30px; background: #d8d4cc; border-radius: 2px; flex-shrink: 0; }
 .m17-pagenum { display: block; margin-top: 6px; font-family: "Courier New", monospace; font-size: 0.35rem; color: #888; }
+
+/* === v24 Abstract Artist Scroll Mini === */
+.mini--v24 { background: #f8f4e8; min-height: 280px; position: relative; overflow: hidden; }
+.m24-block { position: absolute; opacity: 0.2; }
+.m24-b1 { width: 70px; height: 90px; background: #0047ab; top: 10px; left: 8%; transform: rotate(-10deg); }
+.m24-b2 { width: 55px; height: 80px; background: #e63946; top: 50px; right: 12%; transform: rotate(6deg); }
+.m24-b3 { width: 50px; height: 60px; background: #e6b800; bottom: 40px; left: 30%; transform: rotate(-4deg); }
+.m24-img { position: absolute; z-index: 1; background: #556b2f; }
+.m24-i1 { width: 70px; height: 80px; top: 30px; left: 15%; clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 80%); transform: rotate(3deg); }
+.m24-i2 { width: 60px; height: 60px; bottom: 50px; right: 20%; clip-path: circle(50%); }
+.m24-title { position: absolute; top: 20px; right: 10%; font-family: Georgia, serif; font-size: 1.4rem; font-weight: 700; color: #2b2b2b; transform: rotate(-8deg); z-index: 2; line-height: 1.1; }
+.m24-sticker { position: absolute; z-index: 3; border-radius: 6px; padding: 4px 6px; box-shadow: 2px 3px 8px rgba(0,0,0,0.2); }
+.m24-st1 { background: #0047ab; border: 2px solid #e6b800; bottom: 30px; left: 10%; transform: rotate(-12deg); }
+.m24-st2 { background: #e63946; border: 2px solid #fff; top: 60px; right: 25%; transform: rotate(15deg); }
+.m24-stlabel { font-family: system-ui, sans-serif; font-size: 0.3rem; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 0.1em; }
+.m24-vtext { position: absolute; bottom: 10px; left: 5px; writing-mode: vertical-rl; font-family: Georgia, serif; font-size: 0.5rem; font-weight: 700; color: #e63946; transform: rotate(180deg); z-index: 2; }
 
 /* === v23 Airline Magazine Scroll Mini === */
 .mini--v23 { background: #e8f2fa; display: flex; min-height: 280px; overflow: hidden; align-items: stretch; position: relative; }
