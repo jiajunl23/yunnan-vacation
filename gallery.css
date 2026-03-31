@@ -33,6 +33,67 @@ body {
 
 /* ===== Gallery / Masonry ===== */
 .gallery { max-width: 1200px; margin: 0 auto 6rem; padding: 0 2rem; }
+
+/* Version journey path */
+.version-path {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 0 1rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+.vp-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #b0c8d8;
+  flex-shrink: 0;
+}
+.vp-dot--start {
+  background: #4a8faa;
+  width: 8px;
+  height: 8px;
+}
+.vp-dot--end {
+  background: #2a8c7a;
+  width: 8px;
+  height: 8px;
+}
+.vp-seg {
+  width: 12px;
+  height: 0;
+  border-top: 1.5px dotted #b0c8d8;
+  flex-shrink: 0;
+}
+.vp-label {
+  font-family: "Courier New", monospace;
+  font-size: 0.55rem;
+  color: #7a9aaa;
+  padding: 0 3px;
+  flex-shrink: 0;
+}
+.vp-arrow {
+  font-family: "Courier New", monospace;
+  font-size: 0.55rem;
+  color: #c9a96e;
+  padding-left: 6px;
+  flex-shrink: 0;
+}
+.vp-arrow::before {
+  content: " \2192 ";
+  color: #b0c8d8;
+}
+.version-path-caption {
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #7a9aaa;
+  margin-bottom: 2.5rem;
+}
+
 .masonry { columns: 3; column-gap: 1.75rem; }
 @media (max-width: 900px) { .masonry { columns: 2; } }
 @media (max-width: 560px) { .masonry { columns: 1; } }
