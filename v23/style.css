@@ -154,6 +154,17 @@ html, body {
   padding: 2px 8px;
 }
 
+.photo-desc {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.8;
+  max-width: 600px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  margin-top: 12px;
+}
+
 .photo-chinese {
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.7);
@@ -175,6 +186,19 @@ html, body {
   align-self: center;
   position: relative;
   z-index: 5;
+}
+
+.sticker-label {
+  display: inline-block;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1a2e40;
+  background: #c9a96e;
+  padding: 4px 12px;
+  border-radius: 0 0 8px 0;
 }
 
 .sticker-head {
@@ -305,11 +329,25 @@ html, body {
   transform: rotate(5deg);
 }
 
+.sticker-alt {
+  width: 280px;
+  transform: rotate(6deg);
+  align-self: flex-start;
+  margin-top: 8vh;
+}
+
 .sticker-food {
-  width: 400px;
+  width: 380px;
   transform: rotate(-4deg);
   align-self: flex-end;
-  margin-bottom: 12vh;
+  margin-bottom: 14vh;
+}
+
+.sticker-tips {
+  width: 340px;
+  transform: rotate(7deg);
+  align-self: flex-start;
+  margin-top: 12vh;
 }
 
 /* ============================================
